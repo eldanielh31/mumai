@@ -1,0 +1,6 @@
+numpy
+scipy
+opencv-python
+matplotlib
+pyside6<6.10
+scikit-learn
