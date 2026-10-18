@@ -6,6 +6,7 @@ import sys
 import tempfile
 import time
 import unittest
+from unittest.mock import patch
 
 from PySide6.QtWidgets import QApplication
 from video_analysis.gui.main_window import MainWindow
@@ -76,10 +77,11 @@ class GuiTests(unittest.TestCase):
                 self.wait_for_load(window)
                 self.assertIsNotNone(window.result_path, window.status.text())
                 self.assertTrue((window.result_path / "informe.json").exists())
-                self.assertTrue(window.results_button.isEnabled())
+                self.assertFalse(window.results_button.isEnabled())
+                self.assertTrue(window.export_button.isEnabled())
                 self.assertIn("0 ventanas", window.status.text())
                 self.assertEqual(window.progress_bar.value(), 100)
-                # Un parámetro inválido no inicia un trabajo ni borra el resultado previo.
+                # Un parámetro cambiado invalida la vista anterior y un valor inválido no inicia trabajo.
                 window.high.setValue(11)
                 window.start_analysis()
                 self.assertIsNone(window.worker)
@@ -88,6 +90,49 @@ class GuiTests(unittest.TestCase):
                 window.cancel()
                 self.wait_for_load(window)
                 window.close()
+
+    def test_review_export_error_recovery_and_states(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = generate_reference(root / "static.avi", "static", seconds=10, size=(80, 64))
+            window = MainWindow()
+            window.dimension.setValue(80)
+            try:
+                self.assertEqual(window.state, "En espera")
+                window.load_video(str(path)); self.wait_for_load(window)
+                self.assertEqual(window.state, "Entrada válida")
+                window.configure()
+                self.assertEqual(window.state, "Configurado")
+                window.start_analysis()
+                self.assertEqual(window.state, "Procesando")
+                self.wait_for_load(window)
+                self.assertEqual(window.state, "Resultados disponibles")
+                self.assertIsNone(window.exported_path)
+                original = window.result_path
+                bad = root / "not_directory"; bad.write_text("test")
+                window.start_export(bad); self.wait_for_load(window)
+                self.assertEqual(window.state, "Error controlado")
+                self.assertEqual(window.result_path, original)
+                self.assertIn("sigue disponible", window.status.text())
+                window.start_export(root / "exported"); self.wait_for_load(window)
+                self.assertEqual(window.state, "Resultados disponibles")
+                saved = window.exported_path
+                self.assertEqual((saved / "metricas.csv").read_bytes(), (original / "metricas.csv").read_bytes())
+                self.assertTrue(window.results_button.isEnabled())
+                with patch("video_analysis.pipeline.analyze_video", side_effect=ValueError("Fallo controlado de prueba")):
+                    window.start_analysis(); self.wait_for_load(window)
+                self.assertEqual(window.state, "Error controlado")
+                self.assertIsNone(window.result_path)
+                self.assertEqual(window.details.text(), "")
+                self.assertTrue(window.preview.pixmap().isNull())
+                self.assertTrue(window.chart.pixmap().isNull())
+                window.reset()
+                self.assertEqual(window.state, "En espera")
+                self.assertIsNone(window.info)
+                self.assertTrue((saved / "informe.json").exists())
+                self.assertFalse(original.exists())
+            finally:
+                window.cancel(); self.wait_for_load(window); window.close()
 
 
 if __name__ == "__main__":

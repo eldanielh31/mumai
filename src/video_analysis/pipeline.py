@@ -22,7 +22,7 @@ from video_analysis.magnification.eulerian import EulerianMagnifier
 from video_analysis.motion.optical_flow import MotionAnalyzer, metrics
 from video_analysis.heatmaps.maps import HeatmapAccumulator, render_pair
 from video_analysis.anomalies.patterns import detect_patterns
-from video_analysis.export.charts import save_motion_chart
+from video_analysis.export.charts import save_motion_chart, save_heatmaps
 
 
 @dataclass(frozen=True)
@@ -151,13 +151,9 @@ def analyze_video(path, output_root, config=None, cancelled=lambda: False, progr
                 raise ValueError("La exportación de video quedó incompleta.")
         values = [acc.mean() for acc in accumulators]
         images = render_pair(*values)
-        for tag, matrix, heatmap in zip(("original", "magnificado"), values, images[:2]):
+        for tag, matrix in zip(("original", "magnificado"), values):
             np.save(staging / f"movimiento_{tag}.npy", matrix)
-            if not cv2.imwrite(str(staging / f"mapa_{tag}.png"), heatmap):
-                raise OSError("No se pudo guardar el mapa de calor.")
-        map_pair = np.hstack(images[:2])
-        if not cv2.imwrite(str(staging / "mapas_comparados.png"), map_pair):
-            raise OSError("No se pudo guardar la comparación de mapas.")
+        save_heatmaps(*values, images[2], staging)
         patterns = detect_patterns(windows, config.baseline_seconds, config.patterns_enabled)
         chart_stride = save_motion_chart(staging / "metricas.csv", staging / "movimiento.png",
                                          info.frame_count, warmup, config.baseline_seconds, patterns)
@@ -176,7 +172,7 @@ def analyze_video(path, output_root, config=None, cancelled=lambda: False, progr
         if clipping > .01:
             warnings.append("Más del 1 % de los píxeles se saturaron; reduce la amplificación.")
         report = {
-            "schema_version": 1, "created_utc": datetime.now(timezone.utc).isoformat(),
+            "schema_version": 2, "created_utc": datetime.now(timezone.utc).isoformat(),
             "input": info.as_dict(), "input_sha256": source_hash, "config": asdict(config),
             "processing_size": [w, h], "warmup_seconds": warmup, "analyzed_frame_pairs": useful,
             "original": summary[0], "magnified": summary[1],
@@ -199,6 +195,15 @@ def analyze_video(path, output_root, config=None, cancelled=lambda: False, progr
         if cancelled():
             raise ValidationCancelled("Análisis cancelado.")
         os.rename(staging, final)
+        # El intervalo incluye escrituras y publicación del análisis. La escritura
+        # de esta propia medición es instrumentación y queda fuera del intervalo.
+        report["elapsed_seconds"] = time.perf_counter() - started
+        report["timing_scope"] = "Desde validación de entrada hasta publicación del análisis; excluye escritura de esta medición y exportación manual posterior."
+        try:
+            (final / "informe.json").write_text(json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
+        except BaseException:
+            shutil.rmtree(final, ignore_errors=True)
+            raise
         progress(100)
         return final
     except BaseException:

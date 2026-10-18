@@ -16,15 +16,19 @@ bash run.sh
    `data/input/referencias/amplitude_change.avi` (20 segundos).
 2. Mantén los parámetros iniciales para esa demostración: 0,7–1,5 Hz, amplificación 5,
    referencia de 8 segundos y nivel espacial 1.
-3. Describe las condiciones de captura y pulsa **Analizar y guardar resultados**.
-4. Revisa los mapas y la pestaña **Métricas en el tiempo**. Abre la carpeta de resultados
-   o el video comparativo con los botones de la aplicación.
+3. Describe las condiciones de captura y pulsa **Validar configuración** y luego **Analizar**.
+4. Revisa los mapas, la pestaña **Métricas en el tiempo** y el video comparativo.
+5. Pulsa **Exportar resultados…** y elige una carpeta. Después puedes abrirla desde la aplicación.
+6. **Volver a En espera** descarta el análisis temporal y permite comenzar otra ejecución.
 
 Los parámetros deben elegirse según el video real. La frecuencia máxima debe ser
 menor que FPS/2. La referencia inicial debe representar el comportamiento que quieras
 usar como normal; la aplicación no puede comprobar por sí misma esa condición.
-El video original no se modifica. Cada ejecución crea una carpeta nueva dentro de
-`data/output/`. El análisis puede cancelarse; los resultados incompletos no se publican.
+El video original no se modifica. En la interfaz los resultados son temporales hasta
+que pulsas **Exportar resultados…**; se eliminan al cerrar o reiniciar. Cada exportación
+crea una carpeta nueva y no sobrescribe otras. Si falla, puedes revisar el análisis y
+reintentar. Al cambiar parámetros se retira la visualización anterior. En consola se
+guarda automáticamente en `data/output/` o en `--output`. El análisis puede cancelarse.
 
 ## Uso por consola
 
@@ -107,11 +111,38 @@ Ver `docs/avance-2026-10-18.md` para el estado contra el plan y
 
 ## Entorno y estructura
 
-Python 3.13 en `.python` y `.venv`; versiones exactas en `requirements.txt`.
-VS Code usa `.venv`. No requiere nube, servidor, base de datos ni GPU.
-Para otra instalación Ubuntu, `bash scripts/complete-setup.sh` instala dependencias
-del sistema con contraseña de administrador. Las librerías se reinstalan con
-`.venv/bin/python -m pip install -r requirements.txt`.
+La versión verificada utiliza **Python 3.13**, con versiones exactas en `requirements.txt`.
+No requiere nube, servidor, base de datos, VS Code ni GPU para ejecutar el análisis.
+
+Para una instalación nueva en Ubuntu:
+
+1. Instala Python 3.13 con su módulo `venv` mediante el mecanismo aprobado para tu
+   distribución. El proyecto no añade repositorios externos ni descarga un intérprete
+   automáticamente. Comprueba `python3.13 --version`.
+2. Desde la carpeta del proyecto ejecuta `bash scripts/complete-setup.sh`. Instala las
+   dependencias del sistema (solicita contraseña de administrador), crea `.venv`,
+   instala las versiones fijadas y comprueba Python, Qt y los códecs.
+3. Ejecuta `bash run.sh`.
+
+Si Python 3.13 está en otra ruta:
+
+```bash
+PROJECT_PYTHON=/ruta/a/python3.13 bash scripts/complete-setup.sh
+```
+
+Si los paquetes del sistema ya están instalados, usa `--skip-system`. Para comprobar
+una instalación aislada sin reemplazar `.venv`, define `PROJECT_VENV=/ruta/nueva`.
+La instalación de paquetes requiere conexión o un repositorio local de paquetes;
+el funcionamiento posterior del análisis no requiere internet. El script no descarga
+videos de demostración: puedes generarlos con `.venv/bin/python scripts/create_reference_videos.py`.
+La comparación de video utiliza el reproductor predeterminado del escritorio.
+
+`informe.json` registra el tiempo desde la validación hasta la publicación del análisis,
+incluyendo los archivos de resultados. Solo excluye la escritura de su propia medición
+y, en la interfaz, la exportación manual posterior (copia del paquete ya analizado).
+
+La documentación de seguimiento se encuentra en **[docs/README.md](docs/README.md)**:
+incidencias, decisiones, pruebas, pendientes y plantillas para futuros informes.
 
 Los componentes están en `src/video_analysis/`: `video`, `magnification`, `motion`,
 `heatmaps`, `anomalies`, `export`, `gui`; `pipeline.py` los integra.

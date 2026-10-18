@@ -1,7 +1,8 @@
-"""Interfaz mínima del primer módulo: selección, validación y vista previa."""
+"""Interfaz de análisis, revisión y exportación con estados explícitos."""
 
 import os
 import json
+import tempfile
 from pathlib import Path
 from PySide6.QtCore import Qt, QThread, Signal, QLibraryInfo, QUrl
 from PySide6.QtGui import QImage, QPixmap, QDesktopServices
@@ -46,8 +47,8 @@ class AnalysisWorker(QThread):
         self.path, self.output, self.config = path, output, config
 
     def run(self):
-        from video_analysis.pipeline import analyze_video
         try:
+            from video_analysis.pipeline import analyze_video
             result = analyze_video(self.path, self.output, self.config,
                                    self.isInterruptionRequested, self.progress.emit)
             self.completed.emit(result)
@@ -57,6 +58,22 @@ class AnalysisWorker(QThread):
             self.failed.emit(f"El análisis no pudo completarse: {exc}")
 
 
+class ExportWorker(QThread):
+    completed = Signal(object)
+    failed = Signal(str)
+
+    def __init__(self, source, destination, parent=None):
+        super().__init__(parent)
+        self.source, self.destination = source, destination
+
+    def run(self):
+        try:
+            from video_analysis.export.package import export_results
+            self.completed.emit(export_results(self.source, self.destination, self.isInterruptionRequested))
+        except Exception as exc:
+            self.failed.emit(f"No se exportaron los resultados: {exc}. El análisis sigue disponible para revisar o reintentar.")
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -64,9 +81,11 @@ class MainWindow(QMainWindow):
         self.info = None
         self._closing = False
         self.result_path = None
+        self.exported_path = None
+        self._session = tempfile.TemporaryDirectory(prefix="video-analysis-")
         self.output_root = Path(__file__).resolve().parents[3] / "data/output"
         self.setWindowTitle("Proyecto Final — Magnificación y análisis de video")
-        self.resize(1000, 850)
+        self.resize(1000, 800)
         panel = QWidget()
         layout = QVBoxLayout(panel)
         self.open_button = QPushButton("Seleccionar video")
@@ -74,7 +93,17 @@ class MainWindow(QMainWindow):
         self.cancel_button = QPushButton("Cancelar")
         self.cancel_button.clicked.connect(self.cancel)
         self.cancel_button.setEnabled(False)
+        self.state_label = QLabel("Estado: En espera")
+        self.state = "En espera"
         self.status = QLabel("Selecciona un video para comprobar su lectura.")
+        self.reset_button = QPushButton("Volver a En espera (descartar análisis sin exportar)")
+        self.reset_button.clicked.connect(self.reset)
+        self.configure_button = QPushButton("Validar configuración")
+        self.configure_button.clicked.connect(self.configure)
+        self.configure_button.setEnabled(False)
+        self.export_button = QPushButton("Exportar resultados…")
+        self.export_button.clicked.connect(self.choose_export)
+        self.export_button.setEnabled(False)
         self.status.setWordWrap(True)
         self.details = QLabel()
         self.details.setTextFormat(Qt.TextFormat.PlainText)
@@ -120,7 +149,7 @@ class MainWindow(QMainWindow):
         form.addRow("Nivel de reducción espacial", self.spatial_level)
         form.addRow(self.patterns)
         form.addRow("Condiciones de captura", self.notes)
-        self.analyze_button = QPushButton("Analizar y guardar resultados")
+        self.analyze_button = QPushButton("Analizar")
         self.analyze_button.setEnabled(False)
         self.analyze_button.clicked.connect(self.start_analysis)
         self.results_button = QPushButton("Abrir carpeta de resultados")
@@ -131,10 +160,105 @@ class MainWindow(QMainWindow):
         self.comparison_button.clicked.connect(self.open_comparison)
         self.progress_bar = QProgressBar()
         self.progress_bar.setRange(0, 100)
-        for widget in (self.open_button, self.settings, self.analyze_button, self.cancel_button,
-                       self.progress_bar, self.status, self.details, self.tabs, self.results_button, self.comparison_button):
+        layout.addWidget(self.open_button)
+        layout.addWidget(self.settings)
+        actions = QHBoxLayout()
+        for widget in (self.configure_button, self.analyze_button, self.cancel_button):
+            actions.addWidget(widget)
+        layout.addLayout(actions)
+        for widget in (self.state_label, self.progress_bar, self.status, self.details, self.tabs):
             layout.addWidget(widget)
+        outputs = QHBoxLayout()
+        for widget in (self.export_button, self.results_button, self.comparison_button):
+            outputs.addWidget(widget)
+        layout.addLayout(outputs)
+        layout.addWidget(self.reset_button)
         self.setCentralWidget(panel)
+        for control in (self.low, self.high, self.alpha, self.baseline, self.dimension, self.spatial_level):
+            control.valueChanged.connect(self.configuration_changed)
+        self.patterns.toggled.connect(self.configuration_changed)
+        self.notes.textChanged.connect(self.configuration_changed)
+
+    def set_state(self, state, message):
+        self.state = state
+        self.state_label.setText(f"Estado: {state}")
+        self.status.setText(message)
+
+    def show_error(self, message):
+        self.set_state("Error controlado", message)
+
+    def clear_results(self):
+        self.result_path = None
+        self.exported_path = None
+        self.results_button.setEnabled(False)
+        self.comparison_button.setEnabled(False)
+        self.export_button.setEnabled(False)
+        self.details.clear()
+        self.preview.clear()
+        self.chart.clear()
+
+    def reset(self):
+        if self.worker is not None:
+            return
+        self.clear_results()
+        self.info = None
+        self._session.cleanup()
+        self._session = tempfile.TemporaryDirectory(prefix="video-analysis-")
+        self.progress_bar.setValue(0)
+        self.analyze_button.setEnabled(False)
+        self.configure_button.setEnabled(False)
+        self.set_state("En espera", "Selecciona un video. Los análisis sin exportar se han descartado.")
+
+    def configuration_changed(self, *_):
+        if self.info is not None and self.worker is None:
+            self.clear_results()
+            self.set_state("Entrada válida", "Configuración modificada. Valídala antes de analizar.")
+
+    def configure(self):
+        if self.info is None or self.worker is not None:
+            return None
+        from video_analysis.pipeline import AnalysisConfig
+        config = AnalysisConfig(low_hz=self.low.value(), high_hz=self.high.value(),
+                                alpha=self.alpha.value(), baseline_seconds=self.baseline.value(),
+                                max_dimension=self.dimension.value(), patterns_enabled=self.patterns.isChecked(),
+                                spatial_level=self.spatial_level.value(),
+                                capture_notes=self.notes.text() or "Condiciones no documentadas.")
+        try:
+            config.validate(self.info.fps)
+        except ValueError as exc:
+            self.clear_results()
+            self.show_error(str(exc))
+            return None
+        self.set_state("Configurado", "Parámetros válidos. Puedes iniciar el análisis.")
+        return config
+
+    def choose_export(self):
+        if self.result_path is None or self.worker is not None:
+            return
+        destination = QFileDialog.getExistingDirectory(self, "Exportar resultados", str(self.output_root))
+        if destination:
+            self.start_export(destination)
+
+    def start_export(self, destination):
+        if self.result_path is None or self.worker is not None:
+            return
+        self.set_busy()
+        self.set_state("Procesando", "Exportando los resultados revisados…")
+        self.worker = ExportWorker(self.result_path, destination, self)
+        self.worker.completed.connect(self.export_completed)
+        self.worker.failed.connect(self.show_error)
+        self.worker.finished.connect(self.finished)
+        self.worker.start()
+
+    def export_completed(self, path):
+        self.exported_path = Path(path)
+        self.set_state("Resultados disponibles", f"Exportación completada: {path}")
+
+    def set_busy(self):
+        for widget in (self.open_button, self.analyze_button, self.configure_button, self.settings,
+                       self.reset_button, self.export_button, self.results_button, self.comparison_button):
+            widget.setEnabled(False)
+        self.cancel_button.setEnabled(True)
 
     def choose_video(self):
         path, _ = QFileDialog.getOpenFileName(
@@ -148,26 +272,18 @@ class MainWindow(QMainWindow):
         if self.worker is not None:
             return
         self.info = None
-        self.result_path = None
-        self.results_button.setEnabled(False)
-        self.comparison_button.setEnabled(False)
-        self.chart.clear()
-        self.analyze_button.setEnabled(False)
-        self.settings.setEnabled(False)
-        self.details.clear()
-        self.preview.clear()
-        self.open_button.setEnabled(False)
-        self.cancel_button.setEnabled(True)
-        self.status.setText("Validando todos los fotogramas. Esto puede tardar según la duración del video…")
+        self.clear_results()
+        self.set_busy()
+        self.set_state("En espera", "Validando todos los fotogramas antes de aceptar la entrada…")
         self.worker = VideoWorker(path, self)
         self.worker.loaded.connect(self.show_video)
-        self.worker.failed.connect(self.status.setText)
+        self.worker.failed.connect(self.show_error)
         self.worker.finished.connect(self.finished)
         self.worker.start()
 
     def show_video(self, info, frame):
         self.info = info
-        self.status.setText("Video validado. Listo para la siguiente etapa de procesamiento.")
+        self.set_state("Entrada válida", "Video validado. Revisa y valida la configuración.")
         self.details.setText(
             f"Archivo: {info.path.name}\n"
             f"Resolución: {info.width} × {info.height} píxeles\n"
@@ -182,29 +298,16 @@ class MainWindow(QMainWindow):
     def start_analysis(self):
         if self.worker is not None or self.info is None:
             return
-        from video_analysis.pipeline import AnalysisConfig
-        config = AnalysisConfig(low_hz=self.low.value(), high_hz=self.high.value(),
-                                alpha=self.alpha.value(), baseline_seconds=self.baseline.value(),
-                                max_dimension=self.dimension.value(), patterns_enabled=self.patterns.isChecked(),
-                                spatial_level=self.spatial_level.value(),
-                                capture_notes=self.notes.text() or "Condiciones no documentadas.")
-        try:
-            config.validate(self.info.fps)
-        except ValueError as exc:
-            self.status.setText(str(exc))
+        config = self.configure()
+        if config is None:
             return
-        self.result_path = None
-        self.results_button.setEnabled(False)
-        self.comparison_button.setEnabled(False)
-        self.open_button.setEnabled(False)
-        self.analyze_button.setEnabled(False)
-        self.settings.setEnabled(False)
-        self.cancel_button.setEnabled(True)
+        self.clear_results()
+        self.set_busy()
         self.progress_bar.setValue(0)
-        self.status.setText("Procesando video y preparando resultados…")
-        self.worker = AnalysisWorker(self.info.path, self.output_root, config, self)
+        self.set_state("Procesando", "Procesando video. Después podrás revisar y exportar los resultados.")
+        self.worker = AnalysisWorker(self.info.path, self._session.name, config, self)
         self.worker.completed.connect(self.show_results)
-        self.worker.failed.connect(self.status.setText)
+        self.worker.failed.connect(self.show_error)
         self.worker.progress.connect(self.progress_bar.setValue)
         self.worker.finished.connect(self.finished)
         self.worker.start()
@@ -215,23 +318,23 @@ class MainWindow(QMainWindow):
         state = {"evaluated": f"{report['flagged_windows']} ventanas con cambios respecto a la referencia",
                  "disabled": "Análisis de patrones desactivado",
                  "insufficient_reference": "Referencia insuficiente para evaluar patrones; consulta el informe"}[report["patterns_status"]]
-        self.status.setText(f"Análisis guardado. {state}. Los resultados no constituyen un diagnóstico de daños.")
+        self.set_state("Resultados disponibles", f"{state}. Revisa y exporta antes de cerrar o reiniciar. No constituye un diagnóstico de daños.")
         self.details.setText(
             f"Movimiento medio: original {report['original']['mean_px_frame']:.5f} / "
             f"magnificado {report['magnified']['mean_px_frame']:.5f} px/fotograma\n"
             f"Mapas: original a la izquierda y magnificado a la derecha; escala común 0–{report['heatmap_scale']['max']:.5f} px/fotograma.\n"
-            f"Resultados: {path}"
+            "Análisis temporal pendiente de exportación."
         )
         self.preview.setPixmap(QPixmap(str(self.result_path / "mapas_comparados.png")).scaled(
             800, 280, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
-        self.results_button.setEnabled(True)
+        self.export_button.setEnabled(True)
         self.comparison_button.setEnabled(True)
         self.chart.setPixmap(QPixmap(str(self.result_path / "movimiento.png")).scaled(
             800, 280, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
 
     def open_results(self):
-        if self.result_path:
-            QDesktopServices.openUrl(QUrl.fromLocalFile(str(self.result_path)))
+        if self.exported_path:
+            QDesktopServices.openUrl(QUrl.fromLocalFile(str(self.exported_path)))
 
     def open_comparison(self):
         if self.result_path:
@@ -248,6 +351,11 @@ class MainWindow(QMainWindow):
         self.cancel_button.setEnabled(False)
         self.settings.setEnabled(True)
         self.analyze_button.setEnabled(self.info is not None)
+        self.configure_button.setEnabled(self.info is not None)
+        self.reset_button.setEnabled(True)
+        self.export_button.setEnabled(self.result_path is not None)
+        self.comparison_button.setEnabled(self.result_path is not None)
+        self.results_button.setEnabled(self.exported_path is not None)
         if self._closing:
             self.close()
 
@@ -257,4 +365,5 @@ class MainWindow(QMainWindow):
             self.cancel()
             event.ignore()
         else:
+            self._session.cleanup()
             event.accept()

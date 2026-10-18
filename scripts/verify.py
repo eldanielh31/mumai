@@ -29,7 +29,7 @@ with tempfile.TemporaryDirectory() as folder:
 print("OpenCV: escritura y lectura de video correctas")
 print("Python", sys.version)
 failed = False
-for command in (["git", "--version"], ["ffmpeg", "-version"], ["code", "--version"]):
+for command in (["git", "--version"], ["ffmpeg", "-version"]):
     try:
         result = subprocess.run(command, capture_output=True, text=True, timeout=20)
         lines = (result.stdout or result.stderr).splitlines()

@@ -9,7 +9,7 @@ from create_reference_videos import generate_reference
 from video_analysis.pipeline import AnalysisConfig, analyze_video
 
 
-def run():
+def run(evidence_path=None):
     project = Path(__file__).resolve().parents[1]
     inputs = project / "data/input/referencias"
     outputs = project / "data/output/validacion"
@@ -47,11 +47,14 @@ def run():
                 "checks": checks, "results": summaries,
                 "limitations": ["Las alertas no demuestran daño real.", "Iluminación y movimiento de cámara pueden contaminar EVM y flujo óptico.",
                                 "No se han estimado sensibilidad ni especificidad sobre maquinaria real."]}
-    (project / "docs/validacion-2026-10-18.json").write_text(json.dumps(evidence, indent=2, ensure_ascii=False), encoding="utf-8")
+    (Path(evidence_path) if evidence_path else project / "docs/validacion-2026-10-18.json").write_text(json.dumps(evidence, indent=2, ensure_ascii=False), encoding="utf-8")
     if not all(checks.values()):
         raise SystemExit(f"Comprobaciones fallidas: {[k for k, v in checks.items() if not v]}")
     print("Todas las comprobaciones de referencia pasaron.")
 
 
 if __name__ == "__main__":
-    run()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--evidence", help="Archivo nuevo para conservar el historial de validaciones")
+    run(parser.parse_args().evidence)

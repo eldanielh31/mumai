@@ -1,0 +1,16 @@
+{
+  "fecha": "2026-10-18",
+  "python": "3.13.16 (main, Oct  3 2026, 01:06:22) [Clang 22.1.3 ]",
+  "plataforma": "Linux-6.8.0-90-generic-x86_64-with-glibc2.35",
+  "arquitectura": "x86_64",
+  "dependencias": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "opencv-python": "5.0.0.93",
+    "matplotlib": "3.11.2",
+    "PySide6": "6.9.3",
+    "scikit-learn": "1.9.1"
+  },
+  "pruebas": "CPU; no se invocan operaciones GPU. No equivale a prueba en equipo físicamente sin GPU.",
+  "instalacion": "Entorno virtual nuevo en /tmp/daniel-install-clean; ruedas locales, Python 3.13 preexistente y bibliotecas de sistema ya instaladas."
+}

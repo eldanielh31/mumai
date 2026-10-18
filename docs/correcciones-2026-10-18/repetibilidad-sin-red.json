@@ -1,0 +1,14 @@
+{
+  "network_interfaces": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+  "repeat_identical": {
+    "metricas.csv": true,
+    "movimiento_original.npy": true,
+    "movimiento_magnificado.npy": true,
+    "patrones.json": true
+  },
+  "export_error_raised": true,
+  "error": "Fallo de exportación provocado por auditoría",
+  "no_partial_export": true,
+  "recovery_success": true,
+  "input_unchanged": true
+}

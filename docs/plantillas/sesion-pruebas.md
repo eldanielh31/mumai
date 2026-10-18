@@ -1,0 +1,21 @@
+# Sesión de pruebas [ID]
+
+- Fecha/hora y responsable:
+- Requisito / actividad del plan:
+- Versión / commit / manifiesto:
+- Equipo, sistema, CPU, RAM, GPU y almacenamiento:
+- Versiones de dependencias:
+- Video, procedencia y SHA-256:
+- Tipo de evidencia: [sintética / cámara real]:
+- Cámara, iluminación, estabilidad, resolución, FPS y duración:
+- Referencia independiente disponible y límites:
+- Parámetros y justificación:
+- Procedimiento/comando exacto:
+- Resultado esperado:
+- Resultado observado:
+- Tiempo y alcance de medición:
+- Salida exportada y archivos de evidencia:
+- Error o incidencia asociada:
+- Repetición / recuperación realizada:
+- Conclusión: [pasa / falla / inconcluso], con alcance:
+- Pendientes y siguiente acción:

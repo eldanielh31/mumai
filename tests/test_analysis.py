@@ -1,4 +1,5 @@
 import json
+import time
 from pathlib import Path
 import sys
 import tempfile
@@ -14,6 +15,7 @@ from video_analysis.motion.optical_flow import MotionAnalyzer
 from video_analysis.heatmaps.maps import render_pair
 from video_analysis.anomalies.patterns import detect_patterns
 from video_analysis.pipeline import AnalysisConfig, analyze_video
+from video_analysis.export.package import export_results
 from video_analysis.video import ValidationCancelled, VideoInfo, VideoError, iter_frames
 
 
@@ -118,6 +120,43 @@ class PipelineTests(unittest.TestCase):
             video = generate_reference(Path(tmp) / "short.avi", seconds=1)
             with self.assertRaisesRegex(ValueError, "corto"):
                 analyze_video(video, Path(tmp) / "results")
+
+    def test_timing_includes_last_outputs_and_publish(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            video = generate_reference(root / "static.avi", "static", seconds=5, size=(80, 64))
+            write = Path.write_text
+            def delayed_write(path, *args, **kwargs):
+                if path.name == "LEEME.txt":
+                    time.sleep(.15)
+                return write(path, *args, **kwargs)
+            with patch.object(Path, "write_text", delayed_write):
+                started = time.perf_counter()
+                result = analyze_video(video, root / "results")
+                wall = time.perf_counter() - started
+            report = json.loads((result / "informe.json").read_text())
+            self.assertGreater(report["elapsed_seconds"], .15)
+            self.assertLess(wall - report["elapsed_seconds"], .1)
+            self.assertIn("publicación", report["timing_scope"])
+
+    def test_export_failure_cleanup_retry_and_no_overwrite(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "analysis"; source.mkdir()
+            (source / "informe.json").write_text('{"config": {"alpha": 5}}')
+            (source / "metricas.csv").write_text("original,magnified\n1,2\n")
+            with patch("video_analysis.export.package.shutil.copy2", side_effect=OSError("Disco lleno")):
+                with self.assertRaises(OSError):
+                    export_results(source, root / "out")
+            self.assertEqual(list((root / "out").iterdir()), [])
+            a = export_results(source, root / "out")
+            b = export_results(source, root / "out")
+            self.assertNotEqual(a, b)
+            self.assertEqual((a / "metricas.csv").read_bytes(), (source / "metricas.csv").read_bytes())
+            self.assertTrue((b / "informe.json").is_file())
+            with self.assertRaises(ValidationCancelled):
+                export_results(source, root / "out", cancelled=lambda: True)
+            self.assertEqual(len(list((root / "out").iterdir())), 2)
 
 
 if __name__ == "__main__":

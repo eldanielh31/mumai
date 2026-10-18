@@ -33,3 +33,25 @@ def save_motion_chart(csv_path, target, frame_count, warmup, baseline, patterns)
     figure.savefig(target, dpi=130)
     figure.clear()
     return stride
+
+
+def save_heatmaps(original, magnified, maximum, directory):
+    """Cada PNG conserva identificación, unidades y escala incluso separado del paquete."""
+    from pathlib import Path
+    directory = Path(directory)
+    for filename, matrices, titles in (
+        ('mapa_original.png', [original], ['Original']),
+        ('mapa_magnificado.png', [magnified], ['Magnificado']),
+        ('mapas_comparados.png', [original, magnified], ['Original', 'Magnificado']),
+    ):
+        figure = Figure(figsize=(6 * len(matrices), 4), layout='constrained')
+        FigureCanvasAgg(figure)
+        axes = figure.subplots(1, len(matrices), squeeze=False)[0]
+        for axis, matrix, title in zip(axes, matrices, titles):
+            picture = axis.imshow(matrix, cmap='inferno', vmin=0, vmax=maximum)
+            axis.set_title(title)
+            axis.set_axis_off()
+        figure.colorbar(picture, ax=list(axes), label='Movimiento medio (px/fotograma)', shrink=.85)
+        figure.suptitle('Movimiento — escala común')
+        figure.savefig(directory / filename, dpi=130)
+        figure.clear()
