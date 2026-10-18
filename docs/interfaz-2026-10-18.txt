@@ -1,0 +1,11 @@
+Verificación realizada en el escritorio Ubuntu con QT_QPA_PLATFORM=xcb.
+Comando: PYTHONPATH=src timeout 30s .venv/bin/python -m unittest discover -s tests -p test_gui.py -v
+
+test_analysis_from_window ... ok
+test_close_during_validation ... ok
+test_load_preview_and_error_recovery ... ok
+Ran 3 tests in 2.513s
+OK
+
+El primer intento no se ejecutó porque la revisión automática de permisos agotó
+su plazo. El único reintento fue autorizado y completó las pruebas anteriores.

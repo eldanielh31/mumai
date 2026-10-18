@@ -12,6 +12,7 @@ from video_analysis.gui.main_window import MainWindow
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from create_sample import create_sample
+from create_reference_videos import generate_reference
 
 
 class GuiTests(unittest.TestCase):
@@ -60,6 +61,33 @@ class GuiTests(unittest.TestCase):
             window.close()
             self.wait_for_load(window)
             self.assertFalse(window.isVisible())
+
+    def test_analysis_from_window(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = generate_reference(root / "static.avi", "static", seconds=10, size=(80, 64))
+            window = MainWindow()
+            window.output_root = root / "results"
+            window.dimension.setValue(80)
+            try:
+                window.load_video(str(path))
+                self.wait_for_load(window)
+                window.start_analysis()
+                self.wait_for_load(window)
+                self.assertIsNotNone(window.result_path, window.status.text())
+                self.assertTrue((window.result_path / "informe.json").exists())
+                self.assertTrue(window.results_button.isEnabled())
+                self.assertIn("0 ventanas", window.status.text())
+                self.assertEqual(window.progress_bar.value(), 100)
+                # Un parámetro inválido no inicia un trabajo ni borra el resultado previo.
+                window.high.setValue(11)
+                window.start_analysis()
+                self.assertIsNone(window.worker)
+                self.assertIn("FPS/2", window.status.text())
+            finally:
+                window.cancel()
+                self.wait_for_load(window)
+                window.close()
 
 
 if __name__ == "__main__":

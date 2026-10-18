@@ -102,7 +102,7 @@ def inspect_video(
         capture.release()
 
 
-def iter_frames(info: VideoInfo) -> Iterator[np.ndarray]:
+def iter_frames(info: VideoInfo, require_constant_fps=False) -> Iterator[np.ndarray]:
     """Entrega fotogramas BGR en orden para los siguientes módulos.
 
     Consumir hasta el final verifica el conteo. Si se interrumpe la iteración,
@@ -110,6 +110,7 @@ def iter_frames(info: VideoInfo) -> Iterator[np.ndarray]:
     """
     _, capture = _open(info.path)
     count = 0
+    previous_time = None
     try:
         while True:
             ok, frame = capture.read()
@@ -118,6 +119,13 @@ def iter_frames(info: VideoInfo) -> Iterator[np.ndarray]:
             if frame is None or frame.shape[:2] != (info.height, info.width):
                 raise VideoError("Los fotogramas no coinciden con el video validado.")
             count += 1
+            if require_constant_fps:
+                timestamp = capture.get(cv2.CAP_PROP_POS_MSEC) / 1000
+                if not math.isfinite(timestamp):
+                    raise VideoError("No se pudo verificar la temporización del video.")
+                if previous_time is not None and abs(timestamp - previous_time - 1 / info.fps) > max(.002, .15 / info.fps):
+                    raise VideoError("Tasa de fotogramas variable o marcas temporales no disponibles. Convierte el video a FPS constantes antes del análisis.")
+                previous_time = timestamp
             if count > info.frame_count:
                 raise VideoError("El video cambió después de la validación.")
             yield frame

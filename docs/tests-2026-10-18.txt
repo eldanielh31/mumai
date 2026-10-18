@@ -1,0 +1,34 @@
+/home/daniel/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-_tfgoxxt because there was an issue with the default path (/home/daniel/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+test_flow_known_translation (test_analysis.AlgorithmTests.test_flow_known_translation) ... ok
+test_frequency_selectivity (test_analysis.AlgorithmTests.test_frequency_selectivity) ... ok
+test_heatmaps_shared_scale (test_analysis.AlgorithmTests.test_heatmaps_shared_scale) ... ok
+test_patterns_no_future_leakage (test_analysis.AlgorithmTests.test_patterns_no_future_leakage) ... ok
+test_reject_bad_parameters (test_analysis.AlgorithmTests.test_reject_bad_parameters) ... ok
+test_static_and_zero_amplification (test_analysis.AlgorithmTests.test_static_and_zero_amplification) ... ok
+test_variable_timing_rejected (test_analysis.AlgorithmTests.test_variable_timing_rejected) ... ok
+test_cancel_leaves_no_published_result (test_analysis.PipelineTests.test_cancel_leaves_no_published_result) ... ok
+test_complete_export_and_static_control (test_analysis.PipelineTests.test_complete_export_and_static_control) ... ok
+test_short_video_rejected (test_analysis.PipelineTests.test_short_video_rejected) ... ok
+test_analysis_from_window (test_gui.GuiTests.test_analysis_from_window) ... ok
+test_close_during_validation (test_gui.GuiTests.test_close_during_validation) ... This plugin does not support propagateSizeHints()
+ok
+test_load_preview_and_error_recovery (test_gui.GuiTests.test_load_preview_and_error_recovery) ... This plugin does not support propagateSizeHints()
+ok
+test_avi_metadata_and_sequential_frames (test_video.VideoTests.test_avi_metadata_and_sequential_frames) ... ok
+test_cancel (test_video.VideoTests.test_cancel) ... ok
+test_changed_video_after_validation (test_video.VideoTests.test_changed_video_after_validation) ... ok
+test_cli_invalid (test_video.VideoTests.test_cli_invalid) ... ok
+test_cli_json (test_video.VideoTests.test_cli_json) ... ok
+test_invalid_fps_releases_file (test_video.VideoTests.test_invalid_fps_releases_file) ... ok
+test_missing_directory_empty_unsupported_and_corrupt (test_video.VideoTests.test_missing_directory_empty_unsupported_and_corrupt) ... [mov,mp4,m4a,3gp,3g2,mj2 @ 0x3c8bf7c0] moov atom not found
+[ WARN:0@3.883] global cap.cpp:212 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+ok
+test_mp4 (test_video.VideoTests.test_mp4) ... ok
+test_truncated_video (test_video.VideoTests.test_truncated_video) ... [mjpeg @ 0x3c2a6a40] overread 8
+ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 2.404s
+
+OK
