@@ -37,3 +37,5 @@ No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`
 - Daniel autorizó GitHub privado. Se verificó que no había conexión autenticada ni remoto; publicación pendiente de conectar su cuenta. Se guardará el avance local con evidencia de versión.
 - Se añadieron instrucciones persistentes de documentación y publicación en `AGENTS.md`. No se programó sincronización en segundo plano.
 - Para revisar el HTML se levantó temporalmente un servidor solo en la computadora; el primer intento aislado no permitía abrir sockets, y se repitió con acceso local autorizado. El resumen fue revisado en navegador.
+
+- La revisión de formato de Git señaló CRLF del CSV exportado como espacios finales. Se conservaron los bytes originales y se añadió una regla específica de atributos, en lugar de modificar la evidencia y sus huellas.

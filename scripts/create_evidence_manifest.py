@@ -15,7 +15,7 @@ def main():
     target = Path(args.output).resolve()
     if target.exists():
         parser.error('El manifiesto ya existe; usa otra ruta para conservar el historial.')
-    files = [root / name for name in ('README.md', 'AGENTS.md', '.gitignore', 'requirements.txt', 'requirements.in', 'run.sh')]
+    files = [root / name for name in ('README.md', 'AGENTS.md', '.gitignore', '.gitattributes', 'requirements.txt', 'requirements.in', 'run.sh')]
     for folder in ('src', 'scripts', 'tests', 'docs'):
         files.extend(p for p in (root / folder).rglob('*') if p.is_file()
                      and '__pycache__' not in p.parts and p.suffix != '.pyc' and p.resolve() != target)

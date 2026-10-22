@@ -1,0 +1,2 @@
+# CSV exportados: conservar bytes CRLF originales para verificar SHA-256 tras clonar.
+*.csv -text whitespace=cr-at-eol

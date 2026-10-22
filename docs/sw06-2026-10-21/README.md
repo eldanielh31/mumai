@@ -28,3 +28,5 @@ QT_QPA_PLATFORM=offscreen .venv/bin/python scripts/validate_sw06.py --evidence d
 La segunda orden requiere acceso al escritorio. Se utilizó `MPLCONFIGDIR=/tmp/daniel-sw06-mpl` para una caché escribible. El generador rechaza sobrescribir un ejemplo/registro existente. Las pruebas de error/copia corrupta son provocadas de forma controlada; no representan daños a archivos reales del usuario.
 
 Los sellos UTC de los archivos pueden indicar el 22 de octubre; el corte de esta sesión en Costa Rica es el 21 de octubre. Las fechas del plan se conservan con el calendario del usuario.
+
+Los CSV conservan sus terminaciones originales CRLF mediante `.gitattributes`, para que sus huellas sigan coincidiendo al clonar el repositorio. El manifiesto inicial identifica la entrega técnica; `manifiesto-publicacion.json` añade la preparación final de Git sin alterar los resultados.
