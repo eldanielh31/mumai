@@ -2,6 +2,12 @@
 
 Este índice reúne evidencia reutilizable para informes, seguimiento del cronograma y entrega final. Fecha de actualización: **21 de octubre de 2026**.
 
+## Cómo probar y estado de las dependencias
+
+- [Guía manual completa para Daniel: 15 casos](guia-pruebas-manuales.md).
+- [Hoja para registrar tus resultados](plantillas/registro-prueba-manual.md).
+- [Revalidación de SW-01, SW-04 y SW-05](verificacion-sw01-sw04-sw05-2026-10-21/README.md).
+
 ## Entrega vigente
 
 - [Avance de SW-06, 19–31 de octubre](avance-2026-10-21-sw06.md).
@@ -36,4 +42,4 @@ Por cada cambio relevante: asignar una incidencia o decisión, describir antes/d
 
 Para un informe, utilizar el estado correspondiente a su fecha de corte. Distinguir **implementado**, **probado en simulación**, **probado con captura real** y **aceptado por la contraparte**. No convertir cantidad de pruebas en porcentaje de cumplimiento, ni tiempo automático de procesamiento en horas de trabajo. Identificar el commit o conservar un manifiesto de archivos de la versión probada.
 
-Los videos completos permanecen en `data/` y no se versionan. Los resultados pequeños y los generadores sí quedan en la documentación. No incluir videos privados o datos de terceros en un informe público sin revisar su contenido.
+Las grabaciones y resultados de trabajo permanecen en `data/` y no se versionan. La excepción documentada es el pequeño ejemplo sintético de SW-06. Los resultados pequeños y los generadores sí quedan en la documentación. No incluir videos privados o datos de terceros en un informe público sin revisar su contenido.

@@ -87,3 +87,9 @@ Corte: 18 de octubre de 2026. Origen: auditoría de requisitos y diseño sobre `
 | REP-001 | No existe conexión autenticada para crear/subir a GitHub | Preparación local, solicitud de conexión y elección privada confirmada | Pendiente; `repositorio.md`. No es una falla del análisis. |
 
 La entrada de INC-008 es una mejora de consulta de SW-06, no una afirmación de que antes faltaran métricas numéricas. Los resultados de las incidencias anteriores permanecen como historial. VAL-001, VAL-002 y VAL-003 siguen abiertos.
+
+## INC-011 — Fecha y preservación de evidencia de referencias
+
+Detectado en la revalidación del 21 de octubre: el generador de referencias escribía la fecha fija `2026-10-18` y permitía reemplazar archivos de evidencia. Esto afectaba la trazabilidad documental, no el resultado del algoritmo.
+
+Corregido: fecha predeterminada de Costa Rica con opción explícita `--date`, nombre nuevo por defecto y rechazo de rutas existentes antes de procesar. Se guardaron referencias con corte correcto y se comprobó que un intento de reemplazo no modifica sus bytes. Evidencia: `verificacion-sw01-sw04-sw05-2026-10-21/proteccion-historial.json`. Los registros antiguos se conservaron.

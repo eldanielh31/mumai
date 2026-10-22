@@ -39,3 +39,12 @@ No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`
 - Para revisar el HTML se levantó temporalmente un servidor solo en la computadora; el primer intento aislado no permitía abrir sockets, y se repitió con acceso local autorizado. El resumen fue revisado en navegador.
 
 - La revisión de formato de Git señaló CRLF del CSV exportado como espacios finales. Se conservaron los bytes originales y se añadió una regla específica de atributos, en lugar de modificar la evidencia y sus huellas.
+
+## Revalidación y guía manual — 21 de octubre de 2026
+
+- Ante la consulta de Daniel, se repitió la suite completa: 31 pruebas aprobadas. Se repitieron los cinco escenarios de referencia con siete criterios aprobados.
+- Se comprobaron adicionalmente reducción proporcional a 80×60, conservación de 20 FPS/400 fotogramas, entrada intacta, patrones desactivados y referencia insuficiente: cinco comprobaciones aprobadas en tres ejecuciones.
+- Se prepararon 15 casos manuales con pasos, valores esperados, límites y una hoja en blanco para registrar la revisión de Daniel.
+- Se encontró que el generador de evidencia mantenía una fecha fija del 18 de octubre y podía sobrescribir un resultado. Se corrigió para usar fecha de Costa Rica o fecha explícita y rutas nuevas; se verificó que rechaza una ruta existente sin modificarla.
+- La aplicación y sus algoritmos no cambiaron en esta revisión. No se atribuyeron a Daniel pruebas que todavía no ejecutó.
+- Se actualizó el procedimiento de publicación para continuar sin el plugin de GitHub, según su decisión. La publicación remota sigue pendiente de autenticación confirmada.

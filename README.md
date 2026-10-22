@@ -108,6 +108,12 @@ Hay un [ejemplo sintético completo](docs/sw06-2026-10-21/README.md), una
 - La validación completa de lectura no detecta toda corrupción tolerada por el decodificador.
   MP4, AVI, MOV, MKV, M4V y WebM dependen de los códecs disponibles en OpenCV/FFmpeg.
 
+## Probarlo tú mismo
+
+Sigue la [guía manual de 15 casos](docs/guia-pruebas-manuales.md) y completa la
+[hoja de registro](docs/plantillas/registro-prueba-manual.md). Incluye pasos, valores
+esperados, recuperación ante errores y exportación, usando los videos de demostración.
+
 ## Reproducir las pruebas
 
 ```bash

@@ -1,0 +1,40 @@
+{
+  "fecha": "2026-10-21",
+  "checks": {
+    "reduccion_proporcional": true,
+    "fps_y_fotogramas_conservados": true,
+    "original_intacto": true,
+    "patrones_desactivados": true,
+    "referencia_insuficiente_informada": true
+  },
+  "results": {
+    "reduccion": {
+      "processing_size": [
+        80,
+        60
+      ],
+      "fps": 20.0,
+      "frames": 400,
+      "patterns_status": "evaluated"
+    },
+    "sin_patrones": {
+      "processing_size": [
+        80,
+        60
+      ],
+      "fps": 20.0,
+      "frames": 400,
+      "patterns_status": "disabled"
+    },
+    "referencia_insuficiente": {
+      "processing_size": [
+        80,
+        60
+      ],
+      "fps": 20.0,
+      "frames": 400,
+      "patterns_status": "insufficient_reference"
+    }
+  },
+  "alcance": "Escenario sintético; las salidas temporales se eliminaron después de comprobarlas."
+}

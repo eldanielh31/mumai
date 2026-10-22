@@ -1,0 +1,42 @@
+test_flow_known_translation (test_analysis.AlgorithmTests.test_flow_known_translation) ... ok
+test_frequency_selectivity (test_analysis.AlgorithmTests.test_frequency_selectivity) ... ok
+test_heatmaps_shared_scale (test_analysis.AlgorithmTests.test_heatmaps_shared_scale) ... ok
+test_patterns_no_future_leakage (test_analysis.AlgorithmTests.test_patterns_no_future_leakage) ... ok
+test_reject_bad_parameters (test_analysis.AlgorithmTests.test_reject_bad_parameters) ... ok
+test_static_and_zero_amplification (test_analysis.AlgorithmTests.test_static_and_zero_amplification) ... ok
+test_variable_timing_rejected (test_analysis.AlgorithmTests.test_variable_timing_rejected) ... ok
+test_cancel_leaves_no_published_result (test_analysis.PipelineTests.test_cancel_leaves_no_published_result) ... ok
+test_complete_export_and_static_control (test_analysis.PipelineTests.test_complete_export_and_static_control) ... ok
+test_export_failure_cleanup_retry_and_no_overwrite (test_analysis.PipelineTests.test_export_failure_cleanup_retry_and_no_overwrite) ... ok
+test_short_video_rejected (test_analysis.PipelineTests.test_short_video_rejected) ... ok
+test_timing_includes_last_outputs_and_publish (test_analysis.PipelineTests.test_timing_includes_last_outputs_and_publish) ... ok
+test_analysis_from_window (test_gui.GuiTests.test_analysis_from_window) ... ok
+test_close_during_validation (test_gui.GuiTests.test_close_during_validation) ... This plugin does not support propagateSizeHints()
+ok
+test_load_preview_and_error_recovery (test_gui.GuiTests.test_load_preview_and_error_recovery) ... This plugin does not support propagateSizeHints()
+ok
+test_review_export_error_recovery_and_states (test_gui.GuiTests.test_review_export_error_recovery_and_states) ... ok
+test_corrupt_copy_not_published (test_sw06.SW06Tests.test_corrupt_copy_not_published) ... ok
+test_export_receipt_matches_all_files (test_sw06.SW06Tests.test_export_receipt_matches_all_files) ... ok
+test_invalid_video_player_recovers (test_sw06.SW06Tests.test_invalid_video_player_recovers) ... [ WARN:0@9.918] global cap.cpp:212 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+ok
+test_metrics_and_fallback_preserve_result (test_sw06.SW06Tests.test_metrics_and_fallback_preserve_result) ... ok
+test_player_seek_play_pause_and_clear (test_sw06.SW06Tests.test_player_seek_play_pause_and_clear) ... ok
+test_summary_is_local_escaped_and_complete (test_sw06.SW06Tests.test_summary_is_local_escaped_and_complete) ... ok
+test_avi_metadata_and_sequential_frames (test_video.VideoTests.test_avi_metadata_and_sequential_frames) ... ok
+test_cancel (test_video.VideoTests.test_cancel) ... ok
+test_changed_video_after_validation (test_video.VideoTests.test_changed_video_after_validation) ... ok
+test_cli_invalid (test_video.VideoTests.test_cli_invalid) ... ok
+test_cli_json (test_video.VideoTests.test_cli_json) ... ok
+test_invalid_fps_releases_file (test_video.VideoTests.test_invalid_fps_releases_file) ... ok
+test_missing_directory_empty_unsupported_and_corrupt (test_video.VideoTests.test_missing_directory_empty_unsupported_and_corrupt) ... [mov,mp4,m4a,3gp,3g2,mj2 @ 0x3f921f00] moov atom not found
+[ WARN:0@10.168] global cap.cpp:212 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+ok
+test_mp4 (test_video.VideoTests.test_mp4) ... ok
+test_truncated_video (test_video.VideoTests.test_truncated_video) ... [mjpeg @ 0x3f391600] overread 8
+ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 8.763s
+
+OK

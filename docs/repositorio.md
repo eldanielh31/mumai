@@ -10,7 +10,7 @@ Actualizado: 21 de octubre de 2026.
 
 ## Paso pendiente del usuario
 
-Conectar GitHub mediante la integración ofrecida en esta conversación. La autenticación debe realizarse en GitHub; no copiar contraseñas ni tokens al chat. Una vez confirmada la cuenta, crear el repositorio privado, configurar el remoto, subir el historial y verificar que el commit remoto coincide con el local. Registrar aquí la URL, fecha y commit publicados cuando realmente ocurra.
+Daniel decidió continuar sin instalar el plugin. La alternativa disponible es iniciar sesión en GitHub desde el navegador y comprobar una autenticación válida para Git en esta computadora. No copiar contraseñas ni tokens al chat. Una vez confirmada la cuenta y el acceso necesario, crear el repositorio privado, configurar el remoto, subir el historial y verificar que el commit remoto coincide con el local. Registrar aquí la URL, fecha y commit publicados cuando realmente ocurra.
 
 ## Qué se publicará
 
