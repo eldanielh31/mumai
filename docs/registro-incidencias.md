@@ -75,3 +75,15 @@ Corte: 18 de octubre de 2026. Origen: auditoría de requisitos y diseño sobre `
 **VAL-002:** ejecutar funciones principales en equipo documentado sin GPU y conservar especificaciones y resultados. CPU en equipo con GPU no demuestra literalmente ese método de verificación.
 
 **VAL-003:** completar protocolos de noviembre, mediciones de desempeño y registros de aceptación. No hay aprobación de contraparte registrada y no se ha enviado ninguna comunicación externa.
+
+## Seguimiento del 21 de octubre — SW-06
+
+| ID | Problema u oportunidad | Acción | Estado / evidencia |
+|---|---|---|---|
+| INC-007 | Dependencia de reproductor externo para ver la comparación | Reproductor integrado sincronizado, pausa y búsqueda temporal; aviso si apertura externa falla | Corregido; pruebas de reproducción, búsqueda y recuperación. |
+| INC-008 | Métricas completas poco accesibles y anexos manuales | Tabla de cuatro indicadores y resumen HTML local con imágenes/configuración/límites | Implementado; comparación con JSON e inspección visual. |
+| INC-009 | Una copia corrupta podía publicarse sin comparación con la fuente | Verificación SHA-256 por archivo y recibo de exportación, limpieza si no coincide | Corregido; corrupción inducida rechazada y recibo del ejemplo verificado. |
+| INC-010 | La ventana seguía indicando análisis pendiente después de exportar | Actualizar ruta y estado; impedir exportar dentro de sesión temporal que se eliminará | Corregido; flujo y destino temporal probados. |
+| REP-001 | No existe conexión autenticada para crear/subir a GitHub | Preparación local, solicitud de conexión y elección privada confirmada | Pendiente; `repositorio.md`. No es una falla del análisis. |
+
+La entrada de INC-008 es una mejora de consulta de SW-06, no una afirmación de que antes faltaran métricas numéricas. Los resultados de las incidencias anteriores permanecen como historial. VAL-001, VAL-002 y VAL-003 siguen abiertos.

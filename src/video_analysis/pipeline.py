@@ -23,6 +23,7 @@ from video_analysis.motion.optical_flow import MotionAnalyzer, metrics
 from video_analysis.heatmaps.maps import HeatmapAccumulator, render_pair
 from video_analysis.anomalies.patterns import detect_patterns
 from video_analysis.export.charts import save_motion_chart, save_heatmaps
+from video_analysis.export.summary import save_summary
 
 
 @dataclass(frozen=True)
@@ -192,6 +193,7 @@ def analyze_video(path, output_root, config=None, cancelled=lambda: False, progr
             "movimiento.png: comparación temporal; los intervalos rojos son cambios respecto a referencia.\n"
             "informe.json: parámetros, huella del video, versiones, resumen y advertencias.\n"
             "patrones.json: referencia, intervalos evaluados y alertas de cambios.\n\n" + "\n".join(warnings), encoding="utf-8")
+        save_summary(report, staging / "resumen.html")
         if cancelled():
             raise ValidationCancelled("Análisis cancelado.")
         os.rename(staging, final)

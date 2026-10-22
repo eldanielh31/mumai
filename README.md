@@ -17,7 +17,7 @@ bash run.sh
 2. Mantén los parámetros iniciales para esa demostración: 0,7–1,5 Hz, amplificación 5,
    referencia de 8 segundos y nivel espacial 1.
 3. Describe las condiciones de captura y pulsa **Validar configuración** y luego **Analizar**.
-4. Revisa los mapas, la pestaña **Métricas en el tiempo** y el video comparativo.
+4. Revisa los mapas, **Métricas en el tiempo**, **Video comparativo** (reproducir/pausar y buscar un instante) y **Resumen numérico**.
 5. Pulsa **Exportar resultados…** y elige una carpeta. Después puedes abrirla desde la aplicación.
 6. **Volver a En espera** descarta el análisis temporal y permite comenzar otra ejecución.
 
@@ -62,6 +62,21 @@ La ayuda completa está en `bash run.sh --help`.
 | `patrones.json` | Tramo de referencia, características, puntuaciones y alertas |
 | `informe.json` | Parámetros, versiones, SHA-256 de entrada, resumen, tiempo y límites |
 | `LEEME.txt` | Interpretación de los resultados y escala de los mapas |
+| `resumen.html` | Resumen local imprimible con métricas, figuras, configuración y límites |
+| `exportacion.json` | Huellas SHA-256 y tamaños de los archivos al exportar desde la interfaz |
+
+El resumen HTML funciona sin internet: abre el archivo desde la carpeta exportada y
+conserva sus imágenes junto a él. La comparación integrada utiliza un único video con
+ambas versiones sincronizadas. En equipos lentos la reproducción puede omitir imágenes
+para seguir el reloj; usa pausa y el control de posición para inspeccionar un instante.
+Esto no cambia las métricas calculadas. La copia exportada se verifica antes de publicarse.
+
+## Entrega del 19–31 de octubre
+
+La actividad SW-06 está descrita en [el avance del 21 de octubre](docs/avance-2026-10-21-sw06.md).
+Hay un [ejemplo sintético completo](docs/sw06-2026-10-21/README.md), una
+[guía para tu primer video real](docs/guia-video-real.md) y el
+[estado de publicación en GitHub](docs/repositorio.md).
 
 ## Método y límites
 

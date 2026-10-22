@@ -1,8 +1,16 @@
 # Documentación del proyecto Daniel Proyecto Final
 
-Este índice reúne evidencia reutilizable para informes, seguimiento del cronograma y entrega final. Fecha de actualización: **18 de octubre de 2026**.
+Este índice reúne evidencia reutilizable para informes, seguimiento del cronograma y entrega final. Fecha de actualización: **21 de octubre de 2026**.
 
-## Qué leer primero
+## Entrega vigente
+
+- [Avance de SW-06, 19–31 de octubre](avance-2026-10-21-sw06.md).
+- [Matriz de los 35 requisitos al 21 de octubre](matriz-requisitos-2026-10-21.md).
+- [Evidencia y ejemplo completo](sw06-2026-10-21/README.md).
+- [Qué video grabar o conseguir](guia-video-real.md).
+- [Estado del repositorio privado](repositorio.md).
+
+## Documentación de base e historial
 
 1. [Estado actual después de las correcciones](estado-2026-10-18-corregido.md): qué funciona, qué se corrigió y qué falta comprobar.
 2. [Registro de incidencias](registro-incidencias.md): problema, causa, impacto, solución, requisitos, evidencia y criterio de cierre.

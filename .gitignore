@@ -8,3 +8,16 @@ data/input/*
 data/output/*
 !data/input/.gitkeep
 !data/output/.gitkeep
+# Material de captura y credenciales locales
+.env.*
+*.pem
+*.key
+*.p12
+*.mp4
+*.mov
+*.mkv
+*.m4v
+*.webm
+*.avi
+# Única excepción: paquetes de ejemplo sintéticos revisados y documentados
+!docs/**/ejemplo/*.avi

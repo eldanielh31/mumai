@@ -9,10 +9,11 @@ from PySide6.QtGui import QImage, QPixmap, QDesktopServices
 from PySide6.QtWidgets import (
     QFileDialog, QLabel, QMainWindow, QPushButton, QVBoxLayout, QWidget,
     QDoubleSpinBox, QSpinBox, QCheckBox, QFormLayout, QGroupBox, QHBoxLayout,
-    QProgressBar, QLineEdit, QTabWidget,
+    QProgressBar, QLineEdit, QTabWidget, QTableWidget, QTableWidgetItem, QAbstractItemView, QHeaderView,
 )
 
 from video_analysis.video import VideoError, inspect_video
+from video_analysis.gui.comparison import ComparisonPlayer
 
 # OpenCV puede dirigir Qt hacia sus propios plugins. La ventana usa Qt de PySide6.
 if "cv2/qt" in os.environ.get("QT_QPA_PLATFORM_PLUGIN_PATH", ""):
@@ -115,6 +116,13 @@ class MainWindow(QMainWindow):
         self.tabs = QTabWidget()
         self.tabs.addTab(self.preview, "Vista previa / mapas")
         self.tabs.addTab(self.chart, "Métricas en el tiempo")
+        self.player = ComparisonPlayer()
+        self.tabs.addTab(self.player, "Video comparativo")
+        self.metrics_table = QTableWidget(0, 3)
+        self.metrics_table.setHorizontalHeaderLabels(["Indicador", "Original", "Magnificado"])
+        self.metrics_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.metrics_table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.tabs.addTab(self.metrics_table, "Resumen numérico")
         self.settings = QGroupBox("Configuración del análisis")
         form = QFormLayout(self.settings)
         self.low = QDoubleSpinBox()
@@ -196,6 +204,10 @@ class MainWindow(QMainWindow):
         self.details.clear()
         self.preview.clear()
         self.chart.clear()
+        self.player.clear()
+        self.metrics_table.setRowCount(0)
+        self.progress_bar.setRange(0, 100)
+        self.progress_bar.setValue(0)
 
     def reset(self):
         if self.worker is not None:
@@ -242,8 +254,14 @@ class MainWindow(QMainWindow):
     def start_export(self, destination):
         if self.result_path is None or self.worker is not None:
             return
+        selected = Path(destination).expanduser().resolve()
+        temporary = Path(self._session.name).resolve()
+        if selected == temporary or temporary in selected.parents:
+            self.show_error("Elige una carpeta permanente fuera de la sesión temporal para conservar la exportación.")
+            return
         self.set_busy()
-        self.set_state("Procesando", "Exportando los resultados revisados…")
+        self.progress_bar.setRange(0, 0)
+        self.set_state("Procesando", "Exportando y verificando los resultados revisados…")
         self.worker = ExportWorker(self.result_path, destination, self)
         self.worker.completed.connect(self.export_completed)
         self.worker.failed.connect(self.show_error)
@@ -252,6 +270,7 @@ class MainWindow(QMainWindow):
 
     def export_completed(self, path):
         self.exported_path = Path(path)
+        self.details.setText(self.details.text().rsplit("\n", 1)[0] + f"\nExportado en: {path}")
         self.set_state("Resultados disponibles", f"Exportación completada: {path}")
 
     def set_busy(self):
@@ -314,6 +333,7 @@ class MainWindow(QMainWindow):
 
     def show_results(self, path):
         self.result_path = Path(path)
+        self.player.load(self.result_path / "comparacion.avi")
         report = json.loads((self.result_path / "informe.json").read_text())
         state = {"evaluated": f"{report['flagged_windows']} ventanas con cambios respecto a la referencia",
                  "disabled": "Análisis de patrones desactivado",
@@ -327,18 +347,24 @@ class MainWindow(QMainWindow):
         )
         self.preview.setPixmap(QPixmap(str(self.result_path / "mapas_comparados.png")).scaled(
             800, 280, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
+        indicators = [("Media (px/fotograma)", "mean_px_frame"), ("Percentil 95 medio (px/fotograma)", "p95_px_frame"),
+                      ("RMS medio (px/fotograma)", "rms_px_frame"), ("Media (px/s)", "mean_px_second")]
+        self.metrics_table.setRowCount(len(indicators))
+        for row, (label, key) in enumerate(indicators):
+            for column, value in enumerate((label, f"{report['original'][key]:.6g}", f"{report['magnified'][key]:.6g}")):
+                self.metrics_table.setItem(row, column, QTableWidgetItem(value))
         self.export_button.setEnabled(True)
         self.comparison_button.setEnabled(True)
         self.chart.setPixmap(QPixmap(str(self.result_path / "movimiento.png")).scaled(
             800, 280, Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation))
 
     def open_results(self):
-        if self.exported_path:
-            QDesktopServices.openUrl(QUrl.fromLocalFile(str(self.exported_path)))
+        if self.exported_path and not QDesktopServices.openUrl(QUrl.fromLocalFile(str(self.exported_path))):
+            self.show_error(f"No se pudo abrir la carpeta. Los resultados están guardados en: {self.exported_path}")
 
     def open_comparison(self):
-        if self.result_path:
-            QDesktopServices.openUrl(QUrl.fromLocalFile(str(self.result_path / "comparacion.avi")))
+        if self.result_path and not QDesktopServices.openUrl(QUrl.fromLocalFile(str(self.result_path / "comparacion.avi"))):
+            self.show_error("No se pudo abrir el reproductor externo. Usa la pestaña Video comparativo; el análisis sigue disponible.")
 
     def cancel(self):
         if self.worker is not None:
@@ -347,6 +373,7 @@ class MainWindow(QMainWindow):
     def finished(self):
         self.worker.deleteLater()
         self.worker = None
+        self.progress_bar.setRange(0, 100)
         self.open_button.setEnabled(True)
         self.cancel_button.setEnabled(False)
         self.settings.setEnabled(True)
@@ -365,5 +392,6 @@ class MainWindow(QMainWindow):
             self.cancel()
             event.ignore()
         else:
+            self.player.clear()
             self._session.cleanup()
             event.accept()

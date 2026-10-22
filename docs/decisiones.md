@@ -14,3 +14,13 @@ Fecha: 18 de octubre de 2026. Relación con el registro: INC-001 a INC-006.
 | DEC-008 | Conservar auditoría y resultados previos; añadir nueva matriz y evidencias. | Los informes históricos conservan su contexto; usar documento vigente para estado actual. |
 
 No se alteraron el algoritmo EVM, parámetros de flujo óptico ni umbrales de patrones. Las correcciones se concentran en presentación, manejo de estados, exportación, instalación, medición y documentación. No se añadieron diagnóstico mecánico certificado ni control de maquinaria.
+
+## Decisiones del 21 de octubre — SW-06
+
+| ID | Decisión | Motivo y límite |
+|---|---|---|
+| DEC-009 | Reproducir el video compuesto con OpenCV y un reloj de interfaz | Mantiene ambas mitades sincronizadas y evita agregar dependencias multimedia. Puede saltar imágenes de visualización si el equipo se retrasa; no altera el cálculo. |
+| DEC-010 | Resumen HTML local, sin recursos externos | Permite revisión/impresión y anexos sin servidor ni internet. Mantener la carpeta completa. Texto de entrada escapado. |
+| DEC-011 | Verificar copias mediante SHA-256 antes de publicarlas | Detecta diferencias de contenido en la exportación. No certifica validez física de los resultados. |
+| DEC-012 | Incluir un paquete pequeño sintético en documentación | Facilita revisar el entregable recién clonado sin publicar capturas reales. |
+| DEC-013 | GitHub privado, historial local hasta conexión | Preferencia explícita de Daniel. No inventar URL ni afirmar subida sin confirmación remota. |

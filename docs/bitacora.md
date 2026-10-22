@@ -26,3 +26,14 @@ No se registran horas de trabajo estimadas como si fueran horas reales. Fecha de
 ## Alcance y preservación
 
 No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`. No se alteraron entregables históricos para cambiar su fecha o conclusión. No se inventaron horas, aprobación ni resultados reales. No se enviaron mensajes a terceros. La documentación actualiza el estado sin dar por terminadas las pruebas formales futuras.
+
+## Sesión del 21 de octubre de 2026 — ACT-SW-06
+
+- Se confirmó directamente en el plan la actividad del 19–31 de octubre y su presupuesto original de 12 horas; no se registran como horas reales.
+- Se añadieron comparación integrada con navegación temporal, tabla de métricas, resumen HTML local e integridad de copias exportadas.
+- Se corrigieron mensajes de apertura externa y destino temporal; el paquete exportado permanece después de reiniciar.
+- Se ejecutaron 31 pruebas completas, seis de SW-06 también en escritorio y nueve criterios del flujo de demostración. Se conservaron capturas y paquete sintético completo.
+- Se preparó una guía de captura y se actualizaron documentos de seguimiento. Captura real y aprobación siguen pendientes.
+- Daniel autorizó GitHub privado. Se verificó que no había conexión autenticada ni remoto; publicación pendiente de conectar su cuenta. Se guardará el avance local con evidencia de versión.
+- Se añadieron instrucciones persistentes de documentación y publicación en `AGENTS.md`. No se programó sincronización en segundo plano.
+- Para revisar el HTML se levantó temporalmente un servidor solo en la computadora; el primer intento aislado no permitía abrir sockets, y se repitió con acceso local autorizado. El resumen fue revisado en navegador.
