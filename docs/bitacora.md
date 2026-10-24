@@ -48,3 +48,9 @@ No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`
 - Se encontró que el generador de evidencia mantenía una fecha fija del 18 de octubre y podía sobrescribir un resultado. Se corrigió para usar fecha de Costa Rica o fecha explícita y rutas nuevas; se verificó que rechaza una ruta existente sin modificarla.
 - La aplicación y sus algoritmos no cambiaron en esta revisión. No se atribuyeron a Daniel pruebas que todavía no ejecutó.
 - Se actualizó el procedimiento de publicación para continuar sin el plugin de GitHub, según su decisión. La publicación remota sigue pendiente de autenticación confirmada.
+
+## Traslado al Escritorio — 23 de octubre de 2026
+
+- A solicitud de Daniel, se trasladó el proyecto completo a `/home/daniel/Desktop/proyecto-final`, incluyendo Git, entorno, videos y resultados existentes.
+- Se ajustaron los enlaces y rutas del entorno Python y la guía manual. La ubicación anterior conserva un enlace de compatibilidad hacia la única copia del proyecto en el Escritorio.
+- No se modificaron algoritmos ni evidencias históricas. La verificación del traslado se guarda en `traslado-2026-10-23.txt`.

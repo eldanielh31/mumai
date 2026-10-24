@@ -7,7 +7,7 @@ Actualizada al **21 de octubre de 2026**. Prueba la implementación de SW-01 a S
 En la terminal, copia estas órdenes:
 
 ```bash
-cd /home/daniel/.codex/.chatgpt-projects/g-p-6a79f71086f08191856a4e8d59937ac0/proyecto-final
+cd /home/daniel/Desktop/proyecto-final
 .venv/bin/python scripts/create_reference_videos.py
 mkdir -p data/output/pruebas-daniel
 bash run.sh
@@ -18,7 +18,7 @@ El generador conserva los videos de referencia que ya existen. La última orden 
 Los cinco videos están en la carpeta `data/input/referencias` dentro del proyecto. Si el selector lo permite, pega la ruta absoluta:
 
 ```text
-/home/daniel/.codex/.chatgpt-projects/g-p-6a79f71086f08191856a4e8d59937ac0/proyecto-final/data/input/referencias
+/home/daniel/Desktop/proyecto-final/data/input/referencias
 ```
 
 Crea una copia de [la hoja de registro](plantillas/registro-prueba-manual.md) y completa tus resultados. Ningún caso de esa hoja se marca aprobado antes de que tú lo ejecutes.
