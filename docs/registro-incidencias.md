@@ -93,3 +93,7 @@ La entrada de INC-008 es una mejora de consulta de SW-06, no una afirmación de 
 Detectado en la revalidación del 21 de octubre: el generador de referencias escribía la fecha fija `2026-10-18` y permitía reemplazar archivos de evidencia. Esto afectaba la trazabilidad documental, no el resultado del algoritmo.
 
 Corregido: fecha predeterminada de Costa Rica con opción explícita `--date`, nombre nuevo por defecto y rechazo de rutas existentes antes de procesar. Se guardaron referencias con corte correcto y se comprobó que un intento de reemplazo no modifica sus bytes. Evidencia: `verificacion-sw01-sw04-sw05-2026-10-21/proteccion-historial.json`. Los registros antiguos se conservaron.
+
+## INC-012 — Temporización de la captura real del teléfono
+
+1 de noviembre de 2026: motor.mp4 se decodifica, pero el análisis rechaza el intervalo inicial de 0,1257 s. La carga y la comprobación temporal ocurren en fases distintas; no se debe interpretar carga válida como análisis garantizado. Se creó una copia derivada a 30 FPS sin cambiar el original ni relajar el control del programa. Copia verificada: 1644 fotogramas, 54,8 s. Adaptación de esta entrada resuelta; no se añadió conversión automática a la interfaz. Actividades relacionadas: SW-01 y prueba del flujo SW-02–SW-06. Evidencia y procedimiento: motor-2026-11-01/README.md.

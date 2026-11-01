@@ -1,0 +1,186 @@
+{
+  "date": "2026-11-01",
+  "original_sha256": "51d00236596561711f28dd8c4f62107f87f9ea0691d696d2f8a8ff3d2cdd5c26",
+  "adapted_sha256": "b8219e9f4ef2e2e05ad404a84911eb35917894520adc92d32ac9e75d67292788",
+  "adapted": {
+    "path": "/home/daniel/Desktop/proyecto-final/data/input/motor_30fps.avi",
+    "fps": 30.0,
+    "width": 848,
+    "height": 478,
+    "frame_count": 1644,
+    "duration_seconds": 54.8
+  },
+  "constant_fps_checked_frames": 1644,
+  "original_rejection": "Salto entre primer y segundo fotograma: 0.1257 s; mediana de intervalos: 0.033322 s.",
+  "conversion": "ffmpeg -nostdin -n -v warning -i data/input/motor.mp4 -map 0:v:0 -vf fps=30 -c:v ffv1 -level 3 -an data/input/motor_30fps.avi",
+  "runs": [
+    {
+      "output": "/home/daniel/Desktop/proyecto-final/data/output/motor-validacion-2026-11-01/analisis-20261101T201511Z-a0cd56c4",
+      "report": {
+        "schema_version": 2,
+        "created_utc": "2026-11-01T20:17:20.986340+00:00",
+        "input": {
+          "path": "/home/daniel/Desktop/proyecto-final/data/input/motor_30fps.avi",
+          "fps": 30.0,
+          "width": 848,
+          "height": 478,
+          "frame_count": 1644,
+          "duration_seconds": 54.8
+        },
+        "input_sha256": "b8219e9f4ef2e2e05ad404a84911eb35917894520adc92d32ac9e75d67292788",
+        "config": {
+          "low_hz": 0.7,
+          "high_hz": 1.5,
+          "alpha": 5.0,
+          "spatial_level": 1,
+          "max_dimension": 480,
+          "baseline_seconds": 10.0,
+          "patterns_enabled": true,
+          "capture_notes": "Captura real de motor de automóvil con teléfono aportada por Daniel. Modelo de teléfono, RPM, soporte y fecha de captura no confirmados. Copia FFV1 a 30 FPS; original conservado. Banda exploratoria de movimiento lento, no frecuencia mecánica confirmada ni diagnóstico."
+        },
+        "processing_size": [
+          480,
+          270
+        ],
+        "warmup_seconds": 2.857142857142857,
+        "analyzed_frame_pairs": 1558,
+        "original": {
+          "mean_px_frame": 0.021121686282558713,
+          "p95_px_frame": 0.0634389450311522,
+          "rms_px_frame": 0.059167048720516195,
+          "mean_px_second": 0.6336505896649748
+        },
+        "magnified": {
+          "mean_px_frame": 0.03009815621865251,
+          "p95_px_frame": 0.08113122230756727,
+          "rms_px_frame": 0.05913312863367245,
+          "mean_px_second": 0.9029446876056694
+        },
+        "mean_motion_ratio": 1.4249883184519287,
+        "heatmap_scale": {
+          "min": 0,
+          "max": 1.0044664144515991,
+          "unit": "px/frame",
+          "colormap": "inferno",
+          "shared": true
+        },
+        "clipped_pixel_fraction": 0.01152163873118861,
+        "patterns_status": "evaluated",
+        "chart_sample_stride": 1,
+        "flagged_windows": 2,
+        "elapsed_seconds": 134.84653599800004,
+        "versions": {
+          "numpy": "2.5.3",
+          "scipy": "1.18.1",
+          "opencv-python": "5.0.0.93",
+          "scikit-learn": "1.9.1"
+        },
+        "warnings": [
+          "Los indicadores apoyan la inspección; no certifican daños ni seguridad mecánica.",
+          "Flujo expresado en píxeles de procesamiento; no equivale a desplazamiento físico sin calibración.",
+          "EVM lineal de una escala gaussiana: puede amplificar iluminación, ruido y movimiento de cámara.",
+          "Filtro causal: tiene desfase y transitorio; las métricas excluyen los primeros 2/frecuencia_mínima segundos.",
+          "Los videos de salida son MJPEG sin audio; las métricas se calculan antes de su compresión.",
+          "Más del 1 % de los píxeles se saturaron; reduce la amplificación."
+        ],
+        "timing_scope": "Desde validación de entrada hasta publicación del análisis; excluye escritura de esta medición y exportación manual posterior."
+      },
+      "events": [
+        {
+          "start_seconds": 42.5,
+          "end_seconds": 43.0,
+          "score": 6.277178767295244
+        },
+        {
+          "start_seconds": 51.0,
+          "end_seconds": 51.5,
+          "score": 13.295160831275059
+        }
+      ]
+    },
+    {
+      "output": "/home/daniel/Desktop/proyecto-final/data/output/motor-validacion-2026-11-01/analisis-20261101T201740Z-96f59e0b",
+      "report": {
+        "schema_version": 2,
+        "created_utc": "2026-11-01T20:19:46.470835+00:00",
+        "input": {
+          "path": "/home/daniel/Desktop/proyecto-final/data/input/motor_30fps.avi",
+          "fps": 30.0,
+          "width": 848,
+          "height": 478,
+          "frame_count": 1644,
+          "duration_seconds": 54.8
+        },
+        "input_sha256": "b8219e9f4ef2e2e05ad404a84911eb35917894520adc92d32ac9e75d67292788",
+        "config": {
+          "low_hz": 0.7,
+          "high_hz": 1.5,
+          "alpha": 2.0,
+          "spatial_level": 1,
+          "max_dimension": 480,
+          "baseline_seconds": 10.0,
+          "patterns_enabled": true,
+          "capture_notes": "Motor de automóvil grabado con teléfono por Daniel. Copia FFV1 normalizada a 30 FPS. Banda exploratoria, RPM y soporte no confirmados. Amplificación reducida a 2 tras advertencia de saturación con 5. No diagnóstico mecánico."
+        },
+        "processing_size": [
+          480,
+          270
+        ],
+        "warmup_seconds": 2.857142857142857,
+        "analyzed_frame_pairs": 1558,
+        "original": {
+          "mean_px_frame": 0.021121686282558713,
+          "p95_px_frame": 0.0634389450311522,
+          "rms_px_frame": 0.059167048720516195,
+          "mean_px_second": 0.6336505896649748
+        },
+        "magnified": {
+          "mean_px_frame": 0.023796851320230475,
+          "p95_px_frame": 0.06810895847850054,
+          "rms_px_frame": 0.05703089959962492,
+          "mean_px_second": 0.7139055398418371
+        },
+        "mean_motion_ratio": 1.1266548987559193,
+        "heatmap_scale": {
+          "min": 0,
+          "max": 1.0044664144515991,
+          "unit": "px/frame",
+          "colormap": "inferno",
+          "shared": true
+        },
+        "clipped_pixel_fraction": 0.009215107874500616,
+        "patterns_status": "evaluated",
+        "chart_sample_stride": 1,
+        "flagged_windows": 2,
+        "elapsed_seconds": 131.12952471599965,
+        "versions": {
+          "numpy": "2.5.3",
+          "scipy": "1.18.1",
+          "opencv-python": "5.0.0.93",
+          "scikit-learn": "1.9.1"
+        },
+        "warnings": [
+          "Los indicadores apoyan la inspección; no certifican daños ni seguridad mecánica.",
+          "Flujo expresado en píxeles de procesamiento; no equivale a desplazamiento físico sin calibración.",
+          "EVM lineal de una escala gaussiana: puede amplificar iluminación, ruido y movimiento de cámara.",
+          "Filtro causal: tiene desfase y transitorio; las métricas excluyen los primeros 2/frecuencia_mínima segundos.",
+          "Los videos de salida son MJPEG sin audio; las métricas se calculan antes de su compresión."
+        ],
+        "timing_scope": "Desde validación de entrada hasta publicación del análisis; excluye escritura de esta medición y exportación manual posterior."
+      },
+      "events": [
+        {
+          "start_seconds": 42.5,
+          "end_seconds": 43.0,
+          "score": 6.277178767295244
+        },
+        {
+          "start_seconds": 51.0,
+          "end_seconds": 51.5,
+          "score": 13.295160831275059
+        }
+      ]
+    }
+  ],
+  "original_unchanged": true
+}

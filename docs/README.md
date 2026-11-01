@@ -2,6 +2,10 @@
 
 Este índice reúne evidencia reutilizable para informes, seguimiento del cronograma y entrega final. Fecha de actualización: **21 de octubre de 2026**.
 
+## Prueba real más reciente
+
+- [Motor del automóvil: compatibilidad, adaptación y guía — 1 de noviembre de 2026](motor-2026-11-01/README.md).
+
 ## Cómo probar y estado de las dependencias
 
 - [Guía manual completa para Daniel: 15 casos](guia-pruebas-manuales.md).

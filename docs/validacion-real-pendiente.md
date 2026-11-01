@@ -26,3 +26,7 @@ Documentar equipo, sistema, CPU, memoria, almacenamiento y ausencia de GPU segú
 ## Rendimiento y aceptación — VAL-003
 
 En las etapas de noviembre medir duración, resolución/FPS, tiempo de análisis, memoria y disco; documentar hardware y condiciones equivalentes. No extrapolar tiempos de los videos pequeños a videos largos o de alta resolución. Registrar aprobación/rechazo y observaciones de la contraparte cuando existan; no anticipar esa aceptación.
+
+## Actualización — 1 de noviembre de 2026
+
+El estado del 18 de octubre anterior se conserva como historial. Daniel ya aportó una captura real del motor de su automóvil. Se comprobó lectura y se adaptó la temporización en una copia; el flujo completo produjo resultados. Véase [registro de prueba real](motor-2026-11-01/README.md). VAL-001 queda parcialmente verificado, no cerrado: faltan condiciones completas de captura, confirmación de referencia, repetibilidad con idéntica configuración y contraste externo. No se ha demostrado diagnóstico de fallas.

@@ -54,3 +54,10 @@ No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`
 - A solicitud de Daniel, se trasladó el proyecto completo a `/home/daniel/Desktop/proyecto-final`, incluyendo Git, entorno, videos y resultados existentes.
 - Se ajustaron los enlaces y rutas del entorno Python y la guía manual. La ubicación anterior conserva un enlace de compatibilidad hacia la única copia del proyecto en el Escritorio.
 - No se modificaron algoritmos ni evidencias históricas. La verificación del traslado se guarda en `traslado-2026-10-23.txt`.
+
+## Captura real de motor — 1 de noviembre de 2026
+
+- Daniel aportó motor.mp4, grabado con su teléfono. Se validaron lectura completa y marcas temporales: el original se carga pero se rechaza al analizar por un intervalo inicial de 125,7 ms.
+- Se conservó el original y se generó motor_30fps.avi, FFV1 a 30 FPS constantes, con 1644 fotogramas comprobados.
+- Se ejecutó el flujo completo con amplificación 5 y se decidió probar 2 por saturación superior al 1 %. Configuraciones, resultados y límites se registran en motor-2026-11-01/. No se modificó código.
+- Videos reales, derivados y salidas permanecen en data/, excluidos de Git; solo se versionan registros textuales. La carpeta no versionada Proyecto/ ya existía y no se modificó.
