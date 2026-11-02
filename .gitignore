@@ -21,3 +21,6 @@ data/output/*
 *.avi
 # Única excepción: paquetes de ejemplo sintéticos revisados y documentados
 !docs/**/ejemplo/*.avi
+
+# Herramientas de revisión local
+.ruff_cache/

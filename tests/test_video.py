@@ -1,19 +1,19 @@
 import contextlib
 import io
 import json
-from pathlib import Path
 import sys
 import tempfile
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
-import cv2
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from create_sample import create_sample
+
 from video_analysis.__main__ import main
-from video_analysis.video import VideoError, ValidationCancelled, inspect_video, iter_frames
+from video_analysis.video import ValidationCancelled, VideoError, inspect_video, iter_frames
 
 
 class VideoTests(unittest.TestCase):
@@ -44,9 +44,13 @@ class VideoTests(unittest.TestCase):
         unsupported.write_text("texto")
         corrupt = self.root / "corrupt.mp4"
         corrupt.write_bytes(b"not a video")
-        for path, message in [(self.root / "missing.avi", "no existe"),
-                              (self.root, "carpeta"), (empty, "vacío"),
-                              (unsupported, "Formato"), (corrupt, "No se pudo abrir")]:
+        for path, message in [
+            (self.root / "missing.avi", "no existe"),
+            (self.root, "carpeta"),
+            (empty, "vacío"),
+            (unsupported, "Formato"),
+            (corrupt, "No se pudo abrir"),
+        ]:
             with self.subTest(path=path):
                 with self.assertRaisesRegex(VideoError, message):
                     inspect_video(path)
@@ -54,7 +58,7 @@ class VideoTests(unittest.TestCase):
     def test_truncated_video(self):
         truncated = self.root / "truncated.avi"
         data = self.video.read_bytes()
-        truncated.write_bytes(data[:len(data) // 2])
+        truncated.write_bytes(data[: len(data) // 2])
         with self.assertRaises(VideoError):
             inspect_video(truncated)
 

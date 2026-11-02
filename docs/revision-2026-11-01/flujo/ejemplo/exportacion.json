@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "exported_utc": "2026-11-02T00:07:48.161676+00:00",
+  "files": {
+    "resumen.html": {
+      "sha256": "175f7c429d41079db8e0c2e929f804f09ac3e3be083e603605ae5be5ff5222d0",
+      "bytes": 3729
+    },
+    "mapa_magnificado.png": {
+      "sha256": "990a7835f58db15732d3008caafe2530bdb9363fc65dc951e815ac0b97c25dcf",
+      "bytes": 47019
+    },
+    "LEEME.txt": {
+      "sha256": "0dc94cc951aec0a0ef85d10579d8355ac2585f944b61c61017b2e30c0f8f3fb0",
+      "bytes": 1001
+    },
+    "patrones.json": {
+      "sha256": "22b9096941b32a3f9edaa55a3d597f674c1fa0b09eb07e78fc68c23838b967ba",
+      "bytes": 8618
+    },
+    "informe.json": {
+      "sha256": "a1435445e7f215dd59af9817e7d16970bfe1b8226feda0e296243bd9b0c86649",
+      "bytes": 2350
+    },
+    "movimiento.png": {
+      "sha256": "48ff36a39c9f69f0b5e46a3be8be002d3f7ef230b88d6a7d934a158bb610f62b",
+      "bytes": 144817
+    },
+    "comparacion.avi": {
+      "sha256": "8847a94b50fc2d23d7b40d2e543ef83ed7bf897f7422968de47dcbade08fb2b5",
+      "bytes": 2272386
+    },
+    "movimiento_original.npy": {
+      "sha256": "db7b93e37786b9cf3b706db2fd1f5b61c93f37e86cf0ed95769d745db50ab8da",
+      "bytes": 76928
+    },
+    "mapas_comparados.png": {
+      "sha256": "b99aa83739039ea8619b6227620ee47eb5b2b51ffbd9082d9a6bb96bbf60f314",
+      "bytes": 59175
+    },
+    "magnificado.avi": {
+      "sha256": "687678e26b7ccc1400edf1f09e683ebe825ea5ce6c03c3d82b38d40e94382554",
+      "bytes": 1019550
+    },
+    "movimiento_magnificado.npy": {
+      "sha256": "ce580b01e01d8a14ebe88a644111d20048a44d2e99a3c6b053af1eca591016f1",
+      "bytes": 76928
+    },
+    "metricas.csv": {
+      "sha256": "52fb8310934c31a19d7177e4afdf13d99d16460a3309b0af0e9295081686f86d",
+      "bytes": 67856
+    },
+    "original.avi": {
+      "sha256": "eca6763abf0bb76cb0e4dd406057052dcb4d7626ac404a50473e44b3580a083b",
+      "bytes": 978996
+    },
+    "mapa_original.png": {
+      "sha256": "f07274dc581d5a3cc92b8d397ee490cbcfbe28aacf645fb8e12396b5fba41f5b",
+      "bytes": 33761
+    }
+  },
+  "purpose": "Integridad de los archivos copiados; no certifica exactitud del análisis."
+}

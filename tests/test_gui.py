@@ -1,19 +1,21 @@
 import os
+
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from pathlib import Path
 import sys
 import tempfile
 import time
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 from PySide6.QtWidgets import QApplication
+
 from video_analysis.gui.main_window import MainWindow
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from create_sample import create_sample
 from create_reference_videos import generate_reference
+from create_sample import create_sample
 
 
 class GuiTests(unittest.TestCase):
@@ -99,7 +101,8 @@ class GuiTests(unittest.TestCase):
             window.dimension.setValue(80)
             try:
                 self.assertEqual(window.state, "En espera")
-                window.load_video(str(path)); self.wait_for_load(window)
+                window.load_video(str(path))
+                self.wait_for_load(window)
                 self.assertEqual(window.state, "Entrada válida")
                 window.configure()
                 self.assertEqual(window.state, "Configurado")
@@ -109,18 +112,27 @@ class GuiTests(unittest.TestCase):
                 self.assertEqual(window.state, "Resultados disponibles")
                 self.assertIsNone(window.exported_path)
                 original = window.result_path
-                bad = root / "not_directory"; bad.write_text("test")
-                window.start_export(bad); self.wait_for_load(window)
+                bad = root / "not_directory"
+                bad.write_text("test")
+                window.start_export(bad)
+                self.wait_for_load(window)
                 self.assertEqual(window.state, "Error controlado")
                 self.assertEqual(window.result_path, original)
                 self.assertIn("sigue disponible", window.status.text())
-                window.start_export(root / "exported"); self.wait_for_load(window)
+                window.start_export(root / "exported")
+                self.wait_for_load(window)
                 self.assertEqual(window.state, "Resultados disponibles")
                 saved = window.exported_path
-                self.assertEqual((saved / "metricas.csv").read_bytes(), (original / "metricas.csv").read_bytes())
+                self.assertEqual(
+                    (saved / "metricas.csv").read_bytes(), (original / "metricas.csv").read_bytes()
+                )
                 self.assertTrue(window.results_button.isEnabled())
-                with patch("video_analysis.pipeline.analyze_video", side_effect=ValueError("Fallo controlado de prueba")):
-                    window.start_analysis(); self.wait_for_load(window)
+                with patch(
+                    "video_analysis.pipeline.analyze_video",
+                    side_effect=ValueError("Fallo controlado de prueba"),
+                ):
+                    window.start_analysis()
+                    self.wait_for_load(window)
                 self.assertEqual(window.state, "Error controlado")
                 self.assertIsNone(window.result_path)
                 self.assertEqual(window.details.text(), "")
@@ -132,7 +144,9 @@ class GuiTests(unittest.TestCase):
                 self.assertTrue((saved / "informe.json").exists())
                 self.assertFalse(original.exists())
             finally:
-                window.cancel(); self.wait_for_load(window); window.close()
+                window.cancel()
+                self.wait_for_load(window)
+                window.close()
 
 
 if __name__ == "__main__":

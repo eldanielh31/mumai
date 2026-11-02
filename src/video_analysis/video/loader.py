@@ -1,9 +1,9 @@
 """Carga local y lectura secuencial de videos sin acumularlos en memoria."""
 
+import math
+from collections.abc import Callable, Iterator
 from dataclasses import dataclass
 from pathlib import Path
-from collections.abc import Callable, Iterator
-import math
 
 import cv2
 import numpy as np
@@ -32,8 +32,10 @@ class VideoInfo:
 
     def as_dict(self) -> dict:
         return {
-            "path": str(self.path), "fps": self.fps,
-            "width": self.width, "height": self.height,
+            "path": str(self.path),
+            "fps": self.fps,
+            "width": self.width,
+            "height": self.height,
             "frame_count": self.frame_count,
             "duration_seconds": self.duration_seconds,
         }
@@ -56,7 +58,9 @@ def _open(path: str | Path):
     capture = cv2.VideoCapture(str(file), cv2.CAP_FFMPEG)
     if not capture.isOpened():
         capture.release()
-        raise VideoError("No se pudo abrir el video. Puede estar dañado o usar un códec no compatible.")
+        raise VideoError(
+            "No se pudo abrir el video. Puede estar dañado o usar un códec no compatible."
+        )
     return file, capture
 
 
@@ -88,12 +92,16 @@ def inspect_video(
             if first is None:
                 first = frame.copy()
             elif frame.shape != first.shape:
-                raise VideoError("La resolución cambia durante el video. Usa una resolución constante.")
+                raise VideoError(
+                    "La resolución cambia durante el video. Usa una resolución constante."
+                )
             count += 1
         if first is None:
             raise VideoError("El archivo no contiene fotogramas que se puedan leer.")
         if math.isfinite(declared) and declared > 0 and count < round(declared):
-            raise VideoError(f"Lectura incompleta: se leyeron {count} de {round(declared)} fotogramas declarados.")
+            raise VideoError(
+                f"Lectura incompleta: se leyeron {count} de {round(declared)} fotogramas declarados."
+            )
         height, width = first.shape[:2]
         return VideoInfo(file, fps, width, height, count), first
     except cv2.error as exc:
@@ -123,8 +131,12 @@ def iter_frames(info: VideoInfo, require_constant_fps=False) -> Iterator[np.ndar
                 timestamp = capture.get(cv2.CAP_PROP_POS_MSEC) / 1000
                 if not math.isfinite(timestamp):
                     raise VideoError("No se pudo verificar la temporización del video.")
-                if previous_time is not None and abs(timestamp - previous_time - 1 / info.fps) > max(.002, .15 / info.fps):
-                    raise VideoError("Tasa de fotogramas variable o marcas temporales no disponibles. Convierte el video a FPS constantes antes del análisis.")
+                if previous_time is not None and abs(
+                    timestamp - previous_time - 1 / info.fps
+                ) > max(0.002, 0.15 / info.fps):
+                    raise VideoError(
+                        "Tasa de fotogramas variable o marcas temporales no disponibles. Convierte el video a FPS constantes antes del análisis."
+                    )
                 previous_time = timestamp
             if count > info.frame_count:
                 raise VideoError("El video cambió después de la validación.")

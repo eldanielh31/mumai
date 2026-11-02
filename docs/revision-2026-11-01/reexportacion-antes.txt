@@ -1,0 +1,22 @@
+test_corrupt_copy_not_published (test_sw06.SW06Tests.test_corrupt_copy_not_published) ... ok
+test_export_receipt_matches_all_files (test_sw06.SW06Tests.test_export_receipt_matches_all_files) ... ok
+test_invalid_video_player_recovers (test_sw06.SW06Tests.test_invalid_video_player_recovers) ... [ WARN:0@2.601] global cap.cpp:212 open VIDEOIO(FFMPEG): backend is generally available but can't be used to capture by name
+ok
+test_metrics_and_fallback_preserve_result (test_sw06.SW06Tests.test_metrics_and_fallback_preserve_result) ... ok
+test_player_seek_play_pause_and_clear (test_sw06.SW06Tests.test_player_seek_play_pause_and_clear) ... ok
+test_reexport_receipt_matches_files (test_sw06.SW06Tests.test_reexport_receipt_matches_files) ... FAIL
+test_summary_is_local_escaped_and_complete (test_sw06.SW06Tests.test_summary_is_local_escaped_and_complete) ... ok
+
+======================================================================
+FAIL: test_reexport_receipt_matches_files (test_sw06.SW06Tests.test_reexport_receipt_matches_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/daniel/Desktop/proyecto-final/tests/test_sw06.py", line 96, in test_reexport_receipt_matches_files
+    self.assertNotIn('exportacion.json', receipt['files'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'exportacion.json' unexpectedly found in {'resumen.html': {'sha256': '5fdea830cd1d661d19c7a97e6f4db8c5990785cd35f3501c1b38f8157d31de0d', 'bytes': 3620}, 'mapa_magnificado.png': {'sha256': '5770f561cdef8d0db75090740bde84a166856270a9f1c124e6b132dc4c8dc4eb', 'bytes': 26125}, 'LEEME.txt': {'sha256': 'ca2d68d1ef6902e14bd1158277e6bb9f4e92d7b95d720d814fc1c399047ef030', 'bytes': 1001}, 'patrones.json': {'sha256': '9942f223daa91075ff3070668639cff66d5c50a32ebb80942354cd604cd40ad4', 'bytes': 1401}, 'informe.json': {'sha256': '27d5017c59e6e115e9b131f70219f12127118192802279a4936fb94d015bc58a', 'bytes': 2090}, 'movimiento.png': {'sha256': '3b2cf90c2b4c6c50860869080f7fae9afa1cc3a5a662fc001b9a32188795f6a5', 'bytes': 42212}, 'comparacion.avi': {'sha256': '4d274caf8f49eef3ce5bb5b5bba67ef0b1cc0d9cff9c2c87ca8ef2aa7fbdac1d', 'bytes': 447286}, 'movimiento_original.npy': {'sha256': '29edd949a2c31b3538dcffaa392c9295dc7d3ec4b81c45a9f9149d7819bf2f98', 'bytes': 20608}, 'mapas_comparados.png': {'sha256': '53a7a6556ea67a48b44de8b1079bf67904bb78421da17f5134a76e7dfac6859c', 'bytes': 31094}, 'magnificado.avi': {'sha256': '38da89fcc0e242b908f486a2f0bcdf90e7916e7dbd4ee4068e4bcfb45f6ae74e', 'bytes': 180886}, 'movimiento_magnificado.npy': {'sha256': '29edd949a2c31b3538dcffaa392c9295dc7d3ec4b81c45a9f9149d7819bf2f98', 'bytes': 20608}, 'metricas.csv': {'sha256': 'd850c35a5a0661497b530d43b5223c4f0c0775ae1bd1694de3ab7bd0322fab5f', 'bytes': 8805}, 'exportacion.json': {'sha256': '5a2f61d3463d7b1b23267db6f4ccc5ada95e5ad7eeaa8dba801c621f3766b1a7', 'bytes': 2113}, 'original.avi': {'sha256': '38da89fcc0e242b908f486a2f0bcdf90e7916e7dbd4ee4068e4bcfb45f6ae74e', 'bytes': 180886}, 'mapa_original.png': {'sha256': 'a964f171ddba3d6f9abe7dc156f5c8d11a692d6e809a698e53472a8a37b5b8a4', 'bytes': 25087}}
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.501s
+
+FAILED (failures=1)

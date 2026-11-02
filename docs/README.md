@@ -1,6 +1,11 @@
 # Documentación del proyecto Daniel Proyecto Final
 
-Este índice reúne evidencia reutilizable para informes, seguimiento del cronograma y entrega final. Fecha de actualización: **21 de octubre de 2026**.
+Este índice reúne evidencia reutilizable para informes, seguimiento del cronograma y entrega final. Fecha de actualización: **1 de noviembre de 2026**.
+
+## Revisión y documentos académicos
+
+- [Revisión completa de código y organización](revision-2026-11-01/README.md).
+- [Documentos de Proyecto](../Proyecto/README.md).
 
 ## Prueba real más reciente
 

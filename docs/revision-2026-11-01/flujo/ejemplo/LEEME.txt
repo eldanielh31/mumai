@@ -1,0 +1,14 @@
+RESULTADOS DEL ANÁLISIS
+
+Comparación: original a la izquierda, magnificado a la derecha.
+Mapas: misma escala de 0 a 0.371223 px/fotograma; negro = menor y amarillo = mayor movimiento.
+metricas.csv: valores por fotograma; included=1 indica datos usados en el resumen.
+movimiento.png: comparación temporal; los intervalos rojos son cambios respecto a referencia.
+informe.json: parámetros, huella del video, versiones, resumen y advertencias.
+patrones.json: referencia, intervalos evaluados y alertas de cambios.
+
+Los indicadores apoyan la inspección; no certifican daños ni seguridad mecánica.
+Flujo expresado en píxeles de procesamiento; no equivale a desplazamiento físico sin calibración.
+EVM lineal de una escala gaussiana: puede amplificar iluminación, ruido y movimiento de cámara.
+Filtro causal: tiene desfase y transitorio; las métricas excluyen los primeros 2/frecuencia_mínima segundos.
+Los videos de salida son MJPEG sin audio; las métricas se calculan antes de su compresión.

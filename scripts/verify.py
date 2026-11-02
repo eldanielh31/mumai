@@ -1,31 +1,41 @@
 import os
+
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-import sys, subprocess, importlib, tempfile
+import importlib
+import subprocess
+import sys
+import tempfile
 from pathlib import Path
+
 for name in ("numpy", "scipy", "cv2", "matplotlib", "PySide6", "sklearn"):
     module = importlib.import_module(name)
     print(name, module.__version__)
-from PySide6.QtWidgets import QApplication, QLabel
 from PySide6.QtCore import QLibraryInfo
+from PySide6.QtWidgets import QApplication, QLabel
+
 if "cv2/qt" in os.environ.get("QT_QPA_PLATFORM_PLUGIN_PATH", ""):
-    os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = QLibraryInfo.path(QLibraryInfo.LibraryPath.PluginsPath)
+    os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = QLibraryInfo.path(
+        QLibraryInfo.LibraryPath.PluginsPath
+    )
 app = QApplication([])
 label = QLabel("Verificación")
 label.show()
 app.processEvents()
 print(f"Qt: ventana creada correctamente ({app.platformName()})")
-import cv2, numpy as np
+import cv2
+import numpy as np
+
 with tempfile.TemporaryDirectory() as folder:
     path = str(Path(folder) / "test.avi")
-    writer = cv2.VideoWriter(path, cv2.VideoWriter_fourcc(*"MJPG"), 10, (64,64))
+    writer = cv2.VideoWriter(path, cv2.VideoWriter_fourcc(*"MJPG"), 10, (64, 64))
     assert writer.isOpened(), "No se pudo abrir el codificador"
     for i in range(10):
-        writer.write(np.full((64,64,3), i*20, dtype=np.uint8))
+        writer.write(np.full((64, 64, 3), i * 20, dtype=np.uint8))
     writer.release()
     capture = cv2.VideoCapture(path)
     ok, frame = capture.read()
     capture.release()
-    assert ok and frame.shape == (64,64,3)
+    assert ok and frame.shape == (64, 64, 3)
 print("OpenCV: escritura y lectura de video correctas")
 print("Python", sys.version)
 failed = False

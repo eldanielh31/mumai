@@ -61,3 +61,10 @@ No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`
 - Se conservó el original y se generó motor_30fps.avi, FFV1 a 30 FPS constantes, con 1644 fotogramas comprobados.
 - Se ejecutó el flujo completo con amplificación 5 y se decidió probar 2 por saturación superior al 1 %. Configuraciones, resultados y límites se registran en motor-2026-11-01/. No se modificó código.
 - Videos reales, derivados y salidas permanecen en data/, excluidos de Git; solo se versionan registros textuales. La carpeta no versionada Proyecto/ ya existía y no se modificó.
+
+## Revisión y publicación — 1 de noviembre de 2026
+
+- Daniel informó que la prueba del motor funciona y solicitó revisión de código, organización y publicación privada con todos los documentos de Proyecto.
+- Se corrigieron INC-013 (recibo de reexportación) e INC-014 (fecha fija de SW-06), se eliminaron dos importaciones sin uso y se unificó el formato.
+- Se verificaron 32 pruebas, nueve criterios de interfaz y la integridad de los documentos reorganizados. Evidencia en revision-2026-11-01/.
+- Se autenticó GitHub CLI en la cuenta eldanielh31. La URL y estado verificado se mantienen en repositorio.md.

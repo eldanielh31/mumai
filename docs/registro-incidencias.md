@@ -97,3 +97,10 @@ Corregido: fecha predeterminada de Costa Rica con opción explícita `--date`, n
 ## INC-012 — Temporización de la captura real del teléfono
 
 1 de noviembre de 2026: motor.mp4 se decodifica, pero el análisis rechaza el intervalo inicial de 0,1257 s. La carga y la comprobación temporal ocurren en fases distintas; no se debe interpretar carga válida como análisis garantizado. Se creó una copia derivada a 30 FPS sin cambiar el original ni relajar el control del programa. Copia verificada: 1644 fotogramas, 54,8 s. Adaptación de esta entrada resuelta; no se añadió conversión automática a la interfaz. Actividades relacionadas: SW-01 y prueba del flujo SW-02–SW-06. Evidencia y procedimiento: motor-2026-11-01/README.md.
+
+## Revisión del 1 de noviembre de 2026
+
+- **INC-013 — Recibo inconsistente al reexportar:** reproducido mediante prueba; se excluye el recibo previo y se genera uno nuevo. Regresión aprobada.
+- **INC-014 — Fecha fija en validación SW-06:** reemplazada por fecha de Costa Rica u opción explícita; flujo comprobado con corte 2026-11-01.
+
+Detalles y evidencia en [revisión de código](revision-2026-11-01/README.md).

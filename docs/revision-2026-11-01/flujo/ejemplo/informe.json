@@ -1,0 +1,68 @@
+{
+  "schema_version": 2,
+  "created_utc": "2026-11-02T00:07:47.998117+00:00",
+  "input": {
+    "path": "/home/daniel/Desktop/proyecto-final/data/input/referencias/amplitude_change.avi",
+    "fps": 20.0,
+    "width": 160,
+    "height": 120,
+    "frame_count": 400,
+    "duration_seconds": 20.0
+  },
+  "input_sha256": "af753bc3cad9a5569edb4a6e99371e7a4c08b6ba8b861579fd0898d93cc9bb84",
+  "config": {
+    "low_hz": 0.7,
+    "high_hz": 1.5,
+    "alpha": 5.0,
+    "spatial_level": 1,
+    "max_dimension": 160,
+    "baseline_seconds": 8.0,
+    "patterns_enabled": true,
+    "capture_notes": "Simulación controlada: cambio de amplitud a los 13 s; cámara fija e iluminación constante."
+  },
+  "processing_size": [
+    160,
+    120
+  ],
+  "warmup_seconds": 2.857142857142857,
+  "analyzed_frame_pairs": 342,
+  "original": {
+    "mean_px_frame": 0.07421041783272174,
+    "p95_px_frame": 0.20010409171949003,
+    "rms_px_frame": 0.11927126344750848,
+    "mean_px_second": 1.484208344803219
+  },
+  "magnified": {
+    "mean_px_frame": 0.09883760637195226,
+    "p95_px_frame": 0.2924156497989656,
+    "rms_px_frame": 0.15957566112421498,
+    "mean_px_second": 1.9767521220689628
+  },
+  "mean_motion_ratio": 1.3318562172058221,
+  "heatmap_scale": {
+    "min": 0,
+    "max": 0.37122294306755066,
+    "unit": "px/frame",
+    "colormap": "inferno",
+    "shared": true
+  },
+  "clipped_pixel_fraction": 3.8671875e-05,
+  "patterns_status": "evaluated",
+  "chart_sample_stride": 1,
+  "flagged_windows": 14,
+  "elapsed_seconds": 6.3811312620000535,
+  "versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "opencv-python": "5.0.0.93",
+    "scikit-learn": "1.9.1"
+  },
+  "warnings": [
+    "Los indicadores apoyan la inspección; no certifican daños ni seguridad mecánica.",
+    "Flujo expresado en píxeles de procesamiento; no equivale a desplazamiento físico sin calibración.",
+    "EVM lineal de una escala gaussiana: puede amplificar iluminación, ruido y movimiento de cámara.",
+    "Filtro causal: tiene desfase y transitorio; las métricas excluyen los primeros 2/frecuencia_mínima segundos.",
+    "Los videos de salida son MJPEG sin audio; las métricas se calculan antes de su compresión."
+  ],
+  "timing_scope": "Desde validación de entrada hasta publicación del análisis; excluye escritura de esta medición y exportación manual posterior."
+}

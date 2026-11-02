@@ -1,27 +1,29 @@
 import json
-import time
-from pathlib import Path
 import sys
 import tempfile
+import time
 import unittest
+from pathlib import Path
 from unittest.mock import patch
-import numpy as np
+
 import cv2
+import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from create_reference_videos import generate_reference
+
+from video_analysis.anomalies.patterns import detect_patterns
+from video_analysis.export.package import export_results
+from video_analysis.heatmaps.maps import render_pair
 from video_analysis.magnification.eulerian import EulerianMagnifier
 from video_analysis.motion.optical_flow import MotionAnalyzer
-from video_analysis.heatmaps.maps import render_pair
-from video_analysis.anomalies.patterns import detect_patterns
 from video_analysis.pipeline import AnalysisConfig, analyze_video
-from video_analysis.export.package import export_results
-from video_analysis.video import ValidationCancelled, VideoInfo, VideoError, iter_frames
+from video_analysis.video import ValidationCancelled, VideoError, VideoInfo, iter_frames
 
 
 class AlgorithmTests(unittest.TestCase):
     def temporal_gain(self, frequency):
-        evm = EulerianMagnifier(20, .7, 1.5, 5, 1)
+        evm = EulerianMagnifier(20, 0.7, 1.5, 5, 1)
         inputs, outputs = [], []
         for i in range(400):
             value = round(128 + 5 * np.sin(2 * np.pi * frequency * i / 20))
@@ -45,8 +47,13 @@ class AlgorithmTests(unittest.TestCase):
                 np.testing.assert_array_equal(evm.process(image), image)
 
     def test_reject_bad_parameters(self):
-        for kwargs in ({"low_hz": 2, "high_hz": 1}, {"high_hz": 10},
-                       {"alpha": float("nan")}, {"alpha": -1}, {"level": 8}):
+        for kwargs in (
+            {"low_hz": 2, "high_hz": 1},
+            {"high_hz": 10},
+            {"alpha": float("nan")},
+            {"alpha": -1},
+            {"level": 8},
+        ):
             with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
                 EulerianMagnifier(20, **kwargs)
 
@@ -58,7 +65,7 @@ class AlgorithmTests(unittest.TestCase):
         flow = MotionAnalyzer()
         self.assertIsNone(flow.process(frame))
         magnitude = flow.process(moved)
-        self.assertAlmostEqual(float(np.median(magnitude[20:-20, 20:-20])), 1, delta=.15)
+        self.assertAlmostEqual(float(np.median(magnitude[20:-20, 20:-20])), 1, delta=0.15)
 
     def test_heatmaps_shared_scale(self):
         original, amplified, maximum = render_pair(np.ones((8, 8)), np.ones((8, 8)) * 2)
@@ -66,14 +73,20 @@ class AlgorithmTests(unittest.TestCase):
         self.assertFalse(np.array_equal(original, amplified))
 
     def test_patterns_no_future_leakage(self):
-        windows = [{"start_seconds": i * .5, "end_seconds": (i + 1) * .5,
-                    "original_rms": .1 if i < 12 else 1.,
-                    "original_p95": .2 if i < 12 else 2.} for i in range(20)]
+        windows = [
+            {
+                "start_seconds": i * 0.5,
+                "end_seconds": (i + 1) * 0.5,
+                "original_rms": 0.1 if i < 12 else 1.0,
+                "original_p95": 0.2 if i < 12 else 2.0,
+            }
+            for i in range(20)
+        ]
         result = detect_patterns(windows, 6)
         self.assertEqual(result["reference_windows"], 12)
         self.assertEqual(len(result["events"]), 8)
-        np.testing.assert_allclose(result["median"], [.1, .2])
-        stable = [dict(w, original_rms=.1, original_p95=.2) for w in windows]
+        np.testing.assert_allclose(result["median"], [0.1, 0.2])
+        stable = [dict(w, original_rms=0.1, original_p95=0.2) for w in windows]
         self.assertEqual(detect_patterns(stable, 6)["events"], [])
         self.assertEqual(detect_patterns(windows[:4], 6)["status"], "insufficient_reference")
 
@@ -110,8 +123,12 @@ class PipelineTests(unittest.TestCase):
             video = generate_reference(root / "test.avi", seconds=5, size=(80, 64))
             state = {"cancel": False}
             with self.assertRaises(ValidationCancelled):
-                analyze_video(video, root / "results", cancelled=lambda: state["cancel"],
-                              progress=lambda _: state.update(cancel=True))
+                analyze_video(
+                    video,
+                    root / "results",
+                    cancelled=lambda: state["cancel"],
+                    progress=lambda _: state.update(cancel=True),
+                )
             self.assertEqual(list((root / "results").iterdir()), [])
             self.assertTrue(video.exists())
 
@@ -126,33 +143,40 @@ class PipelineTests(unittest.TestCase):
             root = Path(tmp)
             video = generate_reference(root / "static.avi", "static", seconds=5, size=(80, 64))
             write = Path.write_text
+
             def delayed_write(path, *args, **kwargs):
                 if path.name == "LEEME.txt":
-                    time.sleep(.15)
+                    time.sleep(0.15)
                 return write(path, *args, **kwargs)
+
             with patch.object(Path, "write_text", delayed_write):
                 started = time.perf_counter()
                 result = analyze_video(video, root / "results")
                 wall = time.perf_counter() - started
             report = json.loads((result / "informe.json").read_text())
-            self.assertGreater(report["elapsed_seconds"], .15)
-            self.assertLess(wall - report["elapsed_seconds"], .1)
+            self.assertGreater(report["elapsed_seconds"], 0.15)
+            self.assertLess(wall - report["elapsed_seconds"], 0.1)
             self.assertIn("publicación", report["timing_scope"])
 
     def test_export_failure_cleanup_retry_and_no_overwrite(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            source = root / "analysis"; source.mkdir()
+            source = root / "analysis"
+            source.mkdir()
             (source / "informe.json").write_text('{"config": {"alpha": 5}}')
             (source / "metricas.csv").write_text("original,magnified\n1,2\n")
-            with patch("video_analysis.export.package.shutil.copy2", side_effect=OSError("Disco lleno")):
+            with patch(
+                "video_analysis.export.package.shutil.copy2", side_effect=OSError("Disco lleno")
+            ):
                 with self.assertRaises(OSError):
                     export_results(source, root / "out")
             self.assertEqual(list((root / "out").iterdir()), [])
             a = export_results(source, root / "out")
             b = export_results(source, root / "out")
             self.assertNotEqual(a, b)
-            self.assertEqual((a / "metricas.csv").read_bytes(), (source / "metricas.csv").read_bytes())
+            self.assertEqual(
+                (a / "metricas.csv").read_bytes(), (source / "metricas.csv").read_bytes()
+            )
             self.assertTrue((b / "informe.json").is_file())
             with self.assertRaises(ValidationCancelled):
                 export_results(source, root / "out", cancelled=lambda: True)

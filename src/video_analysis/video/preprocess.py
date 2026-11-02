@@ -1,4 +1,5 @@
 """Preparación reproducible, sin estabilización automática ni interpolación temporal."""
+
 import cv2
 
 

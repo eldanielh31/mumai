@@ -1,0 +1,18 @@
+{
+  "fecha_corte": "2026-11-01",
+  "actividad": "ACT-SW-06",
+  "tipo": "Simulación; no captura real",
+  "exportacion_local": "data/output/sw06/analisis-20261102T000741Z-fa68bbe2-export-344d2aa5",
+  "qt_platform": "offscreen",
+  "checks": {
+    "entrada_valida": true,
+    "configurado": true,
+    "resultados_antes_de_exportar": true,
+    "cuatro_metricas_comparadas": true,
+    "consulta_instante_14s": true,
+    "copias_integras": true,
+    "resumen_local": true,
+    "estado_exportacion": true,
+    "reinicio_conserva_exportacion": true
+  }
+}

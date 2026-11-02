@@ -1,4 +1,5 @@
 """Mapas de desplazamiento promedio con escala compartida."""
+
 import cv2
 import numpy as np
 

@@ -1,5 +1,7 @@
 """Genera un video sintético reproducible; no representa datos de maquinaria."""
+
 from pathlib import Path
+
 import cv2
 import numpy as np
 
@@ -15,8 +17,15 @@ def create_sample(path, codec="MJPG", frames=30, fps=10, size=(320, 240)):
             frame = np.zeros((size[1], size[0], 3), dtype=np.uint8)
             x = 20 + index * 5 % (size[0] - 40)
             cv2.circle(frame, (x, size[1] // 2), 15, (80, 200, 250), -1)
-            cv2.putText(frame, f"Prueba {index + 1}/{frames}", (10, 30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+            cv2.putText(
+                frame,
+                f"Prueba {index + 1}/{frames}",
+                (10, 30),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.5,
+                (255, 255, 255),
+                1,
+            )
             writer.write(frame)
     finally:
         writer.release()

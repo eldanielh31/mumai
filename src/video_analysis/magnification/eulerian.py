@@ -3,6 +3,7 @@
 Basado en la descomposición espacial + filtrado temporal de Wu et al. (2012).
 No implementa la variante por fase ni garantiza ganancia geométrica exacta.
 """
+
 import cv2
 import numpy as np
 from scipy.signal import butter, sosfilt, sosfilt_zi

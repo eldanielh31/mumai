@@ -1,4 +1,4 @@
-# Proyecto Final — Magnificación y análisis de video
+# Sistema de identificación de daños en maquinaria usando magnificación Euleriana e inteligencia artificial
 
 Aplicación local en Python para cargar un video, magnificar variaciones pequeñas,
 comparar movimiento, generar mapas y métricas y señalar cambios respecto a una
@@ -156,7 +156,7 @@ una instalación aislada sin reemplazar `.venv`, define `PROJECT_VENV=/ruta/nuev
 La instalación de paquetes requiere conexión o un repositorio local de paquetes;
 el funcionamiento posterior del análisis no requiere internet. El script no descarga
 videos de demostración: puedes generarlos con `.venv/bin/python scripts/create_reference_videos.py`.
-La comparación de video utiliza el reproductor predeterminado del escritorio.
+La comparación dispone de reproductor integrado; la apertura externa es opcional.
 
 `informe.json` registra el tiempo desde la validación hasta la publicación del análisis,
 incluyendo los archivos de resultados. Solo excluye la escritura de su propia medición
@@ -169,3 +169,13 @@ Los componentes están en `src/video_analysis/`: `video`, `magnification`, `moti
 `heatmaps`, `anomalies`, `export`, `gui`; `pipeline.py` los integra.
 Los videos y ejecuciones locales están excluidos de Git; los generadores, pruebas,
 código y documentación quedan versionados.
+
+## Documentos y revisión del código
+
+- [Documentos académicos aportados por Daniel](Proyecto/README.md).
+- [Revisión y limpieza del 1 de noviembre](docs/revision-2026-11-01/README.md).
+- [Prueba con el motor del automóvil](docs/motor-2026-11-01/README.md).
+
+Para mantener el estilo, instala Ruff 0.14.3 en un entorno de desarrollo y ejecuta
+`ruff check src scripts tests` y `ruff format --check src scripts tests`.
+La configuración está en `ruff.toml`; Ruff no es una dependencia para usar la aplicación.
