@@ -11,7 +11,7 @@ Actualizado: 1 de noviembre de 2026, Costa Rica.
 
 ## Contenido autorizado
 
-Código, dependencias, pruebas, scripts, historial Git, documentación técnica, evidencias sintéticas y todos los documentos de `Proyecto/`. Se preservan los originales académicos. Las grabaciones reales y resultados locales de `data/`, entornos y credenciales permanecen excluidos. Los videos versionados corresponden exclusivamente a ejemplos sintéticos.
+Código, dependencias, pruebas, scripts, historial Git, documentación técnica, evidencias sintéticas y todos los documentos de `Proyecto/`. Se preservan los originales académicos. Daniel autorizó explícitamente el 1/11/2026 publicar `data/input/`, incluidos motor.mp4 y motor_30fps.avi. Los ocho videos de entrada se almacenan mediante Git LFS; los cinco JSON de referencias se versionan normalmente. `data/output/` sigue excluido salvo su marcador vacío .gitkeep. Entornos y credenciales permanecen excluidos. Para obtener los videos después de clonar, instalar Git LFS y ejecutar `git lfs install` y `git lfs pull`.
 
 ## Continuidad
 

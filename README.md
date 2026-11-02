@@ -167,8 +167,19 @@ incidencias, decisiones, pruebas, pendientes y plantillas para futuros informes.
 
 Los componentes están en `src/video_analysis/`: `video`, `magnification`, `motion`,
 `heatmaps`, `anomalies`, `export`, `gui`; `pipeline.py` los integra.
-Los videos y ejecuciones locales están excluidos de Git; los generadores, pruebas,
-código y documentación quedan versionados.
+Los videos de `data/input/` están versionados con Git LFS por autorización de Daniel.
+Los metadatos de referencia también se incluyen. `data/output/` permanece excluido
+(salvo el marcador vacío `.gitkeep`); no se suben resultados de ejecuciones.
+
+Después de instalar Git LFS en tu equipo, ejecuta en el repositorio:
+
+```bash
+git lfs install
+git lfs pull
+```
+
+Esto descarga los videos completos; sin Git LFS podrías tener solamente archivos
+puntero que no se pueden reproducir. Las entradas actuales ocupan unos 444 MB.
 
 ## Documentos y revisión del código
 

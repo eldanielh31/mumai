@@ -86,3 +86,10 @@ No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`
 - Base bfffc94: 32 pruebas nativas aprobadas en 7,588 s y cinco referencias con siete criterios aprobados. Revisión estática, formato y dependencias sin errores.
 - Integridad comprobada antes de actualizar este índice: 202 archivos del cierre semanal, 26 documentos académicos, 14 archivos de exportación real y ambos videos intactos. No se repitió el análisis real en esta verificación.
 - Se agregaron registros nuevos y lista de cambios acumulados en verificacion-final-2026-11-01/. Sin cambios funcionales adicionales; pendientes formales conservados.
+
+## Publicación de entradas autorizada — 1 de noviembre de 2026
+
+- Daniel solicitó incluir data/input/ en Git y mantener data/output/ excluido. Esta autorización sustituye la exclusión previa de las grabaciones de entrada.
+- Se incorporaron ocho videos mediante Git LFS, incluidos motor.mp4 y motor_30fps.avi, y cinco JSON de referencias mediante Git normal. No se alteró el contenido de las entradas.
+- Se actualizaron reglas de exclusión, atributos LFS, instrucciones de clonación y política del repositorio. Los resultados locales siguen excluidos; únicamente su marcador vacío permanece versionado.
+- Sin cambios al código de la aplicación; la suite 32/32 del cierre anterior sigue siendo la referencia de pruebas funcionales. Esta entrega verifica almacenamiento e integridad, no repite el análisis.

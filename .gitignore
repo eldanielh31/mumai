@@ -4,9 +4,7 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .env
-data/input/*
 data/output/*
-!data/input/.gitkeep
 !data/output/.gitkeep
 # Material de captura y credenciales locales
 .env.*
@@ -19,8 +17,14 @@ data/output/*
 *.m4v
 *.webm
 *.avi
-# Única excepción: paquetes de ejemplo sintéticos revisados y documentados
+# Excepciones: entradas autorizadas por Daniel y ejemplos sintéticos
 !docs/**/ejemplo/*.avi
+!data/input/**/*.avi
+!data/input/**/*.mp4
+!data/input/**/*.mov
+!data/input/**/*.mkv
+!data/input/**/*.m4v
+!data/input/**/*.webm
 
 # Herramientas de revisión local
 .ruff_cache/
