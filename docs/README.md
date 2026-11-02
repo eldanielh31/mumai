@@ -2,6 +2,14 @@
 
 Este índice reúne evidencia reutilizable para informes, seguimiento del cronograma y entrega final. Fecha de actualización: **1 de noviembre de 2026**.
 
+## Cierre semanal vigente — 1 de noviembre
+
+- [Informe de cierre técnico de SW-06 y dependencias](cierre-semana-2026-11-01/README.md).
+- [Matriz vigente de 35 requisitos](matriz-requisitos-2026-11-01.md).
+- [Cronograma completo y entregables](cierre-semana-2026-11-01/cronograma-y-entregables.md).
+- [Protocolo PRU-02, 2–7 de noviembre](cierre-semana-2026-11-01/protocolo-pru02.md).
+- [Esfuerzo estimado, separado de horas reales](cierre-semana-2026-11-01/esfuerzo-estimado.md).
+
 ## Revisión y documentos académicos
 
 - [Revisión completa de código y organización](revision-2026-11-01/README.md).

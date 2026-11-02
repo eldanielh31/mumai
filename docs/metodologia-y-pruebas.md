@@ -84,3 +84,7 @@ Las fases formales de pruebas del cronograma permanecen programadas para noviemb
 Las horas del plan son presupuesto, no horas reales ejecutadas. No se reconstruye ni
 inventa AC. Registrar desde ahora fecha, ID de actividad, horas reales y evidencia;
 el valor ganado debe actualizarse con la revisión de entregables y los registros reales.
+
+## Actualización del protocolo — 1 de noviembre de 2026
+
+El protocolo real ya se ejecutó en el alcance de compatibilidad, consulta, exportación y repetibilidad; véase [cierre semanal](cierre-semana-2026-11-01/README.md). No se reemplaza el estado histórico anterior. El nuevo script `validate_real_workflow.py` conserva la configuración exacta de un reporte y compara resultados, preservando la evidencia existente. La próxima fase dispone de [protocolo PRU-02](cierre-semana-2026-11-01/protocolo-pru02.md).

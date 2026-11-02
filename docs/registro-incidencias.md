@@ -104,3 +104,9 @@ Corregido: fecha predeterminada de Costa Rica con opción explícita `--date`, n
 - **INC-014 — Fecha fija en validación SW-06:** reemplazada por fecha de Costa Rica u opción explícita; flujo comprobado con corte 2026-11-01.
 
 Detalles y evidencia en [revisión de código](revision-2026-11-01/README.md).
+
+## Estado consolidado — cierre del 1 de noviembre de 2026
+
+INC-001 a INC-011 e INC-013/014 conservan sus correcciones y regresiones; INC-012 se resolvió para la entrada mediante copia a FPS constantes, sin conversión automática en el producto. No se identificó un nuevo defecto de implementación en este cierre.
+
+REP-001 queda **resuelto**: GitHub privado conectado y publicado. VAL-001 avanza a captura real documentada y repetibilidad exacta comprobada; siguen sin existir etiquetas de fallas ni intervalos de aceleración/RPM confirmados. VAL-002 tiene ejecución funcional sin acceso a GPU, pero falta el método físico literal o aceptación de equivalencia. VAL-003 conserva las fechas de noviembre; no se atribuye a Daniel la ejecución de todos los casos manuales. Véase [cierre semanal](cierre-semana-2026-11-01/README.md).

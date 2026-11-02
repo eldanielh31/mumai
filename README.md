@@ -179,3 +179,7 @@ código y documentación quedan versionados.
 Para mantener el estilo, instala Ruff 0.14.3 en un entorno de desarrollo y ejecuta
 `ruff check src scripts tests` y `ruff format --check src scripts tests`.
 La configuración está en `ruff.toml`; Ruff no es una dependencia para usar la aplicación.
+
+## Estado al 1 de noviembre de 2026
+
+La implementación de SW-01 a SW-06 cuenta con [cierre técnico documentado](docs/cierre-semana-2026-11-01/README.md), pruebas actuales y captura real reproducida por interfaz. Consulta la [matriz vigente](docs/matriz-requisitos-2026-11-01.md) y el [protocolo funcional del 2–7 de noviembre](docs/cierre-semana-2026-11-01/protocolo-pru02.md). La validación mecánica externa y las etapas finales del plan mantienen sus límites y fechas.

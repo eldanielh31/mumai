@@ -1,0 +1,25 @@
+This plugin does not support propagateSizeHints()
+This plugin does not support propagateSizeHints()
+{
+  "checks": {
+    "load_real_video": true,
+    "configuration": true,
+    "result_before_export": true,
+    "four_metrics": true,
+    "maps_and_chart": true,
+    "same_input_and_config": true,
+    "repeat_summary": true,
+    "repeat_metricas.csv": true,
+    "repeat_patrones.json": true,
+    "repeat_movimiento_original.npy": true,
+    "repeat_movimiento_magnificado.npy": true,
+    "seek_comparison": true,
+    "play_pause_comparison": true,
+    "export_hashes": true,
+    "receipt_complete": true,
+    "local_summary": true,
+    "input_unchanged": true,
+    "reset_preserves_export": true
+  },
+  "error": null
+}

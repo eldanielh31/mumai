@@ -70,3 +70,13 @@ No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`
 - Se autenticó GitHub CLI en la cuenta eldanielh31. La URL y estado verificado se mantienen en repositorio.md.
 
 - Publicación privada comprobada: commit `c3842af2f4d3818be937a2a6961d09f46a8eca7c` coincide entre el repositorio local y GitHub. Se enviaron código, historial y los 26 documentos académicos, además de sus índices y evidencias.
+
+## Cierre semanal 26/10–01/11 — ejecución del 1 de noviembre de 2026
+
+- Se contrastaron las 19 actividades y ocho entregables del plan con requisitos, diseño, informes y código. SW-06 vence el 31/10; PRU-02 comienza el 2/11.
+- Se completó la evidencia de cierre con 32 pruebas, siete pruebas nativas, cinco referencias/siete criterios y 18 comprobaciones del flujo real por interfaz. CSV, matrices, patrones y métricas reales resultaron idénticos a la ejecución previa.
+- Se comprobó el flujo real en proceso sin interfaces de red externas ni dispositivos GPU accesibles; no se confundió con un equipo físicamente sin GPU. Exportación y conservación tras reinicio verificadas.
+- Daniel confirmó Samsung Galaxy S25 Ultra, grabación del 28/10, soporte independiente, ralentí y aceleración; aprobación del plan declarada por el usuario. No se inventaron tiempos de aceleración ni normalidad del tramo inicial.
+- Se añadieron script de repetibilidad, matriz vigente, conciliación del cronograma, protocolo PRU-02 y distribución de esfuerzo expresamente estimada. El registro de horas reales no se rellenó con cifras inventadas.
+- Se preservaron PDFs/DOCX y matrices históricas. La aprobación automática inicialmente rechazó una escritura al interpretar que sustituía una matriz antigua; se comprobó su huella y se crearon archivos nuevos con escritura exclusiva. No quedó bloqueado el trabajo.
+- Evidencia completa en cierre-semana-2026-11-01/. No se modificó el comportamiento de la aplicación ni se ejecutaron por anticipado las etapas finales como si ya estuvieran cerradas.

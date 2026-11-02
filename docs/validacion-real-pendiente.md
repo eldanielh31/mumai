@@ -30,3 +30,9 @@ En las etapas de noviembre medir duración, resolución/FPS, tiempo de análisis
 ## Actualización — 1 de noviembre de 2026
 
 El estado del 18 de octubre anterior se conserva como historial. Daniel ya aportó una captura real del motor de su automóvil. Se comprobó lectura y se adaptó la temporización en una copia; el flujo completo produjo resultados. Véase [registro de prueba real](motor-2026-11-01/README.md). VAL-001 queda parcialmente verificado, no cerrado: faltan condiciones completas de captura, confirmación de referencia, repetibilidad con idéntica configuración y contraste externo. No se ha demostrado diagnóstico de fallas.
+
+## Actualización posterior — cierre semanal del 1 de noviembre
+
+Daniel confirmó teléfono Samsung Galaxy S25 Ultra, fecha 28/10/2026, soporte independiente y periodos al ralentí y acelerados. Se repitió el flujo por interfaz: 18 comprobaciones aprobadas, igualdad exacta de CSV, matrices y patrones, exportación íntegra y reinicio que conserva la copia. Las condiciones y el resultado se encuentran en [cierre-semana-2026-11-01](cierre-semana-2026-11-01/README.md).
+
+La disponibilidad, ejecución y repetibilidad de captura real ya no están pendientes. Siguen sin confirmar RPM e intervalos concretos de aceleración y no hay referencia externa de daños. El análisis usa una banda exploratoria, no una frecuencia mecánica calibrada. Las afirmaciones anteriores permanecen como historial de sus fechas.

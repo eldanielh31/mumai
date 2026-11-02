@@ -1,0 +1,17 @@
+{
+  "fecha_registro": "2026-11-01",
+  "fecha_captura": "2026-10-28",
+  "fuente": "Declaración de Daniel en este chat el 1 de noviembre; miércoles anterior resuelto en America/Costa_Rica",
+  "dispositivo": "Samsung Galaxy S25 Ultra",
+  "soporte": "Independiente del automóvil, confirmado por Daniel",
+  "regimen": "Parte al ralentí y parte acelerado",
+  "intervalos_y_rpm": "No proporcionados; no asignar las alertas a aceleraciones concretas sin confirmación",
+  "iluminacion": "En muestras se observa iluminación de la escena; tipo de fuente, exposición y cambios no confirmados por Daniel",
+  "entrada_original": "data/input/motor.mp4",
+  "sha256_original": "51d00236596561711f28dd8c4f62107f87f9ea0691d696d2f8a8ff3d2cdd5c26",
+  "entrada_analizada": "data/input/motor_30fps.avi",
+  "adaptacion": "FFV1, 30 FPS constantes, sin audio; original conservado",
+  "referencia": "Primeros 10 s seleccionados para exploración, régimen específico no confirmado",
+  "interpretacion": "Las alertas son cambios de movimiento; aceleración deliberada no equivale a daño. No hay diagnóstico ni etiquetas de falla.",
+  "aprobacion_plan": "Daniel declara que todo está aprobado. No se crea firma ni constancia documental del supervisor."
+}
