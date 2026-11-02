@@ -7,7 +7,7 @@ Actualizado: 1 de noviembre de 2026, Costa Rica.
 - URL: https://github.com/eldanielh31/Generacion-de-sistema-de-identificacion-de-danos-en-maquinaria-usando-magnificacion-Euleriana-e-IA
 - El nombre conserva el título del proyecto con “IA” como abreviatura y sin tildes en la URL.
 - Remoto local: `origin`, HTTPS; rama `main`.
-- Estado de envío: pendiente de la primera comprobación de publicación.
+- Publicación verificada el 1 de noviembre de 2026: commit `c3842af2f4d3818be937a2a6961d09f46a8eca7c` presente en `main` remoto. Esta anotación se enviará en un commit documental posterior.
 
 ## Contenido autorizado
 

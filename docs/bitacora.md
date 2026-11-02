@@ -68,3 +68,5 @@ No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`
 - Se corrigieron INC-013 (recibo de reexportación) e INC-014 (fecha fija de SW-06), se eliminaron dos importaciones sin uso y se unificó el formato.
 - Se verificaron 32 pruebas, nueve criterios de interfaz y la integridad de los documentos reorganizados. Evidencia en revision-2026-11-01/.
 - Se autenticó GitHub CLI en la cuenta eldanielh31. La URL y estado verificado se mantienen en repositorio.md.
+
+- Publicación privada comprobada: commit `c3842af2f4d3818be937a2a6961d09f46a8eca7c` coincide entre el repositorio local y GitHub. Se enviaron código, historial y los 26 documentos académicos, además de sus índices y evidencias.
