@@ -80,3 +80,9 @@ No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`
 - Se añadieron script de repetibilidad, matriz vigente, conciliación del cronograma, protocolo PRU-02 y distribución de esfuerzo expresamente estimada. El registro de horas reales no se rellenó con cifras inventadas.
 - Se preservaron PDFs/DOCX y matrices históricas. La aprobación automática inicialmente rechazó una escritura al interpretar que sustituía una matriz antigua; se comprobó su huella y se crearon archivos nuevos con escritura exclusiva. No quedó bloqueado el trabajo.
 - Evidencia completa en cierre-semana-2026-11-01/. No se modificó el comportamiento de la aplicación ni se ejecutaron por anticipado las etapas finales como si ya estuvieran cerradas.
+
+## Verificación final y publicación — 1 de noviembre de 2026
+
+- Base bfffc94: 32 pruebas nativas aprobadas en 7,588 s y cinco referencias con siete criterios aprobados. Revisión estática, formato y dependencias sin errores.
+- Integridad comprobada antes de actualizar este índice: 202 archivos del cierre semanal, 26 documentos académicos, 14 archivos de exportación real y ambos videos intactos. No se repitió el análisis real en esta verificación.
+- Se agregaron registros nuevos y lista de cambios acumulados en verificacion-final-2026-11-01/. Sin cambios funcionales adicionales; pendientes formales conservados.

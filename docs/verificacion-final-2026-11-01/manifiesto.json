@@ -1,0 +1,10 @@
+{
+  "sha256": {
+    "README.md": "3be0842e902baeeb488be4030ba918527f59cc300c1e898d9d47fa3cd8e81f7c",
+    "calidad-y-dependencias.txt": "dfad88cf3cda4de5cf25842342b9edc2a376313a782d62537135152d6f454a2b",
+    "integridad.json": "6bfaa4e7b721060a1624d9e21be558992bf466eff943702396a28fc53a8a4e70",
+    "pruebas-escritorio.txt": "4f6eb56a6c8bc76a70cdff0167acc71a6d7e75b1398b2c3135511acab855bc5d",
+    "referencias.json": "bb0997d1f9e352dc0f92f1a175f7e92183fe11b5071aabb3fba84c69248385e2",
+    "referencias.txt": "04e4d3cfd6e889fe4fdffc88881f25675aaa49bb9888cce893cfba110e850483"
+  }
+}

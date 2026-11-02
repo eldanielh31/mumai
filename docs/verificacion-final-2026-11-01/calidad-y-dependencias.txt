@@ -1,0 +1,11 @@
+$ /tmp/daniel-review-tools/bin/ruff check --no-cache src scripts tests
+All checks passed!
+Exit: 0
+$ /tmp/daniel-review-tools/bin/ruff format --no-cache --check src scripts tests
+32 files already formatted
+Exit: 0
+$ .venv/bin/python -m pip check
+No broken requirements found.
+Exit: 0
+$ git diff --check
+Exit: 0

@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-01",
+  "scenario": "Simulación; no maquinaria real",
+  "checks": {
+    "static_has_no_alerts": true,
+    "static_motion_below_0_001": true,
+    "in_band_motion_increases": true,
+    "in_band_gain_exceeds_out_of_band": true,
+    "stable_subtle_has_no_alerts": true,
+    "amplitude_change_detected_after_13_seconds": true,
+    "no_early_amplitude_alerts": true
+  },
+  "results": {
+    "static": {
+      "output": "data/output/validacion/analisis-20261102T003004Z-d4b59f14",
+      "original_mean": 0.0,
+      "magnified_mean": 0.0,
+      "motion_ratio": null,
+      "flagged_windows": 0,
+      "events": [],
+      "elapsed_seconds": 4.844391475000521,
+      "clipping_fraction": 0.0
+    },
+    "subtle": {
+      "output": "data/output/validacion/analisis-20261102T003009Z-30bbd229",
+      "original_mean": 0.020535761632068814,
+      "magnified_mean": 0.050071695209508056,
+      "motion_ratio": 2.438268232102757,
+      "flagged_windows": 0,
+      "events": [],
+      "elapsed_seconds": 5.166372812998816,
+      "clipping_fraction": 0.0
+    },
+    "out_of_band": {
+      "output": "data/output/validacion/analisis-20261102T003014Z-10f54bcc",
+      "original_mean": 0.09540327993488451,
+      "magnified_mean": 0.09540327993488451,
+      "motion_ratio": 1.0,
+      "flagged_windows": 0,
+      "events": [],
+      "elapsed_seconds": 4.994947196999419,
+      "clipping_fraction": 0.0
+    },
+    "amplitude_change": {
+      "output": "data/output/validacion/analisis-20261102T003019Z-0089f4ff",
+      "original_mean": 0.07421041783272174,
+      "magnified_mean": 0.09883760637195226,
+      "motion_ratio": 1.3318562172058221,
+      "flagged_windows": 14,
+      "events": [
+        {
+          "start_seconds": 13.0,
+          "end_seconds": 13.5,
+          "score": 14.886210174299777
+        },
+        {
+          "start_seconds": 13.5,
+          "end_seconds": 14.0,
+          "score": 17.588439607061446
+        },
+        {
+          "start_seconds": 14.0,
+          "end_seconds": 14.5,
+          "score": 17.591811255551875
+        },
+        {
+          "start_seconds": 14.5,
+          "end_seconds": 15.0,
+          "score": 17.588439607061446
+        },
+        {
+          "start_seconds": 15.0,
+          "end_seconds": 15.5,
+          "score": 17.591811255551875
+        },
+        {
+          "start_seconds": 15.5,
+          "end_seconds": 16.0,
+          "score": 17.588439607061446
+        },
+        {
+          "start_seconds": 16.0,
+          "end_seconds": 16.5,
+          "score": 17.591811255551875
+        },
+        {
+          "start_seconds": 16.5,
+          "end_seconds": 17.0,
+          "score": 17.588439607061446
+        },
+        {
+          "start_seconds": 17.0,
+          "end_seconds": 17.5,
+          "score": 17.591811255551875
+        },
+        {
+          "start_seconds": 17.5,
+          "end_seconds": 18.0,
+          "score": 17.588439607061446
+        },
+        {
+          "start_seconds": 18.0,
+          "end_seconds": 18.5,
+          "score": 17.591811255551875
+        },
+        {
+          "start_seconds": 18.5,
+          "end_seconds": 19.0,
+          "score": 17.588439607061446
+        },
+        {
+          "start_seconds": 19.0,
+          "end_seconds": 19.5,
+          "score": 17.591811255551875
+        },
+        {
+          "start_seconds": 19.5,
+          "end_seconds": 20.0,
+          "score": 17.588439607061446
+        }
+      ],
+      "elapsed_seconds": 4.98130135700012,
+      "clipping_fraction": 3.8671875e-05
+    },
+    "lighting": {
+      "output": "data/output/validacion/analisis-20261102T003024Z-3045b8d3",
+      "original_mean": 8.341430901280039e-05,
+      "magnified_mean": 0.0006745561836701719,
+      "motion_ratio": 8.086816178824398,
+      "flagged_windows": 0,
+      "events": [],
+      "elapsed_seconds": 5.448682186000951,
+      "clipping_fraction": 0.0
+    }
+  },
+  "limitations": [
+    "Las alertas no demuestran daño real.",
+    "Iluminación y movimiento de cámara pueden contaminar EVM y flujo óptico.",
+    "No se han estimado sensibilidad ni especificidad sobre maquinaria real."
+  ]
+}

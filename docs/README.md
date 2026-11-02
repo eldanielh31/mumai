@@ -2,6 +2,8 @@
 
 Este índice reúne evidencia reutilizable para informes, seguimiento del cronograma y entrega final. Fecha de actualización: **1 de noviembre de 2026**.
 
+- [Verificación final, pruebas e integridad — 1 de noviembre](verificacion-final-2026-11-01/README.md).
+
 ## Cierre semanal vigente — 1 de noviembre
 
 - [Informe de cierre técnico de SW-06 y dependencias](cierre-semana-2026-11-01/README.md).
