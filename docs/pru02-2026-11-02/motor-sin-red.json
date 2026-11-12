@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-02",
+  "type": "Captura real; verificación técnica, no diagnóstico ni aceptación externa",
+  "reference": "/home/danbg/mumai/data/output/analisis-20261102T062454Z-3b8898be-export-edf44b2e",
+  "checks": {
+    "load_real_video": true,
+    "configuration": true,
+    "result_before_export": true,
+    "four_metrics": true,
+    "maps_and_chart": true,
+    "same_input_and_config": true,
+    "repeat_summary": true,
+    "repeat_metricas.csv": true,
+    "repeat_patrones.json": true,
+    "repeat_movimiento_original.npy": true,
+    "repeat_movimiento_magnificado.npy": true,
+    "seek_comparison": true,
+    "play_pause_comparison": true,
+    "export_hashes": true,
+    "receipt_complete": true,
+    "local_summary": true,
+    "input_unchanged": true,
+    "reset_preserves_export": true
+  },
+  "environment": {
+    "python": "3.13.18",
+    "system": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "qt_platform": "offscreen",
+    "opencv_opencl_enabled": false,
+    "visible_gpu_devices": [
+      "/dev/dri/card0",
+      "/dev/dri/renderD128"
+    ],
+    "network_interfaces": [
+      "lo",
+      "eth0"
+    ],
+    "network_counters": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+    "memory": [
+      "MemTotal:       15994780 kB",
+      "MemFree:        14168332 kB",
+      "MemAvailable:   15265420 kB"
+    ],
+    "cpu": "AMD Ryzen 7 6800HS with Radeon Graphics"
+  },
+  "report": {
+    "schema_version": 2,
+    "created_utc": "2026-11-03T01:01:41.574891+00:00",
+    "input": {
+      "path": "/home/danbg/mumai/data/input/motor_30fps.avi",
+      "fps": 30.0,
+      "width": 848,
+      "height": 478,
+      "frame_count": 1644,
+      "duration_seconds": 54.8
+    },
+    "input_sha256": "b8219e9f4ef2e2e05ad404a84911eb35917894520adc92d32ac9e75d67292788",
+    "config": {
+      "low_hz": 0.7,
+      "high_hz": 1.5,
+      "alpha": 2.0,
+      "spatial_level": 1,
+      "max_dimension": 480,
+      "baseline_seconds": 10.0,
+      "patterns_enabled": true,
+      "capture_notes": "Condiciones no documentadas."
+    },
+    "processing_size": [
+      480,
+      270
+    ],
+    "warmup_seconds": 2.857142857142857,
+    "analyzed_frame_pairs": 1558,
+    "original": {
+      "mean_px_frame": 0.021121686282558713,
+      "p95_px_frame": 0.0634389450311522,
+      "rms_px_frame": 0.059167048720516195,
+      "mean_px_second": 0.6336505896649748
+    },
+    "magnified": {
+      "mean_px_frame": 0.023796851320230475,
+      "p95_px_frame": 0.06810895847850054,
+      "rms_px_frame": 0.05703089959962492,
+      "mean_px_second": 0.7139055398418371
+    },
+    "mean_motion_ratio": 1.1266548987559193,
+    "heatmap_scale": {
+      "min": 0,
+      "max": 1.0044664144515991,
+      "unit": "px/frame",
+      "colormap": "inferno",
+      "shared": true
+    },
+    "clipped_pixel_fraction": 0.009215107874500616,
+    "patterns_status": "evaluated",
+    "chart_sample_stride": 1,
+    "flagged_windows": 2,
+    "elapsed_seconds": 212.99628737900093,
+    "versions": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "opencv-python": "5.0.0.93",
+      "scikit-learn": "1.9.1"
+    },
+    "warnings": [
+      "Los indicadores apoyan la inspección; no certifican daños ni seguridad mecánica.",
+      "Flujo expresado en píxeles de procesamiento; no equivale a desplazamiento físico sin calibración.",
+      "EVM lineal de una escala gaussiana: puede amplificar iluminación, ruido y movimiento de cámara.",
+      "Filtro causal: tiene desfase y transitorio; las métricas excluyen los primeros 2/frecuencia_mínima segundos.",
+      "Los videos de salida son MJPEG sin audio; las métricas se calculan antes de su compresión."
+    ],
+    "timing_scope": "Desde validación de entrada hasta publicación del análisis; excluye escritura de esta medición y exportación manual posterior."
+  },
+  "exported": "/home/danbg/mumai/data/output/pru02-2026-11-02/motor/analisis-20261103T005808Z-7cc2ba7c-export-b85e2d30",
+  "receipt": {
+    "schema_version": 1,
+    "exported_utc": "2026-11-03T01:01:42.495755+00:00",
+    "files": {
+      "metricas.csv": {
+        "sha256": "093c4844940d11ed30331b8417b2e78a1595b36a23f632fcaf73162e393d1f79",
+        "bytes": 299888
+      },
+      "movimiento_magnificado.npy": {
+        "sha256": "3f1c12d682fc843ff43f3da9f309419bbbc07aa1c058d45763c4229bb88400ce",
+        "bytes": 518528
+      },
+      "mapa_magnificado.png": {
+        "sha256": "bdea3c9991297bfb14d3c381adfd92cf6c464c9f2fef2578e17ff36467012209",
+        "bytes": 84421
+      },
+      "movimiento.png": {
+        "sha256": "f84fb198753a21baa2e991020639c965e1bf04d369fe934826f554d58b51cc87",
+        "bytes": 127284
+      },
+      "mapas_comparados.png": {
+        "sha256": "8a9b843eb2c14f99b3a7fc41a2ae7a03c77c0e9a54a6df98e60c11a3d36c5940",
+        "bytes": 148171
+      },
+      "comparacion.avi": {
+        "sha256": "816ca6b185b049e820e3256dd3e5a47f86e3f3f3fc0466b58508508ee94d9ed0",
+        "bytes": 121054870
+      },
+      "movimiento_original.npy": {
+        "sha256": "cde4ec1fbca4b12495e61b95572b0c6403a59a0fecd41f7e83555fd687230337",
+        "bytes": 518528
+      },
+      "mapa_original.png": {
+        "sha256": "fd98d264f08bb2abbb41a9f07c413ea2087c5df3eda992b1e2d2711b27418335",
+        "bytes": 78460
+      },
+      "original.avi": {
+        "sha256": "12ebc1ba1bf415a012bdc00781a415c943b6ae2a8d3a46560340ec178e436680",
+        "bytes": 60290084
+      },
+      "LEEME.txt": {
+        "sha256": "c71c13308dabd8ef45d7ca1941b21a56d6809add70aa332afbbaf727ee91dcf7",
+        "bytes": 1001
+      },
+      "magnificado.avi": {
+        "sha256": "83c7d9738b2be86c286801e8a74b0b63584215ee32770e4b7e1f8b55dead38f8",
+        "bytes": 60315930
+      },
+      "informe.json": {
+        "sha256": "d148285df7ef551feaadbd0a2faafeab525cb4c6a2e1b012a87ce71615d59aa5",
+        "bytes": 2262
+      },
+      "patrones.json": {
+        "sha256": "7b71192c13ea46dc9718797d10bd9542d7961e1c2bee9f125fba561ce2bcf218",
+        "bytes": 25414
+      },
+      "resumen.html": {
+        "sha256": "9b7c111398fddd3e73e97e2c8f2ece4687ed91d79f49167d0e17dc742f1590ba",
+        "bytes": 3663
+      }
+    },
+    "purpose": "Integridad de los archivos copiados; no certifica exactitud del análisis."
+  }
+}

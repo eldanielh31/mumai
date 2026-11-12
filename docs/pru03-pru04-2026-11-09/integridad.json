@@ -1,0 +1,730 @@
+{
+  "inputs_unchanged": {
+    "data/input/.gitkeep": true,
+    "data/input/motor.mp4": true,
+    "data/input/motor_30fps.avi": true,
+    "data/input/prueba_movimiento.avi": true,
+    "data/input/referencias/amplitude_change.avi": true,
+    "data/input/referencias/amplitude_change.json": true,
+    "data/input/referencias/lighting.avi": true,
+    "data/input/referencias/lighting.json": true,
+    "data/input/referencias/out_of_band.avi": true,
+    "data/input/referencias/out_of_band.json": true,
+    "data/input/referencias/static.avi": true,
+    "data/input/referencias/static.json": true,
+    "data/input/referencias/subtle.avi": true,
+    "data/input/referencias/subtle.json": true
+  },
+  "exports": {
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/amplitude_change-1/analisis-20261109T163645Z-ce1c30af": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/amplitude_change-2/analisis-20261109T163651Z-e0b3624b": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/amplitude_change-3/analisis-20261109T163657Z-379cb807": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/lighting-1/analisis-20261109T163703Z-34b525cc": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/lighting-2/analisis-20261109T163710Z-a8b5e665": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/lighting-3/analisis-20261109T163716Z-a6bd329b": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/out_of_band-1/analisis-20261109T163723Z-bc559763": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/out_of_band-2/analisis-20261109T163730Z-e44d3b71": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/out_of_band-3/analisis-20261109T163736Z-9e51907f": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/static-1/analisis-20261109T163743Z-7eba0104": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/static-2/analisis-20261109T163750Z-307d4e4e": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/static-3/analisis-20261109T163756Z-11f14150": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/subtle-1/analisis-20261109T163803Z-3bc9c352": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/subtle-2/analisis-20261109T163809Z-0cc99cff": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/subtle-3/analisis-20261109T163816Z-56be29df": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/motor_30fps-1/analisis-20261109T163826Z-35a5d6ec": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru03-2026-11-09/motor_30fps-2/analisis-20261109T164044Z-0010d8d3": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/funcionales/analisis-20261109T164332Z-bb868b29-export-d28b2ffe": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "receipt_exists": true,
+        "all_files_listed": true,
+        "hashes_and_sizes": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/funcionales/analisis-20261109T164332Z-bb868b29-export-3293e845": {
+      "checks": {
+        "required_files": true,
+        "source_matches": true,
+        "receipt_exists": true,
+        "all_files_listed": true,
+        "hashes_and_sizes": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    }
+  },
+  "passed": true
+}

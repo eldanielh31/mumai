@@ -1,0 +1,140 @@
+{
+  "activity": "ACT-PRU-02",
+  "date_local": "2026-11-02T18:56:33.612447-06:00",
+  "executor": "Codex; automatización de Qt, no ejecución manual de Daniel",
+  "qt_platform": "xcb",
+  "selector_scope": "M13 simula únicamente la respuesta de cancelar del selector; exportaciones y procesamiento reales",
+  "cases": {
+    "M01": {
+      "checks": {
+        "metadata": true,
+        "configured": true,
+        "no_automatic_analysis": true
+      },
+      "passed": true
+    },
+    "M02": {
+      "checks": {
+        "invalid_format_rejected": true,
+        "recovered": true
+      },
+      "passed": true
+    },
+    "M03": {
+      "checks": {
+        "nyquist_rejected": true,
+        "proportional_size": true,
+        "input_unchanged": true
+      },
+      "passed": true
+    },
+    "M04": {
+      "checks": {
+        "static_motion": true,
+        "no_events": true
+      },
+      "passed": true
+    },
+    "M05": {
+      "checks": {
+        "in_band_gain": true,
+        "no_events": true,
+        "shared_scale": true
+      },
+      "passed": true
+    },
+    "M06": {
+      "checks": {
+        "lower_gain": true,
+        "no_events": true
+      },
+      "passed": true
+    },
+    "M07": {
+      "checks": {
+        "equal_metrics": true,
+        "equal_maps": true
+      },
+      "passed": true
+    },
+    "M08": {
+      "checks": {
+        "evaluated": true,
+        "fourteen_windows": true,
+        "no_early_events": true
+      },
+      "passed": true
+    },
+    "M12": {
+      "checks": {
+        "four_tabs": true,
+        "four_metrics": true,
+        "maps_and_chart": true,
+        "seek": true,
+        "playback": true,
+        "pause": true,
+        "restart": true
+      },
+      "passed": true
+    },
+    "M13": {
+      "checks": {
+        "cancel_selector_keeps_analysis": true,
+        "unique_exports": true,
+        "complete_verified_exports": true,
+        "reset_preserves_both": true,
+        "reset_removes_temporary": true,
+        "local_html": true
+      },
+      "passed": true
+    },
+    "M09": {
+      "checks": {
+        "disabled": true,
+        "visible_disabled": true,
+        "other_results": true
+      },
+      "passed": true
+    },
+    "M10": {
+      "checks": {
+        "insufficient": true,
+        "visible_warning": true,
+        "other_results": true
+      },
+      "passed": true
+    },
+    "M11": {
+      "checks": {
+        "small_residual": true,
+        "no_events": true,
+        "illumination_warning": true
+      },
+      "passed": true
+    },
+    "M14": {
+      "checks": {
+        "views_cleared": true,
+        "bad_configuration_rejected": true,
+        "configuration_recovered": true,
+        "short_video_error": true,
+        "new_input_recovers": true
+      },
+      "passed": true
+    },
+    "M15": {
+      "checks": {
+        "cancelled_while_processing": true,
+        "cancellation_reported": true,
+        "no_partial_result": true,
+        "next_analysis_succeeds": true
+      },
+      "passed": true
+    }
+  },
+  "cancellation_observed_progress": 5,
+  "exports": [
+    "/home/danbg/mumai/data/output/funcionales/analisis-20261103T005713Z-cbe74eae-export-a2c5c681",
+    "/home/danbg/mumai/data/output/funcionales/analisis-20261103T005713Z-cbe74eae-export-e84766a4"
+  ]
+}

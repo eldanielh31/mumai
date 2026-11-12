@@ -1,0 +1,173 @@
+{
+  "inputs_unchanged": {
+    "data/input/motor_30fps.avi": true,
+    "data/input/motor.mp4": true,
+    "data/input/.gitkeep": true,
+    "data/input/prueba_movimiento.avi": true,
+    "data/input/referencias/lighting.json": true,
+    "data/input/referencias/lighting.avi": true,
+    "data/input/referencias/subtle.json": true,
+    "data/input/referencias/subtle.avi": true,
+    "data/input/referencias/amplitude_change.avi": true,
+    "data/input/referencias/out_of_band.avi": true,
+    "data/input/referencias/out_of_band.json": true,
+    "data/input/referencias/amplitude_change.json": true,
+    "data/input/referencias/static.avi": true,
+    "data/input/referencias/static.json": true
+  },
+  "exports": {
+    "/home/danbg/mumai/data/output/analisis-20261102T062454Z-3b8898be-export-edf44b2e": {
+      "checks": {
+        "all_files_listed": true,
+        "hashes_and_sizes": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/pru02-2026-11-02/motor/analisis-20261103T005808Z-7cc2ba7c-export-b85e2d30": {
+      "checks": {
+        "all_files_listed": true,
+        "hashes_and_sizes": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 1644,
+          "fps": 30.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/funcionales/analisis-20261103T005713Z-cbe74eae-export-a2c5c681": {
+      "checks": {
+        "all_files_listed": true,
+        "hashes_and_sizes": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    },
+    "/home/danbg/mumai/data/output/funcionales/analisis-20261103T005713Z-cbe74eae-export-e84766a4": {
+      "checks": {
+        "all_files_listed": true,
+        "hashes_and_sizes": true,
+        "source_matches": true,
+        "original.avi": true,
+        "magnificado.avi": true,
+        "comparacion.avi": true,
+        "mapa_magnificado.png": true,
+        "movimiento.png": true,
+        "mapas_comparados.png": true,
+        "mapa_original.png": true,
+        "movimiento_magnificado.npy": true,
+        "movimiento_original.npy": true,
+        "csv_count": true,
+        "csv_finite": true,
+        "all_four_summary_metrics": true,
+        "html_local_links_exist": true
+      },
+      "videos": {
+        "original.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "magnificado.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        },
+        "comparacion.avi": {
+          "frames": 400,
+          "fps": 20.0,
+          "valid_size": true
+        }
+      },
+      "passed": true
+    }
+  },
+  "passed": true
+}

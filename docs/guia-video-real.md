@@ -1,4 +1,12 @@
-# Qué video necesita Daniel para la siguiente validación
+# Guía para nuevas capturas reales
+
+Uso vigente al **2 de noviembre de 2026**: Daniel ya aportó el video del motor,
+confirmó luz de día y completó una ejecución/exportación; su repetibilidad consta en
+[PRU-02](pru02-2026-11-02/README.md). Esta guía sirve para futuras capturas y mejores
+comparaciones; no significa que siga faltando una primera captura o que deba comprarse
+otro equipo para terminar PRU-02. Para repetir el motor usa los parámetros del
+[README](../README.md). El procedimiento de recomendaciones del 21/10 sigue abajo.
+
 
 Fecha: 21 de octubre de 2026. Relación: VAL-001; prepara PRU-02/03 y permite contrastar el prototipo con una cámara convencional. No es necesario comprar una cámara ni una GPU para comenzar.
 

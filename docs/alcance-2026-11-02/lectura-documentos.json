@@ -1,0 +1,201 @@
+[
+  {
+    "path": "Proyecto/Actividades/Semana_3_Proyecto.pdf",
+    "kind": "PDF",
+    "pages": 1,
+    "extracted_characters": 3415,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Actividades/Tarea_2_Listas_Verificacion.pdf",
+    "kind": "PDF",
+    "pages": 15,
+    "extracted_characters": 43452,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Actividades/Tarea_3_CE1114_Daniel_Brenes.pdf",
+    "kind": "PDF",
+    "pages": 15,
+    "extracted_characters": 37783,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Diseño/Documento_de_Diseno_CE1114_Daniel_Brenes_v2.docx",
+    "kind": "DOCX",
+    "extracted_characters": 16038,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Diseño/Documento_de_Diseno_CE1114_Daniel_Brenes_v2.pdf",
+    "kind": "PDF",
+    "pages": 11,
+    "extracted_characters": 20324,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Diseño/Proyectos_CE-1114_Instrucciones_Documento_de_Diseño.pdf",
+    "kind": "PDF",
+    "pages": 10,
+    "extracted_characters": 17587,
+    "extraction_ok": true,
+    "role": "instrucción o referencia del curso"
+  },
+  {
+    "path": "Proyecto/Ficha/CE1114_Ficha_Proyecto_Magnificacion_Euler_IA_Formato_TEC.docx",
+    "kind": "DOCX",
+    "extracted_characters": 10721,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Ficha/CE1114_Ficha_Proyecto_Magnificacion_Euler_IA_Formato_TEC.pdf",
+    "kind": "PDF",
+    "pages": 4,
+    "extracted_characters": 11176,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Informes/Informe_Avance_1.pdf",
+    "kind": "PDF",
+    "pages": 9,
+    "extracted_characters": 20036,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Informes/Informe_Avance_1_CE1114_Daniel_Brenes_Revisado.docx",
+    "kind": "DOCX",
+    "extracted_characters": 18553,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Informes/Informe_Avance_2.docx",
+    "kind": "DOCX",
+    "extracted_characters": 22782,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Informes/Informe_Avance_2.pdf",
+    "kind": "PDF",
+    "pages": 7,
+    "extracted_characters": 24067,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Informes/Plantilla Informe.docx",
+    "kind": "DOCX",
+    "extracted_characters": 20181,
+    "extraction_ok": true,
+    "role": "plantilla"
+  },
+  {
+    "path": "Proyecto/Informes/Plantilla Informe.pdf",
+    "kind": "PDF",
+    "pages": 10,
+    "extracted_characters": 21784,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Informes/Proyectos_CE-1114_Instrucciones_Informes_de_Avance.pdf",
+    "kind": "PDF",
+    "pages": 10,
+    "extracted_characters": 18195,
+    "extraction_ok": true,
+    "role": "instrucción o referencia del curso"
+  },
+  {
+    "path": "Proyecto/Plan/Plan_de_Proyecto_CE1114_Daniel_Brenes.docx",
+    "kind": "DOCX",
+    "extracted_characters": 17134,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Plan/Plan_de_Proyecto_Daniel_Brenes.pdf",
+    "kind": "PDF",
+    "pages": 8,
+    "extracted_characters": 18409,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Plan/Proyectos_CE-1114_Instrucciones_Plan_de_Proyecto.pdf",
+    "kind": "PDF",
+    "pages": 9,
+    "extracted_characters": 13823,
+    "extraction_ok": true,
+    "role": "instrucción o referencia del curso"
+  },
+  {
+    "path": "Proyecto/Presentacion/Guion_Presentacion_Intermedia_CE1114.docx",
+    "kind": "DOCX",
+    "extracted_characters": 6779,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Presentacion/Presentacion_Intermedia.pptx",
+    "kind": "PPTX",
+    "slides": 11,
+    "extraction_ok": true,
+    "role": "presentación intermedia histórica con fe de erratas nueva"
+  },
+  {
+    "path": "Proyecto/Requerimientos/CE-1114_Instrucciones_Documento_de_Requerimientos_de_Sistema.pdf",
+    "kind": "PDF",
+    "pages": 6,
+    "extracted_characters": 7053,
+    "extraction_ok": true,
+    "role": "instrucción o referencia del curso"
+  },
+  {
+    "path": "Proyecto/Requerimientos/Proyecto_Requer.pdf",
+    "kind": "PDF",
+    "pages": 17,
+    "extracted_characters": 34835,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Requerimientos/Proyectos_documento-de-requerimientos_CE-1114_Instrucciones_Documento_de_Requerimientos_de_Software.pdf",
+    "kind": "PDF",
+    "pages": 5,
+    "extracted_characters": 6873,
+    "extraction_ok": true,
+    "role": "instrucción o referencia del curso"
+  },
+  {
+    "path": "Proyecto/Requerimientos/Proyectos_documento-de-requerimientos_Mavin_A_Rolls_Royce_EARS_RE09_Paperaccepted.pdf",
+    "kind": "PDF",
+    "pages": 7,
+    "extracted_characters": 32401,
+    "extraction_ok": true,
+    "role": "instrucción o referencia del curso"
+  },
+  {
+    "path": "Proyecto/Riesgos/Gestion_de_Riesgos.docx",
+    "kind": "DOCX",
+    "extracted_characters": 1806,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  },
+  {
+    "path": "Proyecto/Riesgos/Gestion_de_Riesgos.pdf",
+    "kind": "PDF",
+    "pages": 2,
+    "extracted_characters": 1894,
+    "extraction_ok": true,
+    "role": "documento académico aportado"
+  }
+]

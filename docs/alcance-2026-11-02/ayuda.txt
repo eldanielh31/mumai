@@ -1,0 +1,26 @@
+usage: __main__.py [-h] [--json] [--analyze] [--output OUTPUT] [--low LOW]
+                   [--high HIGH] [--alpha ALPHA]
+                   [--spatial-level SPATIAL_LEVEL] [--baseline BASELINE]
+                   [--max-dimension MAX_DIMENSION] [--no-patterns]
+                   [--capture-notes CAPTURE_NOTES]
+                   [video]
+
+Carga y validación local de videos
+
+positional arguments:
+  video                 Video que se validará sin abrir la interfaz
+
+options:
+  -h, --help            show this help message and exit
+  --json                Mostrar los datos en JSON (requiere video)
+  --analyze             Ejecutar magnificación, movimiento, mapas y patrones
+  --output OUTPUT       Carpeta donde crear una ejecución nueva
+  --low LOW             Frecuencia mínima en Hz
+  --high HIGH           Frecuencia máxima en Hz
+  --alpha ALPHA         Factor de amplificación temporal
+  --spatial-level SPATIAL_LEVEL
+                        Reducciones gaussianas (0–4)
+  --baseline BASELINE   Fin del tramo inicial de referencia, en segundos
+  --max-dimension MAX_DIMENSION
+  --no-patterns
+  --capture-notes CAPTURE_NOTES

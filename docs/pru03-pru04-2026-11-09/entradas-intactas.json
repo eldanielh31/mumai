@@ -1,0 +1,16 @@
+{
+  "data/input/.gitkeep": true,
+  "data/input/motor.mp4": true,
+  "data/input/motor_30fps.avi": true,
+  "data/input/prueba_movimiento.avi": true,
+  "data/input/referencias/amplitude_change.avi": true,
+  "data/input/referencias/amplitude_change.json": true,
+  "data/input/referencias/lighting.avi": true,
+  "data/input/referencias/lighting.json": true,
+  "data/input/referencias/out_of_band.avi": true,
+  "data/input/referencias/out_of_band.json": true,
+  "data/input/referencias/static.avi": true,
+  "data/input/referencias/static.json": true,
+  "data/input/referencias/subtle.avi": true,
+  "data/input/referencias/subtle.json": true
+}

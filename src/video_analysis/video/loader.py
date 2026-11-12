@@ -51,8 +51,14 @@ def _open(path: str | Path):
         raise VideoError("Formato no admitido. Usa MP4, AVI, MOV, MKV, M4V o WebM.")
     try:
         with file.open("rb") as source:
-            if not source.read(1):
+            header = source.read(256)
+            if not header:
                 raise VideoError("El archivo está vacío.")
+            if header.startswith(b"version https://git-lfs.github.com/spec/v1"):
+                raise VideoError(
+                    "El video está pendiente de descarga con Git LFS. "
+                    "Consulta la sección Git LFS del README para descargarlo."
+                )
     except OSError as exc:
         raise VideoError(f"No se puede acceder al archivo: {exc}") from exc
     capture = cv2.VideoCapture(str(file), cv2.CAP_FFMPEG)

@@ -93,3 +93,31 @@ No se modificaron los PDF proporcionados ni archivos sincronizados en `sources/`
 - Se incorporaron ocho videos mediante Git LFS, incluidos motor.mp4 y motor_30fps.avi, y cinco JSON de referencias mediante Git normal. No se alteró el contenido de las entradas.
 - Se actualizaron reglas de exclusión, atributos LFS, instrucciones de clonación y política del repositorio. Los resultados locales siguen excluidos; únicamente su marcador vacío permanece versionado.
 - Sin cambios al código de la aplicación; la suite 32/32 del cierre anterior sigue siendo la referencia de pruebas funcionales. Esta entrega verifica almacenamiento e integridad, no repite el análisis.
+
+## ACT-PRU-02 — ejecución del 2 de noviembre de 2026
+
+- Se leyeron plan y diseño originales en Proyecto y se ejecutó el protocolo de pruebas funcionales de esta semana.
+- Regresión final 35/35; cinco escenarios/siete criterios; M01–M15 por Qt/X11 con 51 comprobaciones; siete pruebas nativas de escritorio. No se suman repeticiones como requisitos nuevos.
+- Se revisaron visualmente cuatro capturas sintéticas. M13 simula la respuesta de cancelación del selector, pero analiza, reproduce y exporta realmente. M15 canceló durante procesamiento al 5 %, sin resultados parciales y con recuperación.
+- Repetición real sin red: 18/18 comprobaciones, igualdad exacta de CSV, patrones, matrices y métricas respecto de la exportación de Daniel; 212,996 s de procesamiento. Cuatro exportaciones verificadas mediante lectura completa de 12 videos, huellas y coherencia de métricas. Los 14 archivos de entrada quedaron intactos.
+- Ensayo separado de 33 regresiones sin acceso a GPU ni red; dos pruebas de preparación añadidas después completan 35 en el entorno normal. No se confunde la ejecución real sin red con el ensayo de GPU bloqueada.
+- INC-015: mensaje específico de descarga LFS pendiente y guía. INC-016: Python se comprueba antes de instalar paquetes, con dos pruebas de rechazo temprano.
+- Daniel confirma luz de día, acepta justificar CPU en su equipo con RTX 3050 y mantiene público el repositorio con los videos del motor. Ordena no hacer commit ni push sin solicitud explícita; AGENTS actualizado. REP-002 resuelto por confirmación, sin cambiar la visibilidad.
+- Se crean reporte en Proyecto/Informes, matriz de 35 requisitos, anexo de confirmaciones y paquete de evidencia nuevo. Se conservan originales académicos y auditorías. Las modificaciones previas del MP4 y del log de instalación no se sobrescriben.
+- No se inventan horas, aprobación del profesor ni diagnóstico. PRU-03/04 y entrega final mantienen calendario. No se ejecutaron commit ni push.
+
+## Contraste estricto de alcance y README — 2 de noviembre de 2026
+
+- Se contrastaron plan, requisitos (35 IDs), diseño, ficha, informes, riesgos, guion, presentación y guías. Inventario inicial de 61 documentos; extracción de 26 originales académicos, incluidos 146 páginas PDF.
+- Se comprobó que la arquitectura y el flujo implementados corresponden al diseño híbrido. TF/PyTorch son condicionales; cuatro métricas, HTML y recibos concretan consulta, resultados y trazabilidad, sin añadir un servicio externo.
+- Se corrigió la explicación vigente de alternativas, «daño visible», cronograma y componente de captura en una fe de erratas con guion alineado; los originales fechados se conservaron. Se documentan diferencias de horas/fechas sin reconstruirlas.
+- README renovado: alcance, funcionamiento, preparación WSL/LFS, parámetros sintéticos y motor, recuperación y explicación de todos los formatos exportados. Incluye filtros CSV, P95/RMS agregados, unidades, patrones, integridad y límites de interpretación.
+- Índices y guías separan estado actual e histórico. Pendientes se limitan a PRU-03/04, documentación, presentación y revisión previstas; no se añade una campaña diagnóstica etiquetada como condición nueva de cierre.
+- Código de ejecución sin cambios respecto de la versión que aprobó 35 pruebas; se validaron ayuda/carga y promedios del CSV real para documentar el uso de datos. Nueva evidencia en alcance-2026-11-02/.
+- No se ejecutaron commit ni push y no se alteraron entradas, exportaciones previas ni horas registradas.
+
+## Desempeño e integración del 9 de noviembre de 2026
+
+- PRU-03 registró 17 análisis, seis casos, medición de tiempo/RSS/disco y comparación original/magnificado.
+- PRU-04 completó 35 pruebas, 15 casos Qt, 7 criterios sintéticos y verificación de 19 paquetes.
+- [Reporte y evidencia](pru03-pru04-2026-11-09/README.md). Las fechas del cronograma permanecen como línea base.

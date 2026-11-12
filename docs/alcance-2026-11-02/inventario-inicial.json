@@ -1,0 +1,311 @@
+{
+  "date_local": "2026-11-02",
+  "initial_status": " M AGENTS.md\n M Proyecto/README.md\n M README.md\n M data/input/motor.mp4\n M docs/README.md\n M docs/bitacora.md\n M docs/guia-pruebas-manuales.md\n M docs/registro-incidencias.md\n M docs/repositorio.md\n M docs/verification-install-latest.txt\n M scripts/complete-setup.sh\n M src/video_analysis/video/loader.py\n M tests/test_video.py\n?? Proyecto/Informes/Reporte_Pruebas_Funcionales_PRU02_2026-11-02.md\n?? docs/alcance-2026-11-02/\n?? docs/matriz-requisitos-2026-11-02.md\n?? docs/pru02-2026-11-02/\n?? scripts/validate_functional_week.py\n?? tests/test_setup.py\n",
+  "files": [
+    {
+      "path": "Proyecto/Actividades/Semana_3_Proyecto.pdf",
+      "bytes": 215095,
+      "sha256": "7697ca080d655adadd6a4c67bfbb6f2fa736592d922a6ae661366210afee6804"
+    },
+    {
+      "path": "Proyecto/Actividades/Tarea_2_Listas_Verificacion.pdf",
+      "bytes": 366666,
+      "sha256": "2a4d44bbf94d8bc5a1c46cd99fc7edcfa4dcb8512d3b336d692cedc39716c952"
+    },
+    {
+      "path": "Proyecto/Actividades/Tarea_3_CE1114_Daniel_Brenes.pdf",
+      "bytes": 774178,
+      "sha256": "d8c8b81263cdfae4584919b6b1eb7d219690039b3f8732231a29d11eb9844b59"
+    },
+    {
+      "path": "Proyecto/Diseño/Documento_de_Diseno_CE1114_Daniel_Brenes_v2.docx",
+      "bytes": 314737,
+      "sha256": "1f33e6974b46dc156f81b061adc5bf4cadcc5408f71717b41e6de9d6906be92f"
+    },
+    {
+      "path": "Proyecto/Diseño/Documento_de_Diseno_CE1114_Daniel_Brenes_v2.pdf",
+      "bytes": 516086,
+      "sha256": "bd939c2ed6d947675465c9e41b1014c4f97a95770553096d3249a249b0b93130"
+    },
+    {
+      "path": "Proyecto/Diseño/Proyectos_CE-1114_Instrucciones_Documento_de_Diseño.pdf",
+      "bytes": 209000,
+      "sha256": "bdfc3faaf3fc9beb44c5991f5fb78878f8597f4bba12d05e62bb1dcf6eb8ec86"
+    },
+    {
+      "path": "Proyecto/Ficha/CE1114_Ficha_Proyecto_Magnificacion_Euler_IA_Formato_TEC.docx",
+      "bytes": 82184,
+      "sha256": "c34a61a50faa59f80dc00f7657e015127f81e978e19619c46cd0a583b3888491"
+    },
+    {
+      "path": "Proyecto/Ficha/CE1114_Ficha_Proyecto_Magnificacion_Euler_IA_Formato_TEC.pdf",
+      "bytes": 240089,
+      "sha256": "b21310eb0052c49f2dda234fa23c0e2d57d236c193bd39daeb18df9cf33567c2"
+    },
+    {
+      "path": "Proyecto/Informes/Informe_Avance_1.pdf",
+      "bytes": 474133,
+      "sha256": "87ca8a46d8f8f2cd8396c0f09258f1a9faf11c123030b25e6353d9c1dc4b6c11"
+    },
+    {
+      "path": "Proyecto/Informes/Informe_Avance_1_CE1114_Daniel_Brenes_Revisado.docx",
+      "bytes": 243060,
+      "sha256": "86424d6a7eb63c3a0d4523655f7f90f87048cc0f1234fea0e6f8c26af69bbbae"
+    },
+    {
+      "path": "Proyecto/Informes/Informe_Avance_2.docx",
+      "bytes": 257623,
+      "sha256": "ba5397e9a7e8a304a38207135faee1a7f9410d1e88283464091521a5442aa0a4"
+    },
+    {
+      "path": "Proyecto/Informes/Informe_Avance_2.pdf",
+      "bytes": 515127,
+      "sha256": "d6bbaed9ae4647858f773c9e725a7301828a98626e0dc24188efa0f7b7ecd049"
+    },
+    {
+      "path": "Proyecto/Informes/Plantilla Informe.docx",
+      "bytes": 50437,
+      "sha256": "5ce0c6125f7d308ba91d046534337a53b660769ebbb1adb7cd6f3a5e72e2f29b"
+    },
+    {
+      "path": "Proyecto/Informes/Plantilla Informe.pdf",
+      "bytes": 401266,
+      "sha256": "f78fbe55e24e2987905fc252a4fa4316181a74d005d9f0dbb56f509bc33d735b"
+    },
+    {
+      "path": "Proyecto/Informes/Proyectos_CE-1114_Instrucciones_Informes_de_Avance.pdf",
+      "bytes": 405029,
+      "sha256": "05c41750b60ebce5de71ef40ff95ce2af626da31745e68f004d4b4a6080223f4"
+    },
+    {
+      "path": "Proyecto/Informes/Reporte_Pruebas_Funcionales_PRU02_2026-11-02.md",
+      "bytes": 10454,
+      "sha256": "209c7c0091c46275c4da20071f32093a96f7f293760b950a2b8f61dbc5822cc0"
+    },
+    {
+      "path": "Proyecto/Plan/Plan_de_Proyecto_CE1114_Daniel_Brenes.docx",
+      "bytes": 122656,
+      "sha256": "0072e7ec23bcd11bdfdba617121a1e873aefad0440bdd73f36be81c02ad70c60"
+    },
+    {
+      "path": "Proyecto/Plan/Plan_de_Proyecto_Daniel_Brenes.pdf",
+      "bytes": 343866,
+      "sha256": "9c68020f4ef7cd33624c45fa9d2c60f3cb1f0f819c08eb742ea7f549c965d186"
+    },
+    {
+      "path": "Proyecto/Plan/Proyectos_CE-1114_Instrucciones_Plan_de_Proyecto.pdf",
+      "bytes": 151037,
+      "sha256": "be69f40f770e7cbf034df87e1e84fd26731cae66b1ff504485a34d4a41945419"
+    },
+    {
+      "path": "Proyecto/Presentacion/Guion_Presentacion_Intermedia_CE1114.docx",
+      "bytes": 39983,
+      "sha256": "07d91968cdd8b45856fc5614cfbb51ffa0743bc97055e0b9806bde1eb7359af5"
+    },
+    {
+      "path": "Proyecto/Presentacion/Presentacion_Intermedia.pptx",
+      "bytes": 57253,
+      "sha256": "7d9007a33654db5104d787a60d2ab4896c42b23fa082741a4582ecba42f58f22"
+    },
+    {
+      "path": "Proyecto/README.md",
+      "bytes": 3717,
+      "sha256": "a2582e41f79d81e15700990ffed05af4597f4908949df1938c22f0285b9c28ed"
+    },
+    {
+      "path": "Proyecto/Requerimientos/CE-1114_Instrucciones_Documento_de_Requerimientos_de_Sistema.pdf",
+      "bytes": 166179,
+      "sha256": "af83aa192075ffe32518c10208d03d6e73d0423c6fc39eca2b448995cb20886f"
+    },
+    {
+      "path": "Proyecto/Requerimientos/Proyecto_Requer.pdf",
+      "bytes": 301270,
+      "sha256": "3c17eeb9555877caedaf20d51540b56465022e7816de46fe182ac06f39cb4888"
+    },
+    {
+      "path": "Proyecto/Requerimientos/Proyectos_documento-de-requerimientos_CE-1114_Instrucciones_Documento_de_Requerimientos_de_Software.pdf",
+      "bytes": 158814,
+      "sha256": "46b4c921497f40e41004f76593906edb4f20f0b995ddc884482eb39f377742d4"
+    },
+    {
+      "path": "Proyecto/Requerimientos/Proyectos_documento-de-requerimientos_Mavin_A_Rolls_Royce_EARS_RE09_Paperaccepted.pdf",
+      "bytes": 393936,
+      "sha256": "9ab375521970106e8eacdd95bcaa1cd9d8038225a8ca17fd0744aee28779d885"
+    },
+    {
+      "path": "Proyecto/Riesgos/Gestion_de_Riesgos.docx",
+      "bytes": 39064,
+      "sha256": "b9383d34700b092baca1262c161f9abc8a0a6131635a6a69c53e5e559b470220"
+    },
+    {
+      "path": "Proyecto/Riesgos/Gestion_de_Riesgos.pdf",
+      "bytes": 50577,
+      "sha256": "ff7ada00ed1c2403e970fd43d0ebe5262cead7018d5f88f308f21f04358d8828"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 5538,
+      "sha256": "24f2f84c19ed084ca4b2323bb8421974d1ac6a75328b22436a11252071fd80ad"
+    },
+    {
+      "path": "docs/auditoria-2026-10-18.md",
+      "bytes": 11808,
+      "sha256": "710b97873b081b88ba9f7e997982ade3883b034bc77d547e81a1fa01fa69d505"
+    },
+    {
+      "path": "docs/avance-2026-10-06.md",
+      "bytes": 2845,
+      "sha256": "e50f43ab1df922d1aacc5f77f390819bf7e5373028e0f0510b249b8293faefb5"
+    },
+    {
+      "path": "docs/avance-2026-10-18.md",
+      "bytes": 6101,
+      "sha256": "69c687e9e9eee3a0cb6bf3d35595439332862baeea9fc06c40a60f8faa56a7f6"
+    },
+    {
+      "path": "docs/avance-2026-10-21-sw06.md",
+      "bytes": 5175,
+      "sha256": "5802b3a259a96aa172e74ce607e41d09907588e37b585552df13ac5c079f7fef"
+    },
+    {
+      "path": "docs/bitacora.md",
+      "bytes": 12884,
+      "sha256": "30f6eb8c9b1e9bc75d38dead7ebcd1e8359388d0ebb2a790570a20deef935c1a"
+    },
+    {
+      "path": "docs/cierre-semana-2026-11-01/README.md",
+      "bytes": 8301,
+      "sha256": "c96d268cc52991a410950eb095921b3a6ec08408b5404d5f53dc101f583588be"
+    },
+    {
+      "path": "docs/cierre-semana-2026-11-01/cronograma-y-entregables.md",
+      "bytes": 5485,
+      "sha256": "01f1b6769b637b8e82a412aad3e5eb69965f2df13fae40c358fc5f971f31e77e"
+    },
+    {
+      "path": "docs/cierre-semana-2026-11-01/esfuerzo-estimado.md",
+      "bytes": 2294,
+      "sha256": "e5cd3d929c0b796e33e73e76c637f8176dd150e1c45ae0e036458367a5fa706e"
+    },
+    {
+      "path": "docs/cierre-semana-2026-11-01/protocolo-pru02.md",
+      "bytes": 4845,
+      "sha256": "4f0622ae0ad60658552498c225fa68a7afe8d381aeac9c2b3f048c6ecd0cfc49"
+    },
+    {
+      "path": "docs/correcciones-2026-10-18/README.md",
+      "bytes": 3081,
+      "sha256": "ca6f405cf0ab5d79715cccafca5aa26abc83183915faea7364bcf28995f3dd28"
+    },
+    {
+      "path": "docs/decisiones.md",
+      "bytes": 2934,
+      "sha256": "49abe6e9dacd9c40abb108686623776ec9c3ad0adf533f39cbfbce79beb99e78"
+    },
+    {
+      "path": "docs/estado-2026-10-18-corregido.md",
+      "bytes": 4215,
+      "sha256": "e609faf814bb794ce11a99df5344c4525dfb8a8475301c8ec90fa15fb9420d16"
+    },
+    {
+      "path": "docs/guia-pruebas-manuales.md",
+      "bytes": 14216,
+      "sha256": "9f88f598a03701c4ab88d38e5d1a21657dacc51676143633a02da80b0ed71142"
+    },
+    {
+      "path": "docs/guia-video-real.md",
+      "bytes": 4080,
+      "sha256": "fa68df25070ba66800728dc32aab8957c6c7da36e672fd95caa605d635d13d39"
+    },
+    {
+      "path": "docs/matriz-requisitos-2026-10-18.md",
+      "bytes": 5502,
+      "sha256": "a78bb5ab5b0870b33916f19ddea479b9663ea44d7e0f8207e8b453493e4c4df7"
+    },
+    {
+      "path": "docs/matriz-requisitos-2026-10-21.md",
+      "bytes": 5862,
+      "sha256": "fbbdf3caa1adec7f7517eb22e27e0ffc799f9cb1d9565830b79781433a73c0d6"
+    },
+    {
+      "path": "docs/matriz-requisitos-2026-11-01.md",
+      "bytes": 5911,
+      "sha256": "c50758a8b60ed014c609d35ce5ab1665a3fab4b4f6378ad1c91a093847d575a1"
+    },
+    {
+      "path": "docs/matriz-requisitos-2026-11-02.md",
+      "bytes": 5851,
+      "sha256": "ac091961503aa9cef57c6fff9630014be600766d1342cfdd361e9f642e97aec3"
+    },
+    {
+      "path": "docs/metodologia-y-pruebas.md",
+      "bytes": 5796,
+      "sha256": "1070e7082d01feb40e48dbef9f78b9e88bc3d1907e321fdc3023fe6e307482de"
+    },
+    {
+      "path": "docs/motor-2026-11-01/README.md",
+      "bytes": 5242,
+      "sha256": "63fdd25907d51c476ce5f24d3407a991fcf8e2387af074c2b26757f19da76a93"
+    },
+    {
+      "path": "docs/plantillas/informe-avance.md",
+      "bytes": 1296,
+      "sha256": "ce39db4dfa733e27c8de43499c8f1e54ca818777566eb899a7da70ce2ac789b0"
+    },
+    {
+      "path": "docs/plantillas/registro-prueba-manual.md",
+      "bytes": 1655,
+      "sha256": "8a20103a23a34bb86fd0811e9b720c347687d6151ad45791b75e9a09343b75b4"
+    },
+    {
+      "path": "docs/plantillas/sesion-pruebas.md",
+      "bytes": 752,
+      "sha256": "5d765887b18c925241b8a16fe84f3fb041cd99e691e588fdfd81e0ba2e413405"
+    },
+    {
+      "path": "docs/pru02-2026-11-02/README.md",
+      "bytes": 2001,
+      "sha256": "9826cb5c0524356b9650f4ae5bb616f8b28c900fbb2cd245262f0eed5c9a1da0"
+    },
+    {
+      "path": "docs/referencias/Plan_de_Proyecto_Daniel_Brenes.pdf",
+      "bytes": 343866,
+      "sha256": "9c68020f4ef7cd33624c45fa9d2c60f3cb1f0f819c08eb742ea7f549c965d186"
+    },
+    {
+      "path": "docs/registro-incidencias.md",
+      "bytes": 14615,
+      "sha256": "63e28cf5c7204218156b49424c91945c09478aa3aa8bb0bb1746854c40b6a0ba"
+    },
+    {
+      "path": "docs/repositorio.md",
+      "bytes": 3255,
+      "sha256": "f1e1949b68259ec201820ac80804de6d65e3160aef2e40617ea5b2fa0cca05ee"
+    },
+    {
+      "path": "docs/revision-2026-11-01/README.md",
+      "bytes": 3763,
+      "sha256": "4a83b385678a166b4fd062b4a21d939fd71573fdb830d2ff0c4cbb0bc61f02ff"
+    },
+    {
+      "path": "docs/sw06-2026-10-21/README.md",
+      "bytes": 2377,
+      "sha256": "191f4e2d9c7cd49a3d3ef4782f63be71d41469d9b91da5770f767bb935615524"
+    },
+    {
+      "path": "docs/validacion-real-pendiente.md",
+      "bytes": 4058,
+      "sha256": "1fdf03fbee809f99cf2b1d9f13200eae94d2e8c9e8d3666d99918c8ab0d3942d"
+    },
+    {
+      "path": "docs/verificacion-final-2026-11-01/README.md",
+      "bytes": 3681,
+      "sha256": "3be0842e902baeeb488be4030ba918527f59cc300c1e898d9d47fa3cd8e81f7c"
+    },
+    {
+      "path": "docs/verificacion-sw01-sw04-sw05-2026-10-21/README.md",
+      "bytes": 3835,
+      "sha256": "4c92462ff02d1544918f6d106e5e5a2e39e6614232997daf3a08c87eabd5dc08"
+    }
+  ]
+}

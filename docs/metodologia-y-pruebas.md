@@ -1,5 +1,12 @@
 # Método y protocolo de validación
 
+Estado vigente al **2 de noviembre de 2026**: la metodología sigue el diseño híbrido;
+la captura real y PRU-02 ya tienen evidencia en [PRU-02](pru02-2026-11-02/README.md).
+Las frases fechadas de preparación que siguen describen el historial, no pendientes
+actuales. La validación diagnóstica con daños etiquetados no es un nuevo entregable
+obligatorio del prototipo; sería necesaria para afirmar una exactitud que hoy no se
+pretende demostrar. Véase la [revisión de alcance](alcance-2026-11-02/README.md).
+
 ## Fundamento y decisiones
 
 El módulo EVM sigue el principio de descomposición espacial, filtrado temporal y

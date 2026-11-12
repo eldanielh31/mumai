@@ -1,6 +1,8 @@
 # Repositorio y publicación del proyecto
 
-Actualizado: 1 de noviembre de 2026, Costa Rica.
+Estado vigente: **2 de noviembre de 2026**. Origin actual: **https://github.com/eldanielh31/mumai**, público por confirmación expresa de Daniel, incluidos los videos del motor. **No hacer commit ni push salvo solicitud explícita de Daniel.** Las notas anteriores de privacidad y publicación automática que siguen se conservan como historial y quedan sustituidas por esta decisión.
+
+Registro histórico del 1 de noviembre de 2026:
 
 - Cuenta autenticada: `eldanielh31`.
 - Repositorio creado y privacidad comprobada mediante API: **privado**.
@@ -18,3 +20,20 @@ Código, dependencias, pruebas, scripts, historial Git, documentación técnica,
 GitHub CLI está instalado en `/home/daniel/.local/bin/gh` y autenticado por Daniel. Git utiliza esa autenticación para este repositorio; no hay tokens en archivos versionados. Cada entrega debe documentarse, probarse, guardarse en un commit y enviarse; verificar que `origin/main` coincide con `HEAD`. No hay sincronización automática en segundo plano.
 
 El estado del 21 de octubre (sin conexión) se conserva en el historial Git. La revisión del 1 de noviembre está en [revision-2026-11-01/README.md](revision-2026-11-01/README.md).
+
+## Verificación del remoto actual — 2 de noviembre de 2026
+
+En la copia WSL `/home/danbg/mumai`, origin es
+`https://github.com/eldanielh31/mumai.git`, distinto del nombre histórico indicado
+arriba. La API pública de GitHub devuelve `private: false`, `visibility: public`.
+Véase [registro](pru02-2026-11-02/remoto.json). Se mantiene esta diferencia explícita;
+la publicación de PRU-02 queda pendiente de aclarar la visibilidad con Daniel.
+No se cambió la privacidad ni se enviaron los cambios de esta sesión.
+
+### Decisión posterior de Daniel — 2 de noviembre
+
+Daniel confirma mantener público el remoto actual y los videos del motor. REP-002
+queda resuelto mediante autorización explícita de esa visibilidad. Además, ordena
+no hacer commit ni push hasta que lo solicite expresamente. Esta decisión sustituye
+la publicación al final de cada entrega. En PRU-02 no se ejecutaron commit ni push.
+Véase [confirmaciones](pru02-2026-11-02/confirmaciones-daniel.json).

@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "calidad-final": true,
+    "formato-final": true,
+    "diff-check": true,
+    "new_report_links": true,
+    "regression_35": true,
+    "functional_15": true,
+    "real_18": true,
+    "integrity": true,
+    "no_commit": true,
+    "no_staging": true
+  },
+  "broken_links": [],
+  "git_actions": "No se ejecutaron commit ni push; por solicitud explícita de Daniel se conserva el trabajo local",
+  "acceptance": "Campaña técnica completada; método de CPU acordado con Daniel, sin atribuir aceptación al profesor"
+}

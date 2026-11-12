@@ -1,4 +1,25 @@
-# Validación con captura real y equipo de referencia
+# Validación del prototipo y límites de las conclusiones
+
+## Estado vigente al 9 de noviembre de 2026
+
+- **VAL-001, compatibilidad y repetibilidad:** captura real del motor disponible,
+  analizada, exportada y repetida. Daniel confirmó luz de día, soporte independiente
+  y teléfono; exposición, RPM e instantes exactos de aceleración permanecen desconocidos.
+- **VAL-002, GPU opcional:** verificación funcional con GPU inaccesible en un proceso,
+  método aceptado por Daniel en su computadora con RTX 3050. No se afirma ausencia
+  física de GPU ni aprobación del profesor.
+- **VAL-003, etapas del plan:** PRU-02, PRU-03 y PRU-04 cuentan con evidencia técnica.
+  Continúan la entrega final según calendario y la revisión académica.
+  [Desempeño e integración](pru03-pru04-2026-11-09/README.md).
+
+Evidencia: [PRU-02](pru02-2026-11-02/README.md) y
+[confirmaciones](pru02-2026-11-02/confirmaciones-daniel.json).
+No se exige conseguir fallas etiquetadas para cerrar un nuevo entregable: el alcance
+es apoyar la inspección con mediciones y patrones. Sin referencia mecánica externa
+no se afirmará diagnóstico, sensibilidad o especificidad.
+
+## Historial de criterios y actualizaciones
+
 
 Estado al 18 de octubre de 2026: **pendiente**. Daniel confirmó en esta sesión que no dispone de un video de prueba real. No hay captura real incorporada a la evidencia actual. Los cinco escenarios del repositorio son sintéticos. No se accedió a una cámara ni se grabó a ninguna persona.
 

@@ -110,3 +110,60 @@ Detalles y evidencia en [revisión de código](revision-2026-11-01/README.md).
 INC-001 a INC-011 e INC-013/014 conservan sus correcciones y regresiones; INC-012 se resolvió para la entrada mediante copia a FPS constantes, sin conversión automática en el producto. No se identificó un nuevo defecto de implementación en este cierre.
 
 REP-001 queda **resuelto**: GitHub privado conectado y publicado. VAL-001 avanza a captura real documentada y repetibilidad exacta comprobada; siguen sin existir etiquetas de fallas ni intervalos de aceleración/RPM confirmados. VAL-002 tiene ejecución funcional sin acceso a GPU, pero falta el método físico literal o aceptación de equivalencia. VAL-003 conserva las fechas de noviembre; no se atribuye a Daniel la ejecución de todos los casos manuales. Véase [cierre semanal](cierre-semana-2026-11-01/README.md).
+
+## ACT-PRU-02 — 2 de noviembre de 2026
+
+### INC-015 — Punteros Git LFS confundidos con videos dañados
+
+Daniel informó que los ejemplos no abrían tras clonar. Se comprobó que los AVI de
+132 bytes contenían punteros LFS; no eran los videos reales. Git LFS no funcionaba
+en ese Ubuntu. La descarga con LFS recuperó los archivos; Daniel confirmó después
+que pudo ejecutar y exportar motor_30fps.avi. Se conserva el motor.mp4 que repuso.
+La aplicación ahora informa descarga pendiente antes de intentar decodificar un
+puntero. README incorpora preparación LFS y exclusión de una entrada reemplazada.
+Regresión: test_lfs_pointer_reports_missing_download_before_decoding.
+Requisitos: REQ-FUNC-002, REQ-CONF-001, REQ-MANT-002, REQ-CV-001.
+
+### INC-016 — Preparación instalaba paquetes antes de comprobar Python
+
+El script ejecutaba apt/sudo antes de detectar que faltaba Python 3.13. Ubuntu tenía
+3.12.3 y el primer intento no podía crear el entorno. Se mueve la comprobación del
+intérprete al inicio, manteniendo versiones y sin descargar un intérprete por cuenta
+del proyecto. Se documenta PROJECT_PYTHON para una instalación mediante uv. Dos
+pruebas reproducen intérprete ausente/incompatible y comprueban que no se invoca
+la instalación del sistema ni se crea el entorno. REQ-MANT-002 y REQ-CV-001.
+
+### REP-002 — Visibilidad del remoto actual distinta de la política privada
+
+La API de GitHub muestra el remoto actual eldanielh31/mumai como público. El histórico
+se refiere a otro nombre de repositorio privado. No se supone que la privacidad
+anterior siga vigente. Se pidió aclaración a Daniel; no se cambia la visibilidad ni
+se publica esta entrega sin resolverlo. Evidencia: pru02-2026-11-02/remoto.json.
+
+Las evidencias y el alcance de las pruebas nuevas se conservan en
+[PRU-02](pru02-2026-11-02/README.md). No se alteran las conclusiones históricas.
+
+### Confirmación posterior de Daniel en la sesión del 2 de noviembre
+
+REP-002 resuelto: Daniel confirma repositorio público y videos del motor públicos.
+No se cambia la visibilidad. Nueva política persistente: no hacer commit ni push
+salvo solicitud explícita; queda actualizada en AGENTS.md. No se ejecutó ninguna
+de esas acciones en esta sesión.
+
+VAL-002 se verifica mediante equivalencia funcional acordada con Daniel: esta
+computadora tiene una RTX 3050 según su declaración y permite justificar el uso de
+CPU. La regresión aisló GPU y red mediante namespaces, /dev/dri vacío y /dev/dxg
+sustituido por /dev/null; el resto del equipo conserva su GPU. No se atribuye
+aprobación al profesor. Para VAL-001 se confirma luz de día; exposición, RPM e
+intervalos exactos siguen desconocidos. Confirmaciones en pru02-2026-11-02/.
+
+## Revisión de alcance y documentación — 2 de noviembre de 2026
+
+DOC-001 a DOC-006 se registran en [alcance-2026-11-02](alcance-2026-11-02/README.md):
+alternativas de presentación ajenas al Diseño §11, lenguaje de daño no demostrado,
+estados antiguos llamados vigentes, uso de datos exportados sin explicar,
+validación diagnóstica confundida con entregable y divergencias de cronología/esfuerzo.
+Se corrigen README, guías e índices y se añaden fe de erratas y notas de coherencia.
+Los documentos académicos originales y las evidencias fechadas se conservan.
+No se identificó un desvío funcional que exigiera cambiar algoritmos o retirar módulos;
+no se amplía el alcance con sensores, nube, clasificación de averías o nuevos entregables.

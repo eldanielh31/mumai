@@ -1,64 +1,75 @@
-# Documentación del proyecto Daniel Proyecto Final
+# Documentación del proyecto
 
-Este índice reúne evidencia reutilizable para informes, seguimiento del cronograma y entrega final. Fecha de actualización: **1 de noviembre de 2026**.
+Estado vigente al **9 de noviembre de 2026**. Este índice separa la definición del
+producto, las guías de uso, las pruebas y el historial. El repositorio actual es
+público por autorización de Daniel, incluidos los videos del motor. **No hacer
+commit ni push sin solicitud explícita de Daniel.**
 
-- [Verificación final, pruebas e integridad — 1 de noviembre](verificacion-final-2026-11-01/README.md).
+## Alcance y fuentes vigentes
 
-## Cierre semanal vigente — 1 de noviembre
+- [Plan, requisitos, diseño y documentos académicos](../Proyecto/README.md).
+- [Revisión de alcance y trazabilidad del 2/11](alcance-2026-11-02/README.md).
+- [Notas de coherencia documental](../Proyecto/Informes/Notas_de_coherencia_documental_2026-11-02.md).
+- [Fe de erratas y guion alineado de presentación](../Proyecto/Presentacion/Fe_de_erratas_alcance_2026-11-02.md).
 
-- [Informe de cierre técnico de SW-06 y dependencias](cierre-semana-2026-11-01/README.md).
-- [Matriz vigente de 35 requisitos](matriz-requisitos-2026-11-01.md).
-- [Cronograma completo y entregables](cierre-semana-2026-11-01/cronograma-y-entregables.md).
-- [Protocolo PRU-02, 2–7 de noviembre](cierre-semana-2026-11-01/protocolo-pru02.md).
-- [Esfuerzo estimado, separado de horas reales](cierre-semana-2026-11-01/esfuerzo-estimado.md).
+Plan, requisitos y diseño definen el prototipo local: entrada, EVM, medida compartida
+de movimiento, mapas/métricas, patrones opcionales, comparación y exportación.
+No se convierten diagnóstico mecánico, sensores, nube o entrenamiento con fallas
+etiquetadas en nuevas condiciones de cierre. Los informes fechados conservan su corte.
 
-## Revisión y documentos académicos
+## Uso y datos exportados
 
-- [Revisión completa de código y organización](revision-2026-11-01/README.md).
-- [Documentos de Proyecto](../Proyecto/README.md).
+- [README: preparación, operación e interpretación de cada archivo](../README.md).
+- [Guía de 15 casos manuales](guia-pruebas-manuales.md) y [hoja personal](plantillas/registro-prueba-manual.md).
+- [Capturas nuevas y sus condiciones](guia-video-real.md).
+- [Método y protocolos](metodologia-y-pruebas.md).
+- [Validación del prototipo y límites](validacion-real-pendiente.md).
 
-## Prueba real más reciente
+## Estado técnico y pendientes del plan
 
-- [Motor del automóvil: compatibilidad, adaptación y guía — 1 de noviembre de 2026](motor-2026-11-01/README.md).
+- [Reporte ACT-PRU-02](../Proyecto/Informes/Reporte_Pruebas_Funcionales_PRU02_2026-11-02.md).
+- [Evidencia PRU-02: 35 pruebas, 15 casos y repetición real](pru02-2026-11-02/README.md).
+- [Matriz vigente de los 35 requisitos](matriz-requisitos-2026-11-09.md).
+- [Desempeño e integración PRU-03/04](pru03-pru04-2026-11-09/README.md).
+- [Confirmaciones: luz de día, método CPU y política Git](pru02-2026-11-02/confirmaciones-daniel.json).
 
-## Cómo probar y estado de las dependencias
+SW-01 a SW-06 están implementadas y PRU-02 tiene campaña técnica ejecutada el 2/11.
+PRU-03 y PRU-04 se completaron técnicamente el 9/11 dentro de sus ventanas del plan.
+La documentación final está prevista para 16–20/11 y la presentación para 18–21/11. La revisión académica se registra cuando
+exista. Los tiempos automáticos no se convierten en horas reales de ingeniería.
 
-- [Guía manual completa para Daniel: 15 casos](guia-pruebas-manuales.md).
-- [Hoja para registrar tus resultados](plantillas/registro-prueba-manual.md).
-- [Revalidación de SW-01, SW-04 y SW-05](verificacion-sw01-sw04-sw05-2026-10-21/README.md).
+## Seguimiento y registros
 
-## Entrega vigente
+- [Bitácora](bitacora.md), [incidencias](registro-incidencias.md) y [decisiones](decisiones.md).
+- [Estado del repositorio y política vigente](repositorio.md).
+- [Registro de horas reales](registro-horas.csv), sin completar con estimaciones.
+- [Plantilla de informe](plantillas/informe-avance.md) y [sesión de pruebas](plantillas/sesion-pruebas.md).
 
-- [Avance de SW-06, 19–31 de octubre](avance-2026-10-21-sw06.md).
-- [Matriz de los 35 requisitos al 21 de octubre](matriz-requisitos-2026-10-21.md).
-- [Evidencia y ejemplo completo](sw06-2026-10-21/README.md).
-- [Qué video grabar o conseguir](guia-video-real.md).
-- [Estado del repositorio privado](repositorio.md).
+## Historial y evidencia conservada
 
-## Documentación de base e historial
+Estos documentos describen su fecha; no sustituyen el estado vigente anterior.
 
-1. [Estado actual después de las correcciones](estado-2026-10-18-corregido.md): qué funciona, qué se corrigió y qué falta comprobar.
-2. [Registro de incidencias](registro-incidencias.md): problema, causa, impacto, solución, requisitos, evidencia y criterio de cierre.
-3. [Bitácora de trabajo](bitacora.md): cambios realizados y pruebas, sin inventar horas trabajadas.
-4. [Decisiones de implementación](decisiones.md): motivos y límites de las soluciones elegidas.
-5. [Matriz actual de requisitos](matriz-requisitos-2026-10-18.md): los 35 requisitos después de corregir.
-6. [Pendientes de validación real](validacion-real-pendiente.md): datos necesarios y procedimiento para completar la evidencia.
-7. [Plantilla de informe de avance](plantillas/informe-avance.md): estructura para informes futuros.
-8. [Plantilla de sesión de pruebas](plantillas/sesion-pruebas.md): condiciones, resultados, archivos y anomalías.
+| Corte | Documentos y evidencia |
+|---|---|
+| 6 de octubre | [Avance inicial](avance-2026-10-06.md). |
+| 18 de octubre | [Avance](avance-2026-10-18.md), [auditoría original](auditoria-2026-10-18.md), [correcciones](correcciones-2026-10-18/README.md), [estado corregido](estado-2026-10-18-corregido.md), [matriz](matriz-requisitos-2026-10-18.md). |
+| 21 de octubre | [SW-06](avance-2026-10-21-sw06.md), [ejemplo sintético completo](sw06-2026-10-21/README.md), [revalidación de dependencias](verificacion-sw01-sw04-sw05-2026-10-21/README.md), [matriz](matriz-requisitos-2026-10-21.md). |
+| 1 de noviembre | [Revisión](revision-2026-11-01/README.md), [motor](motor-2026-11-01/README.md), [cierre semanal](cierre-semana-2026-11-01/README.md), [verificación final](verificacion-final-2026-11-01/README.md), [matriz](matriz-requisitos-2026-11-01.md). |
 
-## Evidencia conservada
+La [conciliación de actividades y entregables](cierre-semana-2026-11-01/cronograma-y-entregables.md)
+y el [protocolo PRU-02](cierre-semana-2026-11-01/protocolo-pru02.md) se conservan con
+su fecha de preparación. Las [estimaciones de esfuerzo](cierre-semana-2026-11-01/esfuerzo-estimado.md)
+no son horas reales. La copia del [plan original](referencias/Plan_de_Proyecto_Daniel_Brenes.pdf)
+permanece disponible. No se borran auditorías por contener hallazgos ya corregidos.
 
-- [Auditoría original](auditoria-2026-10-18.md) y carpeta `auditoria-2026-10-18/`: diagnóstico de la versión anterior. Se conservan sin reescribir sus conclusiones históricas.
-- [Evidencia de correcciones](correcciones-2026-10-18/README.md): registros automáticos, instalación nueva, interfaz y mapas revisados.
-- [Avance anterior](avance-2026-10-18.md), `tests-2026-10-18.txt`, `interfaz-2026-10-18.txt` y `validacion-2026-10-18.json`: resultados anteriores a estas correcciones. Sus instrucciones de interfaz corresponden a aquella versión.
-- [Metodología y pruebas](metodologia-y-pruebas.md): fundamentos y protocolo.
-- [Plan original](referencias/Plan_de_Proyecto_Daniel_Brenes.pdf): línea base de fechas. Recuperar funciones no elimina retrasos históricos.
-- [Registro de horas](registro-horas.csv): completar únicamente con horas reales conocidas.
+## Cómo mantener el historial
 
-## Cómo mantener este historial
+Crear una carpeta nueva por revisión. Registrar problema, causa, solución, requisito,
+prueba y pendiente; conservar versiones anteriores. Distinguir implementado, probado
+en simulación, probado con captura y aceptado. Identificar versión por commit o
+manifiesto, sin inventar porcentajes, horas, aprobación o datos de cámara.
 
-Por cada cambio relevante: asignar una incidencia o decisión, describir antes/después, vincular requisitos y actividad del plan, guardar las pruebas en una **carpeta nueva**, actualizar la matriz y registrar los pendientes. No sustituir registros anteriores para que parezca que una corrección ya existía.
-
-Para un informe, utilizar el estado correspondiente a su fecha de corte. Distinguir **implementado**, **probado en simulación**, **probado con captura real** y **aceptado por la contraparte**. No convertir cantidad de pruebas en porcentaje de cumplimiento, ni tiempo automático de procesamiento en horas de trabajo. Identificar el commit o conservar un manifiesto de archivos de la versión probada.
-
-Por autorización explícita de Daniel del 1/11/2026, las entradas de `data/input/` se versionan y sus videos usan Git LFS. Los resultados de `data/output/` no se versionan. El pequeño ejemplo sintético de SW-06 en docs conserva su excepción documentada. Los resultados pequeños y los generadores sí quedan en la documentación. No incluir videos privados o datos de terceros en un informe público sin revisar su contenido.
+`data/input/` contiene las entradas autorizadas con Git LFS. `data/output/` conserva
+resultados locales y sigue excluido del versionado, salvo su marcador vacío. Los
+pequeños ejemplos sintéticos de documentación mantienen su excepción. No publicar
+otras grabaciones, imágenes privadas o resultados reales por esa excepción.

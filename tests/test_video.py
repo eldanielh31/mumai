@@ -55,6 +55,17 @@ class VideoTests(unittest.TestCase):
                 with self.assertRaisesRegex(VideoError, message):
                     inspect_video(path)
 
+    def test_lfs_pointer_reports_missing_download_before_decoding(self):
+        pointer = self.root / "pending.avi"
+        pointer.write_text(
+            "version https://git-lfs.github.com/spec/v1\n"
+            "oid sha256:" + "a" * 64 + "\nsize 1777244\n"
+        )
+        with patch("video_analysis.video.loader.cv2.VideoCapture") as opened:
+            with self.assertRaisesRegex(VideoError, "pendiente de descarga con Git LFS"):
+                inspect_video(pointer)
+            opened.assert_not_called()
+
     def test_truncated_video(self):
         truncated = self.root / "truncated.avi"
         data = self.video.read_bytes()

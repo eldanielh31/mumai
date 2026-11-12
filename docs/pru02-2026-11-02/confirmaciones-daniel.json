@@ -1,0 +1,11 @@
+{
+  "date_local": "2026-11-02",
+  "source": "Respuestas explícitas de Daniel en esta conversación",
+  "lighting": "Luz de día",
+  "exposure_lock": "Desconocido; no confirmado",
+  "gpu_reported_by_user": "RTX 3050 en esta computadora",
+  "cpu_test_method": "Daniel permite justificar el funcionamiento con CPU en esta computadora, sin exigir otro equipo físicamente sin GPU. Se adopta aislamiento de GPU por proceso.",
+  "external_approval": "No se atribuye aprobación al profesor",
+  "repository": "Mantener el repositorio actual público, incluidos los videos del motor",
+  "git_policy": "NO hacer commit ni push salvo solicitud explícita de Daniel; sustituye autorización previa de publicación automática"
+}

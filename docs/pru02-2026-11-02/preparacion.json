@@ -1,0 +1,17 @@
+{
+  "missing": {
+    "returncode": 1,
+    "output": "Se necesita Python 3.13. Define PROJECT_PYTHON con la ruta a ese intérprete; consulta README.md.\n",
+    "no_system_install": true,
+    "environment_not_created": true
+  },
+  "wrong_version": {
+    "returncode": 1,
+    "output": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nAssertionError: La versión verificada es Python 3.13\n",
+    "no_system_install": true,
+    "environment_not_created": true
+  },
+  "shell_syntax": {
+    "returncode": 0
+  }
+}

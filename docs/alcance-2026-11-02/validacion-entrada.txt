@@ -1,0 +1,8 @@
+{
+  "path": "/home/danbg/mumai/data/input/referencias/subtle.avi",
+  "fps": 20.0,
+  "width": 160,
+  "height": 120,
+  "frame_count": 400,
+  "duration_seconds": 20.0
+}

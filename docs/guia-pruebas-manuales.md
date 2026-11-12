@@ -1,24 +1,24 @@
 # Guía para que Daniel pruebe el proyecto completo
 
-Actualizada al **21 de octubre de 2026**. Prueba la implementación de SW-01 a SW-06: entrada, EVM, movimiento, mapas, patrones, comparación y exportación. Los ejemplos son sintéticos; no se presentan como grabaciones reales ni como pruebas formales de noviembre ya realizadas.
+Actualizada al **2 de noviembre de 2026**. Prueba la implementación de SW-01 a SW-06: entrada, EVM, movimiento, mapas, patrones, comparación y exportación. Los ejemplos son sintéticos y no se presentan como grabaciones reales. La campaña técnica de noviembre está registrada por separado en PRU-02; esta guía y la hoja personal de Daniel no equivalen por sí solas a casos manuales ejecutados.
 
 ## 1. Preparar y abrir
 
 En la terminal, copia estas órdenes:
 
 ```bash
-cd /home/daniel/Desktop/proyecto-final
+cd /home/danbg/mumai
 .venv/bin/python scripts/create_reference_videos.py
 mkdir -p data/output/pruebas-daniel
 bash run.sh
 ```
 
-El generador conserva los videos de referencia que ya existen. La última orden abre la aplicación; deja esa terminal abierta. Si `.venv` falta, consulta la sección de instalación del README antes de seguir. En esta computadora el entorno ya fue preparado y probado.
+El generador conserva los videos de referencia que ya existen. La última orden abre la aplicación; deja esa terminal abierta. Si `.venv` falta, consulta la sección de instalación del README antes de seguir. En la sesión del 2 de noviembre el entorno WSL fue verificado; en otro equipo hay que prepararlo antes.
 
 Los cinco videos están en la carpeta `data/input/referencias` dentro del proyecto. Si el selector lo permite, pega la ruta absoluta:
 
 ```text
-/home/daniel/Desktop/proyecto-final/data/input/referencias
+/home/danbg/mumai/data/input/referencias
 ```
 
 Crea una copia de [la hoja de registro](plantillas/registro-prueba-manual.md) y completa tus resultados. Ningún caso de esa hoja se marca aprobado antes de que tú lo ejecutes.
@@ -193,7 +193,7 @@ QT_QPA_PLATFORM=offscreen PYTHONPATH=src .venv/bin/python -m unittest discover -
 .venv/bin/python scripts/validate_reference_suite.py
 ```
 
-La primera debe terminar con **31 pruebas y OK** en esta versión. La segunda procesa cinco referencias, verifica siete criterios y crea un JSON con fecha de Costa Rica y nombre nuevo; no sobrescribe la evidencia anterior. Ambas usan datos sintéticos.
+La primera debe terminar con **35 pruebas y OK** en esta versión. La segunda procesa cinco referencias, verifica siete criterios y crea un JSON con fecha de Costa Rica y nombre nuevo; no sobrescribe la evidencia anterior. Ambas usan datos sintéticos.
 
 Para elegir la carpeta de evidencia de una ejecución concreta, utiliza una ruta nueva:
 
@@ -210,3 +210,17 @@ Indica **M01…M15**, nombre/ruta del video, parámetros, qué esperabas, qué o
 ## 9. Qué no quedará validado con esta guía sintética
 
 La captura de cámara convencional, el ensayo físico específico sin GPU y la aceptación formal siguen pendientes. Para el primer caso usa [la guía de video real](guia-video-real.md). Las pruebas manuales de Daniel son evidencia de revisión de uso cuando se registren; este documento por sí solo no significa que ya las haya ejecutado.
+
+## Ejecución técnica de ACT-PRU-02
+
+Los 15 casos tienen una ejecución automatizada independiente del registro personal de
+Daniel en [pru02-2026-11-02](pru02-2026-11-02/README.md). Para repetirla:
+
+```bash
+QT_QPA_PLATFORM=xcb .venv/bin/python scripts/validate_functional_week.py --evidence docs/NUEVA_SESION/funcionales
+```
+
+Usa una ruta inexistente. En un entorno sin escritorio puedes elegir
+`QT_QPA_PLATFORM=offscreen`, registrándolo como tal. La cancelación del selector
+se simula; el análisis, la reproducción Qt y las exportaciones son reales.
+Esta ejecución no rellena la hoja manual de Daniel ni equivale a aceptación externa.

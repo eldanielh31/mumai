@@ -1,0 +1,24 @@
+{
+  "date_local": "2026-11-02",
+  "executor": "Codex; ejecución técnica automatizada, no aceptación de Daniel",
+  "base_commit": "be0cbf8bcd83372de0bb974ab4840d9b6530a3cb",
+  "python": "3.13.18",
+  "system": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "initial_status": " M data/input/motor.mp4\n M docs/verification-install-latest.txt\n",
+  "input_hashes": {
+    "data/input/motor_30fps.avi": "b8219e9f4ef2e2e05ad404a84911eb35917894520adc92d32ac9e75d67292788",
+    "data/input/motor.mp4": "b72f5be4677254fff385a005ef80c3632cb59f7f3facaa69a86c23ed58837d86",
+    "data/input/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data/input/prueba_movimiento.avi": "16061b9eee2eb540f7deb8fe7bbfa0be350d70cb28949b775174b1c09f466fb9",
+    "data/input/referencias/lighting.json": "a702d81b8139359c7ac523f7491c585a4fc25f3389f101b75aaba27d2ba16748",
+    "data/input/referencias/lighting.avi": "eeb3c56d64f9591efba56c3fa99ad2cf23633927c3c887681f0bde683a0890c2",
+    "data/input/referencias/subtle.json": "aeef17681ec475542cd9ffe77c359daaa193a1984a4c2f084942a0d1fa1e35c2",
+    "data/input/referencias/subtle.avi": "dc2aa51b5e54a0e808d21d901563310625f06c10e717e7c710cc920fbd5f2ec2",
+    "data/input/referencias/amplitude_change.avi": "af753bc3cad9a5569edb4a6e99371e7a4c08b6ba8b861579fd0898d93cc9bb84",
+    "data/input/referencias/out_of_band.avi": "0d6a52a9df9cb5daa5ff3b4127f93beabde4cc3cd4d7dc58e93be441763f3123",
+    "data/input/referencias/out_of_band.json": "73370b0f7c06ed4efd8e51cfd3d6e760b59b8535d94135edf76494aaaf2e463a",
+    "data/input/referencias/amplitude_change.json": "9906791ebaf7d6e1ad7b057f095ea6ed866b82554b5f2579e8ae24a873fcc323",
+    "data/input/referencias/static.avi": "240c0a352126780fecaada1a59da0a00fd31d15acc9eae59ffc13dca98e59532",
+    "data/input/referencias/static.json": "69e64ee100de80c51ef367aaad2480d08dcd3d2c5cb7631dfa1b0310fd44ddcd"
+  }
+}

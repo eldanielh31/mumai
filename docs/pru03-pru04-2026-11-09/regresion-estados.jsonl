@@ -1,0 +1,5 @@
+{"check": "regresion", "returncode": 0}
+{"check": "dependencias", "returncode": 0}
+{"check": "funcionales", "returncode": 0}
+{"check": "referencias", "returncode": 0}
+{"check": "diff", "returncode": 0}
